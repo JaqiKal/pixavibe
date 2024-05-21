@@ -3,7 +3,7 @@ name: User Story
 about: This is our user story template.
 title: "[US] "
 labels: ''
-assignees: ''
+assignees: JaqiKal
 
 ---
 
