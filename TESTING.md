@@ -149,3 +149,58 @@ OK
 Destroying test database for alias 'default'...
 ```
 
+## Issues
+
+
+- **Social Authentication Installation Error**:
+While following the video in LMS: DRF (Deployment > Deployment > Using JWT tokens), at time stamp: 0:55, ```pip install 'dj-rest-auth[with_social]'```
+Error encountered with django-allauth suggests that there is an issue with the specific version of setuptools is used. Although it is the latest version, there may be a compatibility issue.
+
+Possible steps to take (not taken) :
+- Install an older version of setuptools: Sometimes newer versions might have compatibility issues with certain packages. 
+- Install django-allauth with a specific version: You can try installing django-allauth directly with a specific version to see if that helps.
+- Re-attempt to install ```dj-rest-auth[with_social]:```
+
+This error is not fatal to the overall functioning of the project, but it will prevent us from using the social authentication features provided by dj-rest-auth and django-allauth. 
+
+**Error message**:
+```text
+gitpod /workspace/pixavibe-api (main) $ pip install 'dj-rest-auth[with_social]'
+Requirement already satisfied: dj-rest-auth[with_social] in /workspace/.pip-modules/lib/python3.12/site-packages (2.1.9)
+Requirement already satisfied: Django>=2.0 in /workspace/.pip-modules/lib/python3.12/site-packages (from dj-rest-auth[with_social]) (5.0.6)
+Requirement already satisfied: djangorestframework>=3.7.0 in /workspace/.pip-modules/lib/python3.12/site-packages (from dj-rest-auth[with_social]) (3.15.1)
+Collecting django-allauth<0.45.0,>=0.40.0 (from dj-rest-auth[with_social])
+  Downloading django-allauth-0.44.0.tar.gz (572 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 572.5/572.5 kB 13.3 MB/s eta 0:00:00
+  Preparing metadata (setup.py) ... error
+  error: subprocess-exited-with-error
+  
+  × python setup.py egg_info did not run successfully.
+  │ exit code: 1
+  ╰─> [6 lines of output]
+      Traceback (most recent call last):
+        File "<string>", line 2, in <module>
+        File "<pip-setuptools-caller>", line 34, in <module>
+        File "/tmp/pip-install-ywg8p_wh/django-allauth_0a36814bbec14efea932f6a2aa8e628b/setup.py", line 9, in <module>
+          from setuptools import convert_path, find_packages, setup
+      ImportError: cannot import name 'convert_path' from 'setuptools' (/home/gitpod/.pyenv/versions/3.12.2/lib/python3.12/site-packages/setuptools/__init__.py)
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+```
+
+
+
+There is an issue with installing `django-allauth` due to a compatibility problem with `setuptools`. This affects the social authentication feature provided by `dj-rest-auth`. This issue will be addressed at a later stage.
+
+
+## KNOWN ISSUES
+
+- (posts/view.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.  
