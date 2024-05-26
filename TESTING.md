@@ -154,7 +154,11 @@ Destroying test database for alias 'default'...
 
 - Social Authentication Installation Error:
   - During the process of setting up our Django application in the pixavibe-api environment, we encountered a specific error related to package dependencies when attempting to install ```dj-rest-auth[with_social]```. This issue was triggered by an incompatibility between the django-allauth package and the version of Python we were using (Python 3.12.2).
-  - Downgraded to Python 3.11.9 to resolve this. Added runtime.txt with python-3.9.11 to ensure consistent Python version across environments and prevent future issues.
+    - Downgraded to Python 3.11.9 to resolve this. 
+    - Added runtime.txt with python-3.9.11 to ensure consistent Python version across environments and prevent future issues.
+ To execute the final migration required for enabling JSON Web Token authentication.
+    - pip install django-allauth==0.54.0 
+    - In settings.py  MIDDLEWARE remove 'allauth.account.middleware.AccountMiddleware' this is only required since django-allauth==0.56.0
 
   **Error message**:
 
