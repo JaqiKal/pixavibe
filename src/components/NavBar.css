@@ -1,0 +1,7 @@
+/* NavBar.css */
+
+/* Change the color of the Font Awesome icons */
+.navbar-nav .nav-link .fas {
+    color: #d4af37;
+    margin-right: 8px;
+}
