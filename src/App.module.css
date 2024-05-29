@@ -5,6 +5,11 @@
     min-height: 100vh;
 }
 
+/* Push down underneath navbar */
+.Main {
+    padding-top: 81px;
+}
+
 /* Universal box-sizing model for all elements */
 * {
     box-sizing: border-box;
