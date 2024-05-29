@@ -8,14 +8,18 @@ const NavBar = () => {
     return (
         <Navbar className={styles.NavBar} expand="md" fixed="top">
             <Container>
+                {/* Logo as a link to the home page */}
                 <NavLink to="/">
                     <Navbar.Brand>
                         <img src={logo} alt="logo" height="45" />
                     </Navbar.Brand>
                 </NavLink>
+                {/* Navbar toggle for mobile view */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                {/* Collapsible content for responsive navbar */}
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
+                        {/* Navigation link to Home page */}
                         <NavLink
                             exact
                             className={styles.NavLink}
@@ -24,6 +28,7 @@ const NavBar = () => {
                         >
                             <i className="fas fa-home"></i>Home
                         </NavLink>
+                        {/* Navigation link to Sign In page */}
                         <NavLink
                             className={styles.NavLink}
                             activeClassName={styles.Active}
@@ -31,6 +36,7 @@ const NavBar = () => {
                         >
                             <i className="fas fa-sign-in-alt"></i>Sign in
                         </NavLink>
+                        {/* Navigation link to Sign Up page */}
                         <NavLink
                             to="/signup"
                             className={styles.NavLink}
