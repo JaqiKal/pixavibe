@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+// Importing Bootstrap components for form and layout styling
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
@@ -8,39 +8,44 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
-
+// Importing Link and useHistory hooks from react-router-dom for navigation
 import { Link, useHistory } from "react-router-dom";
-
+// Importing custom styles
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
-
+// Importing context hook to set the current user
 function SignInForm() {
-    const setCurrentUser = useSetCurrentUser();
+    const setCurrentUser = useSetCurrentUser(); // Hook to set the current user
 
+    // State to manage sign-in form data
     const [signInData, setSignInData] = useState({
         username: "",
         password: "",
     });
     const { username, password } = signInData;
 
+    // State to manage errors
     const [errors, setErrors] = useState({});
 
-    const history = useHistory();
+    const history = useHistory(); // Hook to programmatically navigate
+
+    // Function to handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
+            // Sending a POST request to the login endpoint with sign-in data
             const { data } = await axios.post("/dj-rest-auth/login/", signInData);
-            setCurrentUser(data.user);
-            history.push("/");
+            setCurrentUser(data.user); // Setting the current user in context
+            history.push("/"); // Navigating to the home page
         } catch (err) {
-            setErrors(err.response?.data);
+            setErrors(err.response?.data); // Setting errors if the request fails
         }
     }
-
+    // Function to handle input changes and update state
     const handleChange = (event) => {
         setSignInData({
             ...signInData,
