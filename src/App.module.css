@@ -1,34 +1,41 @@
+/* Base container styling for the App component */
 .App {
     font-family: "DM Sans", sans-serif;
-    background-color: #cfced3;
+    background-color: #f8f8f8;
     min-height: 100vh;
 }
 
+/* Universal box-sizing model for all elements */
 * {
     box-sizing: border-box;
 }
 
+/* Default link styling */
 a {
     color: #555555;
     transition: color ease-in-out 0.3s;
 }
 
+/* Link hover effects */
 a:hover {
     text-decoration: none;
 }
 
+/* Icon color changes on link hover */
 a:hover i {
-    color: #b221b2;
+    color: #2142b2;
     transition: color ease-in-out 0.3s;
 }
 
+/* Base styling for icons within links */
 i {
-    color: #cfced3;
-    font-size: 1.2rem;
+    color: #555555;
+    font-size: 1.0rem;
     padding: 7px;
     vertical-align: middle;
 }
 
+/* icon hover effects */
 i:hover {
     cursor: pointer;
     transition: color ease-in-out 0.3s;
