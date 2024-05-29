@@ -3,49 +3,97 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/logo.webp";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
-
+import {
+    useCurrentUser,
+    useSetCurrentUser,
+} from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
+import axios from "axios";
 
 const NavBar = () => {
-    const currentUser = useCurrentUser();
+    const currentUser = useCurrentUser(); // Hook to get the current user
+    const setCurrentUser = useSetCurrentUser(); // Hook to set the current user
 
-    const loggedInIcons = <>{currentUser?.username}</>;
+    // Function to handle user sign-out
+    const handleSignOut = async () => {
+        try {
+            // Sending a POST request to log out the user
+            await axios.post("dj-rest-auth/logout/");
+            setCurrentUser(null);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+    // JSX for icons visible when the user is logged in
+    const addPostIcon = (
+        <NavLink
+            className={styles.NavLink}
+            activeClassName={styles.Active}
+            to="/posts/create"
+        >
+            <i className="far fa-plus-square"></i>Add post
+        </NavLink>
+    );
+    // JSX for icons visible when the user is logged in
+    const loggedInIcons = (
+        <>
+            <NavLink
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                to="/feed"
+            >
+                <i className="fas fa-stream"></i>Feed
+            </NavLink>
+            <NavLink
+                className={styles.NavLink}
+                activeClassName={styles.Active}
+                to="/liked"
+            >
+                <i className="fas fa-heart"></i>Liked
+            </NavLink>
+            <NavLink className={styles.NavLink} to="/" onClick={handleSignOut}>
+                <i className="fas fa-sign-out-alt"></i>Sign out
+            </NavLink>
+            <NavLink
+                className={styles.NavLink}
+                to={`/profiles/${currentUser?.profile_id}`}
+            >
+                <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+            </NavLink>
+        </>
+    );
+    // JSX for icons visible when the user is logged out
     const loggedOutIcons = (
         <>
-            {/* Navigation link to Sign In page */}
-            < NavLink
+            <NavLink
                 className={styles.NavLink}
                 activeClassName={styles.Active}
                 to="/signin"
             >
                 <i className="fas fa-sign-in-alt"></i>Sign in
-            </NavLink >
-            {/* Navigation link to Sign Up page */}
-            < NavLink
+            </NavLink>
+            <NavLink
                 to="/signup"
                 className={styles.NavLink}
                 activeClassName={styles.Active}
             >
                 <i className="fas fa-user-plus"></i>Sign up
-            </NavLink >
+            </NavLink>
         </>
     );
 
     return (
         <Navbar className={styles.NavBar} expand="md" fixed="top">
             <Container>
-                {/* Logo as a link to the home page */}
                 <NavLink to="/">
                     <Navbar.Brand>
                         <img src={logo} alt="logo" height="45" />
                     </Navbar.Brand>
                 </NavLink>
-                {/* Navbar toggle for mobile view */}
+                {currentUser && addPostIcon}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                {/* Collapsible content for responsive navbar */}
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
-                        {/* Navigation link to Home page */}
                         <NavLink
                             exact
                             className={styles.NavLink}
