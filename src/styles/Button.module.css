@@ -1,0 +1,80 @@
+/* Base styling for buttons */
+.Button {
+    font-size: 0.8rem;
+    align-self: center;
+    border-radius: 100px;
+    border-color: transparent;
+    padding: 4px 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    min-width: 75px;
+}
+
+/* Button hover effect */
+.Button:hover {
+    opacity: 0.8;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+/* Button active hover effect */
+.Button:hover:active {
+    background-color: #2142b2 !important;
+}
+
+/* Button active state */
+.Button:active {
+    background-color: #2142b2 !important;
+}
+
+/* Button focus state */
+.Button:focus {
+    background-color: #2142b2;
+}
+
+/* Blue button and hover state */
+.Wide {
+    padding: 10px 50px;
+    width: 100%;
+}
+
+/* Blue outline button and hover state */
+.Blue,
+.BlueOutline:hover,
+.Bright:hover {
+    background-color: #2142b2;
+    color: #ffffff;
+}
+
+/* Black button and outline hover state */
+.BlueOutline,
+.Blue:hover {
+    /* border: 1px solid #2142b2; */
+    background-color: #ffffff;
+    color: #2142b2;
+}
+
+/* Black button hover and outline state */
+.Black,
+.BlackOutline:hover {
+    /* background-color: #242a3d;
+  color: white; */
+    background-color: #242a3d;
+    color: aliceblue;
+}
+
+/* Black button hover and outline state */
+.Black:hover,
+.BlackOutline {
+    /* background-color: #dadadf;
+  color: #242a3d;
+  border-color: #242a3d; */
+    background-color: aliceblue;
+    color: #242a3d;
+}
+
+/* Bright button variant */
+.Bright {
+    background-color: #2ed9ff;
+    color: #2142b2;
+}

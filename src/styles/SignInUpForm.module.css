@@ -1,0 +1,56 @@
+/* Styling for a row, adjusting its height */
+.Row {
+    height: calc(100vh - 81px);
+}
+
+/* Styling for input fields */
+.Input {
+    background: #ffffff;
+    border: 1px solid #f0f1f9;
+    /* Ensures padding and border are included in the element's total width and height */
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #7177a1;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Styling for headers */
+.Header {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #2142b2;
+}
+
+/* Styling for links */
+.Link {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+/* Styling for spans within links */
+.Link span {
+    color: #ff9254;
+}
+
+/* Container padding */
+.Container {
+    padding: 30px 10px;
+}
+
+/* Column height for sign-in section */
+.SignInCol {
+    height: 320px;
+}
+
+/* Column height for sign-up section */
+.SignUpCol {
+    height: 375px;
+}
