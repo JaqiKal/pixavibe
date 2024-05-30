@@ -1,3 +1,9 @@
+/*
+* Create post form with title, content, and image inputs.
+* Use useRef for image file input and useHistory for navigation.
+* Handle form submission and errors, update state, and log data.
+* Responsive layout for mobile and desktop views.
+*/
 import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
