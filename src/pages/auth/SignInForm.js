@@ -1,3 +1,9 @@
+/*
+* Sign-in form with username and password inputs.
+* Use useState for form data and errors, and useHistory for navigation.
+* Handle form submission to authenticate user, update context, and navigate.
+* Responsive layout for mobile and desktop views.
+*/
 import React, { useState } from "react";
 import axios from "axios";
 // Importing Bootstrap components for form and layout styling

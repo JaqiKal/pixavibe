@@ -1,3 +1,9 @@
+/*
+* Sign-up form with username, password, and confirm password inputs.
+* Use useState for form data and errors, and useHistory for navigation.
+* Handle form submission to register user and redirect to sign-in.
+* Responsive layout for mobile and desktop views.
+*/
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
@@ -14,7 +20,8 @@ import {
     Row,
     Container,
     Alert,
-} from "react-bootstrap"; // Importing Bootstrap components for layout and styling
+    /
+} from "react-bootstrap"; // Importing Bootstrap components for layout & styling
 import axios from "axios"; // Importing axios for HTTP requests
 
 const SignUpForm = () => {
