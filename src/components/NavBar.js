@@ -9,10 +9,14 @@ import {
 } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios";
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
     const currentUser = useCurrentUser(); // Hook to get the current user
     const setCurrentUser = useSetCurrentUser(); // Hook to set the current user
+
+    // Destructuring from custom hook
+    const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
     // Function to handle user sign-out
     const handleSignOut = async () => {
@@ -21,10 +25,10 @@ const NavBar = () => {
             await axios.post("dj-rest-auth/logout/");
             setCurrentUser(null);
         } catch (err) {
-            console.log(err);
+            console.log(err); // Logging any errors
         }
     };
-    // JSX for icons visible when the user is logged in
+    // JSX for "Add post" icon, visible only when the user is logged in
     const addPostIcon = (
         <NavLink
             className={styles.NavLink}
@@ -83,7 +87,12 @@ const NavBar = () => {
     );
 
     return (
-        <Navbar className={styles.NavBar} expand="md" fixed="top">
+        <Navbar
+            expanded={expanded}
+            className={styles.NavBar}
+            expand="md"
+            fixed="top"
+        >
             <Container>
                 <NavLink to="/">
                     <Navbar.Brand>
@@ -91,7 +100,11 @@ const NavBar = () => {
                     </Navbar.Brand>
                 </NavLink>
                 {currentUser && addPostIcon}
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle
+                    ref={ref}
+                    onClick={() => setExpanded(!expanded)}
+                    aria-controls="basic-navbar-nav"
+                />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
                         <NavLink
