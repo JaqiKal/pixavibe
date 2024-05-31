@@ -4,8 +4,13 @@
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
+# tasks:
+#  - init: npm install && npm run build
+#    command: npm run start
+
 tasks:
-  - init: npm install && npm run build
-    command: npm run start
-
-
+  - init: |
+      nvm install 16
+      nvm use 16
+      npm install
+  - command: npm start
