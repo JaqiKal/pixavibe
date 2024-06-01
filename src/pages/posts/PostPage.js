@@ -19,10 +19,7 @@ import CommentCreateForm from "../comments/CommentCreateForm";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostPage() {
-    // Get the 'id' parameter from the URL
     const { id } = useParams();
-    // Get the 'id' parameter from the URL
-
     const [post, setPost] = useState({ results: [] });
 
     const currentUser = useCurrentUser();
@@ -32,27 +29,25 @@ function PostPage() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                // Fetch the data from the API
                 const [{ data: post }, { data: comments }] = await Promise.all([
                     axiosReq.get(`/posts/${id}`),
                     axiosReq.get(`/comments/?post=${id}`),
                 ]);
-                // Update the state with the fetched data
                 setPost({ results: [post] });
                 setComments(comments);
             } catch (err) {
                 console.log(err);
             }
         };
-        // Call the function to fetch the post data when the component mounts
+
         handleMount();
-    }, [id]);  // Re-run the effect when the 'id' parameter changes
+    }, [id]);
 
     /*
-    * Render the post page layout with dynamic content based on user and comments state.
-    * The layout includes a main column for the post, comments form, and comments display,
-    * and a sidebar for popular profiles that only appears on larger screens.
-    */
+      * Render the post page layout with dynamic content based on user and comments state.
+      * The layout includes a main column for the post, comments form, and comments display,
+      * and a sidebar for popular profiles that only appears on larger screens.
+      */
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
@@ -72,7 +67,12 @@ function PostPage() {
                     ) : null}
                     {comments.results.length ? (
                         comments.results.map((comment) => (
-                            <Comment key={comment.id} {...comment} />
+                            <Comment
+                                key={comment.id}
+                                {...comment}
+                                setPost={setPost}
+                                setComments={setComments}
+                            />
                         ))
                     ) : currentUser ? (
                         <span>No comments yet, be the first to comment!</span>
