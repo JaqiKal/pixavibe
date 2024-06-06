@@ -489,6 +489,7 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
   - [Testing in Django (Part 1) – Best Practices and Examples](https://realpython.com/testing-in-django-part-1-best-practices-and-examples/)
   - [serie of videos - Django Testing Tutorial - What Is Testing?](https://youtu.be/qwypH3YvMKc?si=1OptYFWRajgREWh_)
   - [Unit Tests in Python || Python Tutorial || Learn Python Programming](https://youtu.be/1Lfv5tUGsn8?si=ZgIDWVjSQqTIUYYK)
+  - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) are used in test cases to validate that the application is behaving as expected under various conditions.
 
 #### Acknowledgements
 
