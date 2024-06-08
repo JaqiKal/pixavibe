@@ -43,6 +43,20 @@ function ContactForm() {
   // Handles the form submission, sending contact data to the backend.
   const handleSubmit = async (event) => {
     event.preventDefault();
+    let formErrors = [];
+
+    // Client-side validation
+    if (!reason.trim()) {
+      formErrors.reason = ["Field cannot be empty"];
+    }
+    if (!content.trim()) {
+      formErrors.content = ["Field cannot be empty"];
+    }
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
+
     try {
       await axiosReq.post("/contacts/", contactData);
       setContactData({ reason: "", content: "" }); // Reset form fields
@@ -72,13 +86,17 @@ function ContactForm() {
             value={reason}
             onChange={handleChange}
           />
+          {errors.reason &&
+            errors.reason.map((message, idx) => (
+              <Alert
+                key={idx}
+                variant="warning"
+                className={styles.errorMessage}
+              >
+                {message}
+              </Alert>
+            ))}
         </Form.Group>
-        {errors.reason &&
-          errors.reason.map((message, idx) => (
-            <Alert key={idx} variant="warning">
-              {message}
-            </Alert>
-          ))}
         <Form.Group controlId="content">
           <Form.Label>Content</Form.Label>
           <Form.Control
@@ -88,15 +106,18 @@ function ContactForm() {
             name="content"
             value={content}
             onChange={handleChange}
-            required // Client-side validation
           />
+          {errors.content &&
+            errors.content.map((message, idx) => (
+              <Alert
+                key={idx}
+                variant="warning"
+                className={styles.errorMessage}
+              >
+                {message}
+              </Alert>
+            ))}
         </Form.Group>
-        {errors.content &&
-          errors.content.map((message, idx) => (
-            <Alert key={idx} variant="warning">
-              {message}
-            </Alert>
-          ))}
         <Button variant="primary" type="submit">
           Submit
         </Button>

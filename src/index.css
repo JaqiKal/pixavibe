@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Override styles for alert-warning globally */
+.alert-warning {
+  border-color: rgb(255, 217, 217) !important;
+  background-color: rgb(254, 255, 0, 0.17);
+}
