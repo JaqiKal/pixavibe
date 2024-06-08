@@ -20,6 +20,7 @@ function ContactForm() {
   });
   const { reason, content } = contactData;
   const [errors, setErrors] = useState({});
+  const [successMessage, setSuccessMessage] = useState(false); // Define successMessage state
   const currentUser = useCurrentUser(); // Check if user is authenticated
   const history = useHistory();
 
@@ -46,8 +47,10 @@ function ContactForm() {
       await axiosReq.post("/contacts/", contactData);
       setContactData({ reason: "", content: "" }); // Reset form fields
       setErrors({}); // Clear errors
+      setSuccessMessage(true); // Show success message
     } catch (err) {
       setErrors(err.response?.data); // Set errors from response
+      setSuccessMessage(false); // Hide success message if errors occur
     }
   };
 
@@ -55,6 +58,11 @@ function ContactForm() {
     <Container className={styles.ContactForm}>
       <h1>Contact Us</h1>
       <Form onSubmit={handleSubmit}>
+        {successMessage && (
+          <Alert variant="success">
+            Your message has been sent successfully!
+          </Alert>
+        )}
         <Form.Group controlId="reason">
           <Form.Label>Reason</Form.Label>
           <Form.Control
@@ -80,6 +88,7 @@ function ContactForm() {
             name="content"
             value={content}
             onChange={handleChange}
+            required // Client-side validation
           />
         </Form.Group>
         {errors.content &&
