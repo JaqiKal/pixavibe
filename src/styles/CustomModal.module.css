@@ -1,0 +1,30 @@
+.ModalHeader {
+background-color: #f8f9fa;
+}
+
+.ModalTitle {
+    color: #343a40;
+    font-weight: bold;
+}
+
+.ModalBody {
+    padding: 20px;
+    color: #495057;
+}
+
+.ModalFooter {
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-ends;
+}
+
+.ButtonClose {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.ButtonClose:hover {
+    background-color: #5a6268;
+    color: white;
+}
