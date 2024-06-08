@@ -1,6 +1,5 @@
 /**
- * Amended from walkthrough 'moments', customized to cater for contact management
- * functionality.
+ * Custom code to cater for contact management functionality.
  * ContactCreateForm component allows authenticated users to submit contact
  * messages by providing a reason and message content. It handles form state,
  * submission, and validation errors.
@@ -12,6 +11,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/ContactForm.module.css";
 import { useHistory } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import CharacterCounter from "../../components/CharacterCounter";
 
 function ContactForm() {
   const [contactData, setContactData] = useState({
@@ -103,12 +103,13 @@ function ContactForm() {
           <Form.Label>Content</Form.Label>
           <Form.Control
             as="textarea"
-            rows={5}
+            rows={6}
             placeholder="Enter your message"
             name="content"
             value={content}
             onChange={handleChange}
           />
+          <CharacterCounter text={content} maxLength={300} />
           {errors.content &&
             errors.content.map((message, idx) => (
               <Alert
