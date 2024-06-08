@@ -2,16 +2,24 @@
 
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
-function CustomModal({ show, handleClose, title, message }) {
+function CustomModal({ show, handleClose, title, message, redirectPath }) {
+  const history = useHistory();
+
+  const handleCloseAndRedirect = () => {
+    handleClose();
+    history.push(redirectPath);
+  };
+
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={handleCloseAndRedirect}>
       <Modal.Header closeButton>
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>{message}</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleCloseAndRedirect}>
           Close
         </Button>
       </Modal.Footer>

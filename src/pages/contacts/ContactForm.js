@@ -133,6 +133,7 @@ function ContactForm() {
         handleClose={() => setShowModal(false)}
         title="Thank You"
         message="Thank you for using the contact form. Please note that this is a student project, and while your input is stored, it does not generate an email notification to an administrator. Your message will not be actively monitored. We appreciate your time in testing the app!"
+        redirectPath="/" // Specify the redirect path
       />
     </Container>
   );
