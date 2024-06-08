@@ -43,7 +43,7 @@ function ContactForm() {
   // Handles the form submission, sending contact data to the backend.
   const handleSubmit = async (event) => {
     event.preventDefault();
-    let formErrors = [];
+    let formErrors = {};
 
     // Client-side validation
     if (!reason.trim()) {
@@ -51,6 +51,8 @@ function ContactForm() {
     }
     if (!content.trim()) {
       formErrors.content = ["Field cannot be empty"];
+    } else if (content.length > 300) {
+      formErrors.content = ["Content field cannot exceed 300 characters"];
     }
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
