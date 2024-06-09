@@ -54,36 +54,14 @@ export const unfollowHelper = (profile, clickedProfile) => {
 
 export const blockHelper = (profile, clickedProfile, blocking_id) => {
   return profile.id === clickedProfile.id
-    ? // This is the profile I clicked on,
-      // update its blocking id
-      {
-        ...profile,
-        blocking_id,
-      }
-    : profile.is_owner
-    ? // This is the profile of the logged in user,
-      // you might want to update a blocking count or similar attribute
-      { ...profile, blocking_count: (profile.blocking_count || 0) + 1 }
-    : // this is not the profile the user clicked on or the profile
-      // the user owns, so just return it unchanged
-      profile;
+    ? { ...profile, blocking_id }
+    : profile;
 };
 
 export const unblockHelper = (profile, clickedProfile) => {
   return profile.id === clickedProfile.id
-    ? // This is the profile I clicked on,
-      // update its blocking id
-      {
-        ...profile,
-        blocking_id: null,
-      }
-    : profile.is_owner
-    ? // This is the profile of the logged in user,
-      // you might want to update a blocking count or similar attribute
-      { ...profile, blocking_count: (profile.blocking_count || 1) - 1 }
-    : // this is not the profile the user clicked on or the profile
-      // the user owns, so just return it unchanged
-      profile;
+    ? { ...profile, blocking_id: null }
+    : profile;
 };
 
 export const setTokenTimestamp = (data) => {
