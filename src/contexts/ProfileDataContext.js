@@ -1,7 +1,12 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useCurrentUser } from "../contexts/CurrentUserContext";
-import { followHelper, unfollowHelper } from "../utils/utils";
+import {
+  followHelper,
+  unfollowHelper,
+  blockHelper,
+  unblockHelper,
+} from "../utils/utils";
 
 const ProfileDataContext = createContext();
 const SetProfileDataContext = createContext();
@@ -75,17 +80,13 @@ export const ProfileDataProvider = ({ children }) => {
         ...prevState,
         pageProfile: {
           results: prevState.pageProfile.results.map((profile) =>
-            profile.id === clickedProfile.id
-              ? { ...profile, blocking_id: data.id }
-              : profile
+            blockHelper(profile, clickedProfile, data.id)
           ),
         },
         popularProfiles: {
           ...prevState.popularProfiles,
           results: prevState.popularProfiles.results.map((profile) =>
-            profile.id === clickedProfile.id
-              ? { ...profile, blocking_id: data.id }
-              : profile
+            blockHelper(profile, clickedProfile, data.id)
           ),
         },
       }));
@@ -102,17 +103,13 @@ export const ProfileDataProvider = ({ children }) => {
         ...prevState,
         pageProfile: {
           results: prevState.pageProfile.results.map((profile) =>
-            profile.id === clickedProfile.id
-              ? { ...profile, blocking_id: null }
-              : profile
+            unblockHelper(profile, clickedProfile)
           ),
         },
         popularProfiles: {
           ...prevState.popularProfiles,
           results: prevState.popularProfiles.results.map((profile) =>
-            profile.id === clickedProfile.id
-              ? { ...profile, blocking_id: null }
-              : profile
+            unblockHelper(profile, clickedProfile)
           ),
         },
       }));
