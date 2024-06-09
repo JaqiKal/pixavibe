@@ -11,7 +11,6 @@ export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 export const ProfileDataProvider = ({ children }) => {
   const [profileData, setProfileData] = useState({
-    // we will use the pageProfile later!
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
   });
@@ -66,6 +65,62 @@ export const ProfileDataProvider = ({ children }) => {
     }
   };
 
+  const handleBlock = async (clickedProfile) => {
+    try {
+      const { data } = await axiosRes.post("/blocks/", {
+        target: clickedProfile.id,
+      });
+
+      setProfileData((prevState) => ({
+        ...prevState,
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) =>
+            profile.id === clickedProfile.id
+              ? { ...profile, blocking_id: data.id }
+              : profile
+          ),
+        },
+        popularProfiles: {
+          ...prevState.popularProfiles,
+          results: prevState.popularProfiles.results.map((profile) =>
+            profile.id === clickedProfile.id
+              ? { ...profile, blocking_id: data.id }
+              : profile
+          ),
+        },
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleUnblock = async (clickedProfile) => {
+    try {
+      await axiosRes.delete(`/blocks/${clickedProfile.blocking_id}/`);
+
+      setProfileData((prevState) => ({
+        ...prevState,
+        pageProfile: {
+          results: prevState.pageProfile.results.map((profile) =>
+            profile.id === clickedProfile.id
+              ? { ...profile, blocking_id: null }
+              : profile
+          ),
+        },
+        popularProfiles: {
+          ...prevState.popularProfiles,
+          results: prevState.popularProfiles.results.map((profile) =>
+            profile.id === clickedProfile.id
+              ? { ...profile, blocking_id: null }
+              : profile
+          ),
+        },
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -87,7 +142,13 @@ export const ProfileDataProvider = ({ children }) => {
   return (
     <ProfileDataContext.Provider value={profileData}>
       <SetProfileDataContext.Provider
-        value={{ setProfileData, handleFollow, handleUnfollow }}
+        value={{
+          setProfileData,
+          handleFollow,
+          handleUnfollow,
+          handleBlock,
+          handleUnblock,
+        }}
       >
         {children}
       </SetProfileDataContext.Provider>
