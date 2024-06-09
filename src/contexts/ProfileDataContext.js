@@ -72,6 +72,17 @@ export const ProfileDataProvider = ({ children }) => {
 
   const handleBlock = async (clickedProfile) => {
     try {
+      // Check if the user is already blocked
+      const existingBlock = profileData.pageProfile.results.find(
+        (profile) => profile.id === clickedProfile.id && profile.blocking_id
+      );
+
+      if (existingBlock) {
+        console.log("User is already blocked.");
+        return;
+      }
+
+      console.log("Blocking user ID:", clickedProfile.id); // Log the ID to be blocked
       const { data } = await axiosRes.post("/blocks/", {
         target: clickedProfile.id,
       });
@@ -91,7 +102,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+      console.error(err.response ? err.response.data : err);
     }
   };
 
