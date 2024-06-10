@@ -80,15 +80,15 @@
 }
 
 /* Gray button and hover state */
-.Gray,
-.GrayOutline:hover {
+.Greige,
+.GreigeOutline:hover {
     background-color: #7d726c;
     color: #ffffff;
 }
 
 /* Gray outline button and hover state */
-.GrayOutline,
-.Gray:hover {
+.GreigeOutline,
+.Greige:hover {
     background-color: #ffffff;
     color: #7d726c;
 }

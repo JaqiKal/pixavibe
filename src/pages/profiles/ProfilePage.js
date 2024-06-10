@@ -94,40 +94,42 @@ function ProfilePage() {
           </Row>
         </Col>
         <Col lg={3} className="text-lg-right">
-          {currentUser && !is_owner && (
-            <>
-              {profile?.following_id ? (
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
-                  onClick={() => handleUnfollow(profile)}
-                >
-                  unfollow
-                </Button>
-              ) : (
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.Black}`}
-                  onClick={() => handleFollow(profile)}
-                >
-                  follow
-                </Button>
-              )}
-              {profile?.blocked_id ? (
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.RedOutline}`}
-                  onClick={() => handleUnblock(profile)}
-                >
-                  unblock
-                </Button>
-              ) : (
-                <Button
-                  className={`${btnStyles.Button} ${btnStyles.Red}`}
-                  onClick={() => handleBlock(profile)}
-                >
-                  block
-                </Button>
-              )}
-            </>
-          )}
+          {/* Follow or  Unfollow user */}
+          {currentUser &&
+            !is_owner &&
+            (profile?.following_id ? (
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
+                onClick={() => handleUnfollow(profile)}
+              >
+                unfollow
+              </Button>
+            ) : (
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.Black}`}
+                onClick={() => handleFollow(profile)}
+              >
+                follow
+              </Button>
+            ))}
+          {/* Block or Unblock user */}
+          {currentUser &&
+            !is_owner &&
+            (profile?.blocked_id ? (
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.GreigeOutline}`}
+                onClick={() => handleUnblock(profile)}
+              >
+                unblock
+              </Button>
+            ) : (
+              <Button
+                className={`${btnStyles.Button} ${btnStyles.Greige}`}
+                onClick={() => handleBlock(profile)}
+              >
+                block
+              </Button>
+            ))}
         </Col>
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
