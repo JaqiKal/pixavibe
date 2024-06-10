@@ -78,3 +78,17 @@
     background-color: #2ed9ff;
     color: #2142b2;
 }
+
+/* Gray button and hover state */
+.Gray,
+.GrayOutline:hover {
+    background-color: #7d726c;
+    color: #ffffff;
+}
+
+/* Gray outline button and hover state */
+.GrayOutline,
+.Gray:hover {
+    background-color: #ffffff;
+    color: #7d726c;
+}
