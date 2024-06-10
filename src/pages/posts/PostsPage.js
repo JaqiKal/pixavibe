@@ -23,25 +23,35 @@ function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
-
   const [query, setQuery] = useState("");
-
+  const [blocks, setBlocks] = useState([]);
   const currentUser = useCurrentUser();
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data: blocksData } = await axiosReq.get("/blocks/");
+        setBlocks(blocksData.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
     const fetchPosts = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        // console.log(err);
+        console.log(err);
       }
     };
 
+    // Reset hasLoaded to false
     setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchPosts();
+      fetchData();
     }, 1000);
 
     return () => {
@@ -53,6 +63,7 @@ function PostsPage({ message, filter = "" }) {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
+        {/* Search bar */}
         <i className={`fas fa-search ${styles.SearchIcon}`} />
         <Form
           className={styles.SearchBar}
@@ -66,14 +77,19 @@ function PostsPage({ message, filter = "" }) {
             placeholder="Search posts"
           />
         </Form>
-
+        {/* Posts */}
         {hasLoaded ? (
           <>
             {posts.results.length ? (
               <InfiniteScroll
-                children={posts.results.map((post) => (
-                  <Post key={post.id} {...post} setPosts={setPosts} />
-                ))}
+                children={posts.results.map((post) =>
+                  // If the current user is blocked by the post owner
+                  blocks.some(
+                    (block) => block.target === post.profile_id
+                  ) ? null : (
+                    <Post key={post.id} {...post} setPosts={setPosts} />
+                  )
+                )}
                 dataLength={posts.results.length}
                 loader={<Asset spinner />}
                 hasMore={!!posts.next}
