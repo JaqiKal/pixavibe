@@ -9,13 +9,12 @@ import { useSetProfileData } from "../../contexts/ProfileDataContext";
 
 function Profile(props) {
   const { profile, mobile, imageSize = 55 } = props;
-  const { id, following_id, blocking_id, image, owner } = profile;
+  const { id, following_id, image, owner } = profile;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
-  const { handleFollow, handleUnfollow, handleBlock, handleUnblock } =
-    useSetProfileData();
+  const { handleFollow, handleUnfollow } = useSetProfileData();
 
   return (
     <div
@@ -45,21 +44,6 @@ function Profile(props) {
                 onClick={() => handleFollow(profile)}
               >
                 follow
-              </Button>
-            )}
-            {blocking_id ? (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.RedOutline}`}
-                onClick={() => handleUnblock(profile)}
-              >
-                unblock
-              </Button>
-            ) : (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Red}`}
-                onClick={() => handleBlock(profile)}
-              >
-                block
               </Button>
             )}
           </>
