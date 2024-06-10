@@ -22,6 +22,8 @@ export const ProfileDataProvider = ({ children }) => {
 
   const currentUser = useCurrentUser();
 
+  // Follow or Unfollow
+
   const handleFollow = async (clickedProfile) => {
     try {
       const { data } = await axiosRes.post("/followers/", {
@@ -70,19 +72,10 @@ export const ProfileDataProvider = ({ children }) => {
     }
   };
 
+  // Block or Unblock
+  
   const handleBlock = async (clickedProfile) => {
     try {
-      // Check if the user is already blocked
-      const existingBlock = profileData.pageProfile.results.find(
-        (profile) => profile.id === clickedProfile.id && profile.blocking_id
-      );
-
-      if (existingBlock) {
-        console.log("User is already blocked.");
-        return;
-      }
-
-      console.log("Blocking user ID:", clickedProfile.id); // Log the ID to be blocked
       const { data } = await axiosRes.post("/blocks/", {
         target: clickedProfile.id,
       });
@@ -91,12 +84,6 @@ export const ProfileDataProvider = ({ children }) => {
         ...prevState,
         pageProfile: {
           results: prevState.pageProfile.results.map((profile) =>
-            blockHelper(profile, clickedProfile, data.id)
-          ),
-        },
-        popularProfiles: {
-          ...prevState.popularProfiles,
-          results: prevState.popularProfiles.results.map((profile) =>
             blockHelper(profile, clickedProfile, data.id)
           ),
         },
@@ -117,18 +104,13 @@ export const ProfileDataProvider = ({ children }) => {
             unblockHelper(profile, clickedProfile)
           ),
         },
-        popularProfiles: {
-          ...prevState.popularProfiles,
-          results: prevState.popularProfiles.results.map((profile) =>
-            unblockHelper(profile, clickedProfile)
-          ),
-        },
       }));
     } catch (err) {
       console.log(err);
     }
   };
 
+  // Fetch the popular profiles on mount
   useEffect(() => {
     const handleMount = async () => {
       try {
