@@ -1,3 +1,10 @@
+/**
+ * Amended from walkthrough 'moments', customized to cater for blocking.
+ *
+ * Utility functions for handling profile interactions such as following,
+ * unfollowing, blocking, and unblocking users, as well as handling
+ * token timestamps.
+ */
 import jwtDecode from "jwt-decode";
 import { axiosReq } from "../api/axiosDefaults";
 
@@ -52,18 +59,35 @@ export const unfollowHelper = (profile, clickedProfile) => {
       profile;
 };
 
+// Helper function to handle blocking a profile
 export const blockHelper = (profile, clickedProfile, blocking_id) => {
   return profile.id === clickedProfile.id
-    ? { ...profile, blocking_id }
+    ? {
+        ...profile,
+        blocking_id,
+        blocking_target: clickedProfile.id,
+      }
+    : profile.is_owner
+    ? {
+        ...profile,
+      }
     : profile;
 };
 
+// Helper function to handle unblocking a profile
 export const unblockHelper = (profile, clickedProfile) => {
   return profile.id === clickedProfile.id
-    ? { ...profile, blocking_id: null }
+    ? {
+        ...profile,
+        blocking_id: null,
+        blocking_target: null,
+      }
+    : profile.is_owner
+    ? {
+        ...profile,
+      }
     : profile;
 };
-
 export const setTokenTimestamp = (data) => {
   const refreshTokenTimestamp = jwtDecode(data?.refresh_token).exp;
   localStorage.setItem("refreshTokenTimestamp", refreshTokenTimestamp);
