@@ -113,28 +113,28 @@ function ProfilePage() {
               </Button>
             ))}
           {/* Block or Unblock user */}
-          {currentUser &&
-            !is_owner &&
-            (profile?.blocked_id ? (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.GreigeOutline}`}
-                onClick={() => handleUnblock(profile)}
-              >
-                unblock
-              </Button>
-            ) : (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Greige}`}
-                onClick={() => handleBlock(profile)}
-              >
-                block
-              </Button>
-            ))}
+          {currentUser && profile?.blocked_id ? (
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.GreigeOutline}`}
+              onClick={() => handleUnblock(profile)}
+            >
+              unblock
+            </Button>
+          ) : (
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Greige}`}
+              onClick={() => handleBlock(profile)}
+            >
+              block
+            </Button>
+          )}
         </Col>
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
       </Row>
     </>
   );
+
+  console.log(profile?.blocking_id);
 
   const mainProfilePosts = (
     <>

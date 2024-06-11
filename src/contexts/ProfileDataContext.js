@@ -73,7 +73,7 @@ export const ProfileDataProvider = ({ children }) => {
   };
 
   // Block or Unblock
-  
+
   const handleBlock = async (clickedProfile) => {
     try {
       const { data } = await axiosRes.post("/blocks/", {
@@ -95,18 +95,22 @@ export const ProfileDataProvider = ({ children }) => {
 
   const handleUnblock = async (clickedProfile) => {
     try {
-      await axiosRes.delete(`/blocks/${clickedProfile.blocking_id}/`);
+      const { data } = await axiosRes.delete(
+        `/blocks/${clickedProfile.blocking_id}/`
+      );
+      console.log(data);
 
       setProfileData((prevState) => ({
         ...prevState,
         pageProfile: {
           results: prevState.pageProfile.results.map((profile) =>
-            unblockHelper(profile, clickedProfile)
+            unblockHelper(profile, clickedProfile, data.id)
           ),
         },
       }));
     } catch (err) {
       console.log(err);
+      console.log(clickedProfile);
     }
   };
 
