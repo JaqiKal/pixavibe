@@ -51,47 +51,173 @@ The live link can be found here: [Pixavibe](#) §§§§§§§§§§§§§§§§�
 
 ## The Strategy Plane
 
-### Development Goals mapped with User Stories
+### Development Goals and Corresponding User Stories
 
-| Development Goals                                                                                                                              | Corresponding User Stories                                                                                                                                                                                                                 |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Primary Objective:**                                                                                                                         |                                                                                                                                                                                                                                            |
-| To create a user-friendly, responsive platform that enables users to share and interact with various content types (photos, videos, text).     | **US-22:** Create New Posts<br>**US-23:** View Post Details<br>**US-24:** Like Posts<br>**US-25:** View Most Recent Posts                                                                                                                  |
-| **Secondary Objectives:**                                                                                                                      |                                                                                                                                                                                                                                            |
-| Implement essential social media features such as liking, commenting, and following.                                                           | **US-34:** Add Comments to Posts<br>**US-42:** Follow/Unfollow Users<br>**US-27:** View Liked Posts<br>**US-28:** View Followed Users' Posts<br>**US-30:** Add Tags to Posts<br>**US-47:** Block Users                                     |
-| Ensure smooth and intuitive navigation for users.                                                                                              | **US-14:** Navbar View on Every Page<br>**US-15:** Seamless Page Navigation<br>**US-29:** Infinite Scroll<br>**US-32:** View Post Page                                                                                                     |
-| Maintain high performance and scalability of the application.                                                                                  | **US-10:** Integrate Front-End and API                                                                                                                                                                                                     |
-| **Developer Goals:**                                                                                                                           |                                                                                                                                                                                                                                            |
-| Build a robust, scalable back-end using Django Rest Framework.                                                                                 | **US-7:** DRF - Set Up Django Project<br>**US-8:** DRF - Design Database Models<br>**US-9:** DRF - Implement API CRUD Operations                                                                                                           |
-| Develop a dynamic, responsive front-end with React.js.                                                                                         | **US-5:** Design Responsive UI<br>**US-6:** Create Reusable Components                                                                                                                                                                     |
-| Emphasize clean, maintainable code and efficient database usage.                                                                               | **US-3:** SP - Set Up Project Repositories                                                                                                                                                                                                 |
-| Ensure secure user authentication and authorization mechanisms.                                                                                | **US-11:** DRF - Secure User Data<br>**US-16:** Sign Up for New Account<br>**US-17:** Sign In to Access Features<br>**US-18:** Logged In Status Check<br>**US-19:** Maintain Logged-In Status<br>**US-20:** Conditional Sign In/Up Options |
-| Document the development process and deployment steps clearly in README files for both front-end and back-end repositories.                    | **US-4:** SP - Configure Dev Environment<br>**US-12:** Write React Component Tests<br>**US-13:** DRF - Write API Endpoint Tests                                                                                                            |
-| **User-Centric Goals:**                                                                                                                        |                                                                                                                                                                                                                                            |
-| Provide an intuitive interface for users to easily post, edit, and delete content.                                                             | **US-22:** Create New Posts<br>**US-33:** Edit My Post Details<br>**US-37:** Delete My Comments<br>**US-38:** Edit My Comment<br>**US-44:** Edit My Profile<br>**US-45:** Update Username and Password                                     |
-| Enable social interactions through commenting, liking, and following other users.                                                              | **US-34:** Add Comments to Posts<br>**US-24:** Like Posts<br>**US-42:** Follow/Unfollow Users<br>**US-21:** View User Avatars<br>**US-36:** Read Comments on Posts<br>**US-35:** View Comment Dates                                        |
-| Ensure easy navigation and content discovery through effective search and filter functionalities.                                              | **US-26:** Search Posts by Keywords<br>**US-31:** Search Posts by Tags<br>**US-43:** View All Posts by Specific User<br>**US-40:** View Most Followed Profiles<br>**US-41:** View User Stats                                               |
-| Deliver a responsive design for optimal user experience across devices.                                                                        | **US-5:** Design Responsive UI                                                                                                                                                                                                             |
-| **Learning Outcomes and Skill Development:**                                                                                                   |                                                                                                                                                                                                                                            |
-| To master Full-Stack development by building a comprehensive web application from scratch.                                                     | **US-7:** DRF - Set Up Django Project<br>**US-10:** Integrate Front-End and API                                                                                                                                                            |
-| To improve front-end skills with React.js, focusing on component-based architecture, state management, and responsive design.                  | **US-6:** Create Reusable Components<br>**US-5:** Design Responsive UI                                                                                                                                                                     |
-| To refine back-end development abilities using Django Rest Framework, emphasizing API development, database design, and secure authentication. | **US-8:** DRF - Design Database Models<br>**US-11:** DRF - Secure User Data<br>**US-46:** DRF - Implement Blocking Functionality<br>**US-48:** DRF - Create Contact Form<br>**US-50:** DRF - Implement Post Tagging                        |
-| To apply Agile methodologies for efficient project management, incorporating user feedback and adapting to changing requirements.              | **US-3:** SP - Set Up Project Repositories<br>**US-2:** SP - Identify Key Features                                                                                                                                                         |
-| To develop essential technical skills in HTML, CSS, JavaScript, React.js, Bootstrap.js, Django Rest Framework, and Git.                        | **US-4:** SP - Configure Dev Environment                                                                                                                                                                                                   |
-| To strengthen soft skills in problem-solving, documentation, and communication.                                                                | **US-1:** SP - Define Project Scope<br>**US-3:** SP - Set Up Project Repositories                                                                                                                                                          |
-| **Remaining User Stories:**                                                                                                                    |                                                                                                                                                                                                                                            |
-| View User Profiles                                                                                                                             | **US-39:** View User Profiles                                                                                                                                                                                                              |
-| Send Feedback to Admins                                                                                                                        | **US-49:** Send Feedback to Admins                                                                                                                                                                                                         |
+#### Primary Objective:
+
+To create a user-friendly, responsive platform that enables users to share and interact with various content types (photos, text).
+
+**User Stories:**
+
+- **US-22:** Create New Posts
+- **US-23:** View Post Details
+- **US-24:** Like Posts
+- **US-25:** View Most Recent Posts
+
+#### Secondary Objectives:
+
+1. **Implement essential social media features such as liking, commenting, and following.**
+
+   **User Stories:**
+
+   - **US-34:** Add Comments to Posts
+   - **US-42:** Follow/Unfollow Users
+   - **US-27:** View Liked Posts
+   - **US-28:** View Followed Users' Posts
+   - **US-30:** Add Tags to Posts
+   - **US-47:** Block Users
+
+2. **Ensure smooth and intuitive navigation for users.**
+
+   **User Stories:**
+
+   - **US-14:** Navbar View on Every Page
+   - **US-15:** Seamless Page Navigation
+   - **US-29:** Infinite Scroll
+   - **US-32:** View Post Page
+
+3. **Maintain high performance and scalability of the application.**
+
+   **User Stories:**
+
+   - **US-10:** Integrate Front-End and API
+
+#### Developer Goals:
+
+1. **Build a robust, scalable back-end using Django Rest Framework.**
+
+   **User Stories:**
+
+   - **US-7:** DRF - Set Up Django Project
+   - **US-8:** DRF - Design Database Models
+   - **US-9:** DRF - Implement API CRUD Operations
+
+2. **Develop a dynamic, responsive front-end with React.js.**
+
+   **User Stories:**
+
+   - **US-5:** Design Responsive UI
+   - **US-6:** Create Reusable Components
+
+3. **Emphasize clean, maintainable code and efficient database usage.**
+
+   **User Stories:**
+
+   - **US-3:** SP - Set Up Project Repositories
+
+4. **Ensure secure user authentication and authorization mechanisms.**
+
+   **User Stories:**
+
+   - **US-11:** DRF - Secure User Data
+   - **US-16:** Sign Up for New Account
+   - **US-17:** Sign In to Access Features
+   - **US-18:** Logged In Status Check
+   - **US-19:** Maintain Logged-In Status
+   - **US-20:** Conditional Sign In/Up Options
+
+5. **Document the development process and deployment steps clearly in README files for both front-end and back-end repositories.**
+
+   **User Stories:**
+
+   - **US-4:** SP - Configure Dev Environment
+   - **US-12:** Write React Component Tests
+   - **US-13:** DRF - Write API Endpoint Tests
+
+#### User-Centric Goals:
+
+1. **Provide an intuitive interface for users to easily post, edit, and delete content.**
+
+   **User Stories:**
+
+   - **US-22:** Create New Posts
+   - **US-33:** Edit My Post Details
+   - **US-37:** Delete My Comments
+   - **US-38:** Edit My Comment
+   - **US-44:** Edit My Profile
+   - **US-45:** Update Username and Password
+
+2. **Enable social interactions through commenting, liking, and following other users.**
+
+   **User Stories:**
+
+   - **US-34:** Add Comments to Posts
+   - **US-24:** Like Posts
+   - **US-42:** Follow/Unfollow Users
+   - **US-21:** View User Avatars
+   - **US-36:** Read Comments on Posts
+   - **US-35:** View Comment Dates
+
+3. **Ensure easy navigation and content discovery through effective search and filter functionalities.**
+
+   **User Stories:**
+
+   - **US-26:** Search Posts by Keywords
+   - **US-31:** Search Posts by Tags
+   - **US-43:** View All Posts by Specific User
+   - **US-40:** View Most Followed Profiles
+   - **US-41:** View User Stats
+
+4. **Deliver a responsive design for optimal user experience across devices.**
+
+   **User Stories:**
+
+   - **US-5:** Design Responsive UI
+
+#### Learning Outcomes and Skill Development:
+
+1. **To master Full-Stack development by building a comprehensive web application from scratch.**
+
+   **User Stories:**
+
+   - **US-7:** DRF - Set Up Django Project
+   - **US-10:** Integrate Front-End and API
+
+2. **To improve front-end skills with React.js, focusing on component-based architecture, state management, and responsive design.**
+
+   **User Stories:**
+
+   - **US-6:** Create Reusable Components
+   - **US-5:** Design Responsive UI
+
+3. **To refine back-end development abilities using Django Rest Framework, emphasizing API development, database design, and secure authentication.**
+
+   **User Stories:**
+
+   - **US-8:** DRF - Design Database Models
+   - **US-11:** DRF - Secure User Data
+   - **US-46:** DRF - Implement Blocking Functionality
+   - **US-48:** DRF - Create Contact Form
+   - **US-50:** DRF - Implement Post Tagging
+
+4. **To apply Agile methodologies for efficient project management, incorporating user feedback and adapting to changing requirements.**
+
+   **User Stories:**
+
+   - **US-3:** SP - Set Up Project Repositories
+   - **US-2:** SP - Identify Key Features
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Agile Planning and Development
 
-Agile methodologies and principles guide the planning and creation of Pixavibe. While not adhering strictly to traditional Agile methodologies, such as scheduled sprints or scrums. The development process is inspired by Agile principles, focusing on flexibility, continuous improvement, and rapid adaptation to change. Sprints is not used as the project benefits more from focusing directly on larger goals and milestones, which are already well-defined with clear start and end dates. The approach is straightforward, development of features in a logical sequence, addressing core functionalities first before expanding to more complex features.
+Agile methodologies and principles guide the planning and creation of Pixavibe. While not adhering strictly to traditional Agile methodologies, such as scheduled sprints or scrums. The development process is inspired by Agile principles, focusing on flexibility, continuous improvement, and rapid adaptation to change. Sprints is not used as the project benefits more from focusing directly on developing an epic corresponding to an app in the backend and following th priority level on the User Stories. High level approach is to divide the project into phases: plan, development (as test driven as possible and continuous deploy) and finalize documentation. The approach is straightforward, development of features in a logical sequence, addressing core functionalities first before expanding to more complex features.
 
 When encountering bugs or issues, rather than halting development, these are recorded as bug issues and added to the backlog. This allows to continue progressing in other areas while periodically revisiting and prioritizing the backlog based on severity and impact. This method ensures that development momentum is maintained while systematically addressing and resolving issues.
 
 Feedback from users are actively sought and analyzed to identify areas for improvement, ensuring that the product continuously evolves to meet the needs and expectations of its users effectively
+
+A project kanban board was used to track progress, with user stories moved between 'Todo', 'In Progress' and 'Done' columns as appropriate.
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
@@ -114,6 +240,12 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 - _Posts Page_: This epic covers the creation of the posts page where all posts are displayed. It includes fetching posts from the backend, displaying them in a user-friendly manner, and enabling interactions like liking and commenting.
 
 - _Profile Page_: This epic covers the frontend creation of user profile pages. It allows users to view and edit their profiles, including personal information and their own posts.
+
+- _Block_: T
+
+- _Contact_:
+
+- _Hashtag_:
   <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
