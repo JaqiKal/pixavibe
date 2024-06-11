@@ -113,7 +113,7 @@ function ProfilePage() {
               </Button>
             ))}
           {/* Block or Unblock user */}
-          {currentUser && profile?.blocked_id ? (
+          {currentUser && profile?.blocking_id ? (
             <Button
               className={`${btnStyles.Button} ${btnStyles.GreigeOutline}`}
               onClick={() => handleUnblock(profile)}
@@ -133,8 +133,6 @@ function ProfilePage() {
       </Row>
     </>
   );
-
-  console.log(profile?.blocking_id);
 
   const mainProfilePosts = (
     <>
