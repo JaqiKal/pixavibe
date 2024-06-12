@@ -28,10 +28,8 @@ import { ProfileEditDropdown } from "../../components/MoreDropdown";
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
-
   const currentUser = useCurrentUser();
   const { id } = useParams();
-
   const {
     setProfileData,
     handleFollow,
@@ -40,7 +38,6 @@ function ProfilePage() {
     handleUnblock,
   } = useSetProfileData();
   const { pageProfile } = useProfileData();
-
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
 
@@ -67,6 +64,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
+      {/* Show edit dropdown if the current user owns the profile */}
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
@@ -95,38 +93,40 @@ function ProfilePage() {
         </Col>
         <Col lg={3} className="text-lg-right">
           {/* Follow or  Unfollow user */}
-          {currentUser &&
-            !is_owner &&
-            (profile?.following_id ? (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
-                onClick={() => handleUnfollow(profile)}
-              >
-                unfollow
-              </Button>
-            ) : (
-              <Button
-                className={`${btnStyles.Button} ${btnStyles.Black}`}
-                onClick={() => handleFollow(profile)}
-              >
-                follow
-              </Button>
-            ))}
-          {/* Block or Unblock user */}
-          {currentUser && profile?.blocking_id ? (
-            <Button
-              className={`${btnStyles.Button} ${btnStyles.GreigeOutline}`}
-              onClick={() => handleUnblock(profile)}
-            >
-              unblock
-            </Button>
-          ) : (
-            <Button
-              className={`${btnStyles.Button} ${btnStyles.Greige}`}
-              onClick={() => handleBlock(profile)}
-            >
-              block
-            </Button>
+          {currentUser && !is_owner && (
+            <>
+              {profile?.following_id ? (
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.BlackOutline}`}
+                  onClick={() => handleUnfollow(profile)}
+                >
+                  unfollow
+                </Button>
+              ) : (
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.Black}`}
+                  onClick={() => handleFollow(profile)}
+                >
+                  follow
+                </Button>
+              )}
+              {/* Block or Unblock user */}
+              {profile?.blocking_id ? (
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.GreigeOutline}`}
+                  onClick={() => handleUnblock(profile)}
+                >
+                  unblock
+                </Button>
+              ) : (
+                <Button
+                  className={`${btnStyles.Button} ${btnStyles.Greige}`}
+                  onClick={() => handleBlock(profile)}
+                >
+                  block
+                </Button>
+              )}
+            </>
           )}
         </Col>
         {profile?.content && <Col className="p-3">{profile.content}</Col>}
@@ -134,6 +134,8 @@ function ProfilePage() {
     </>
   );
 
+  // This component is responsible for displaying the list
+  // of posts made by the user whose profile is being viewed.
   const mainProfilePosts = (
     <>
       <hr />
