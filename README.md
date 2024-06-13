@@ -605,7 +605,8 @@ This article was used to implement the simple star rating component:
 
 Throughout the development of Pixavibe, a variety of resources have been utilized to ensure the platform is robust, user-friendly, and engaging. Below is a list of key documentation, blogs, tutorials, and guides that have been instrumental in crafting the features and functionality of Pixavibe:
 
-- Logo used was taken from [x](#) §§§§§§§§§§§§§§§§§§
+- Logo used was created at 
+- [React Multiselect dropdown](https://www.npmjs.com/package/multiselect-react-dropdown): used for hashtags.
 - **Bootstrap**: Used for styling and responsive design, making the site accessible on a variety of devices - [Bootstrap documentation](https://getbootstrap.com/).
 - **Sources of inspiration and guidance in general**:
   - X
@@ -627,9 +628,12 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
 
 I would like to thank!
 
-- The whole team at [Code Institute Slack community](https://code-institute-room.slack.com) for their teaching and support.
-- To all engaged fellow students at all channels and a special shout out to slack channel [community sweden](https://app.slack.com/client/T0L30B202/C03J2BCURV3).
-- My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
+
 - My immediate and extended family, as well as my friends, who support and cheer me on!
+- [Jonathan!](https://github.com/Jonathan97-web/) A very knowledgeable, kind, and helpful man, whose support meant a great deal. Without it, the project would have been in peril of never seeing the light of day!
+- Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow.
+- To all engaged fellow students at all channels and a special shout out to CI slack channel #community-sweden!
+- My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
+
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
