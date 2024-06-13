@@ -5,9 +5,8 @@
  * Pixavibe API and allows users to select multiple hashtags.
  */
 import React, { useState, useEffect } from "react";
-import { getHashtags } from "../api/hashtagServices";
 import Dropdown from "react-bootstrap/Dropdown";
-//import styles from "../styles/HashtagDropdownModule.css";
+import { fetchHashtags } from "../api/fetchHashtags";
 
 /**
  * This component fetches hashtags from the API and displays
@@ -18,26 +17,36 @@ const HashtagDropdown = ({ selectedHashtags, setSelectedHashtags }) => {
   const [hashtags, setHashtags] = useState([]);
 
   useEffect(() => {
-    getHashtags()
-      .then((response) => {
-        if (Array.isArray(response.data)) {
-          setHashtags(response.data);
-        } else {
-          setHashtags([]);
-        }
-      })
-      .catch((error) => {
+    const getHashtags = async () => {
+      try {
+        const hashtags = await fetchHashtags();
+        setHashtags(hashtags);
+      } catch (error) {
         console.error("Error fetching hashtags:", error);
         setHashtags([]);
-      });
+      }
+    };
+
+    getHashtags();
   }, []);
 
-  const handleSelect = (selectedOptions) => {
-    setSelectedHashtags(selectedOptions);
+  const handleSelect = (eventKey) => {
+    const selectedHashtag = hashtags.find(
+      (hashtag) => hashtag.id === parseInt(eventKey)
+    );
+    if (selectedHashtag) {
+      setSelectedHashtags((prevSelectedHashtags) =>
+        prevSelectedHashtags.includes(selectedHashtag.name)
+          ? prevSelectedHashtags.filter(
+              (hashtag) => hashtag !== selectedHashtag.name
+            )
+          : [...prevSelectedHashtags, selectedHashtag.name]
+      );
+    }
   };
 
   return (
-    <Dropdown onSelect={handleSelect} multiple>
+    <Dropdown onSelect={handleSelect}>
       <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic">
         Select Hashtags
       </Dropdown.Toggle>
@@ -47,7 +56,10 @@ const HashtagDropdown = ({ selectedHashtags, setSelectedHashtags }) => {
           <Dropdown.Item
             key={hashtag.id}
             eventKey={hashtag.id}
-            active={selectedHashtags.includes(hashtags.id)}
+            active={
+              Array.isArray(selectedHashtags) &&
+              selectedHashtags.includes(hashtag.name)
+            }
           >
             {hashtag.name}
           </Dropdown.Item>
