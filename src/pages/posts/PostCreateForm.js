@@ -4,7 +4,7 @@
  * Handle form submission and errors, update state, and log data.
  * Responsive layout for mobile and desktop views.
  */
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -25,7 +25,9 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import HashtagDropdown from "../../components/HashtagDropdown";
 
+// The main component function.
 function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
@@ -34,12 +36,34 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    hashtags: [],
   });
-  const { title, content, image } = postData;
+  const { title, content, image, hashtags } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
 
+  /*
+   * Fetch available hashtags from the backend on component mount.
+   * Store them in the postData state.
+   */
+  useEffect(() => {
+    async function fetchHashtags() {
+      try {
+        const { data } = await axiosReq.get("/hashtags");
+        setPostData((prevData) => ({
+          ...prevData,
+          availableHashtags: data,
+        }));
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    fetchHashtags();
+  }, []);
+
+  // Update the postData state with the input values
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -47,6 +71,7 @@ function PostCreateForm() {
     });
   };
 
+  // Update the image in the postData state with the selected file
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -57,6 +82,18 @@ function PostCreateForm() {
     }
   };
 
+  // Update the hashtags in the postData state with the selected hashtags
+  const handleHashtagChange = (selectedHashtags) => {
+    setPostData({
+      ...postData,
+      hashtags: selectedHashtags,
+    });
+  };
+
+  /*
+   * Submit the form data to the backend and navigate to the new post page.
+   * Handle errors and update the errors state.
+   */
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -64,6 +101,7 @@ function PostCreateForm() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
+    formData.append("hashtags", hashtags.join(",")); // Convert array to comma-separated string
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
@@ -104,6 +142,19 @@ function PostCreateForm() {
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group>
+        <Form.Label>Hashtags</Form.Label>
+        <HashtagDropdown
+          selectedHashtags={hashtags}
+          setSelectedHashtags={handleHashtagChange}
+        />
+      </Form.Group>
+      {errors?.hashtags?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
