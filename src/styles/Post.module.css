@@ -22,3 +22,22 @@ h5 {
 .HeartOutline:hover {
     color: #f85032;
 }
+
+/* Styles for hashtag container */
+.Hashtags {
+    background-color: blue;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ /* Styles for individual hashtags */
+.Hashtag {
+    display: inline-block;
+    margin-right: 5px;
+    /* Add some space between hashtags */
+    padding: 5px;
+    /* Add some padding */
+    background-color: white;
+    border-radius: 3px;
+  
+}

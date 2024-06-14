@@ -1,8 +1,8 @@
 /*
-* Fetch post data based on URL id, update state, and display placeholders 
-* for popular profiles, post component, and comments.
-* Log errors and fetched data. Responsive layout for mobile and desktop views.
-*/
+ * Fetch post data based on URL id, update state, and display placeholders
+ * for popular profiles, post component, and comments.
+ * Log errors and fetched data. Responsive layout for mobile and desktop views.
+ */
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
@@ -23,82 +23,82 @@ import Asset from "../../components/Asset";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
-
 function PostPage() {
-    const { id } = useParams();
-    const [post, setPost] = useState({ results: [] });
+  const { id } = useParams();
+  const [post, setPost] = useState({ results: [] });
 
-    const currentUser = useCurrentUser();
-    const profile_image = currentUser?.profile_image;
-    const [comments, setComments] = useState({ results: [] });
+  const currentUser = useCurrentUser();
+  const profile_image = currentUser?.profile_image;
+  const [comments, setComments] = useState({ results: [] });
 
-    useEffect(() => {
-        const handleMount = async () => {
-            try {
-                const [{ data: post }, { data: comments }] = await Promise.all([
-                    axiosReq.get(`/posts/${id}`),
-                    axiosReq.get(`/comments/?post=${id}`),
-                ]);
-                setPost({ results: [post] });
-                setComments(comments);
-            } catch (err) {
-                console.log(err);
-            }
-        };
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const [{ data: post }, { data: comments }] = await Promise.all([
+          axiosReq.get(`/posts/${id}`),
+          axiosReq.get(`/comments/?post=${id}`),
+        ]);
+        console.log("Post data:", post); // Check if hashtags are included
+        setPost({ results: [post] });
+        setComments(comments);
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-        handleMount();
-    }, [id]);
+    handleMount();
+  }, [id]);
 
-    /*
-      * Render the post page layout with dynamic content based on user and comments state.
-      * The layout includes a main column for the post, comments form, and comments display,
-      * and a sidebar for popular profiles that only appears on larger screens.
-      */
-    return (
-        <Row className="h-100">
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <PopularProfiles mobile />
+  /*
+   * Render the post page layout with dynamic content based on user and comments state.
+   * The layout includes a main column for the post, comments form, and comments display,
+   * and a sidebar for popular profiles that only appears on larger screens.
+   */
+  return (
+    <Row className="h-100">
+      <Col className="py-2 p-0 p-lg-2" lg={8}>
+        <PopularProfiles mobile />
 
-                <Post {...post.results[0]} setPosts={setPost} postPage />
-                <Container className={appStyles.Content}>
-                    {currentUser ? (
-                        <CommentCreateForm
-                            profile_id={currentUser.profile_id}
-                            profileImage={profile_image}
-                            post={id}
-                            setPost={setPost}
-                            setComments={setComments}
-                        />
-                    ) : comments.results.length ? (
-                        "Comments"
-                    ) : null}
-                    {comments.results.length ? (
-                        <InfiniteScroll
-                            children={comments.results.map((comment) => (
-                                <Comment
-                                    key={comment.id}
-                                    {...comment}
-                                    setPost={setPost}
-                                    setComments={setComments}
-                                />
-                            ))}
-                            dataLength={comments.results.length}
-                            loader={<Asset spinner />}
-                            hasMore={!!comments.next}
-                            next={() => fetchMoreData(comments, setComments)}
-                        />
-                    ) : currentUser ? (
-                        <span>No comments yet, be the first to comment!</span>
-                    ) : (
-                        <span>No comments... yet</span>
-                    )}
-                </Container>
-            </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                <PopularProfiles />
-            </Col>
-        </Row>
-    );
+        <Post {...post.results[0]} setPosts={setPost} postPage />
+        <Container className={appStyles.Content}>
+          {currentUser ? (
+            <CommentCreateForm
+              profile_id={currentUser.profile_id}
+              profileImage={profile_image}
+              post={id}
+              setPost={setPost}
+              setComments={setComments}
+            />
+          ) : comments.results.length ? (
+            "Comments"
+          ) : null}
+          {comments.results.length ? (
+            <InfiniteScroll
+              children={comments.results.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  {...comment}
+                  setPost={setPost}
+                  setComments={setComments}
+                />
+              ))}
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            />
+          ) : currentUser ? (
+            <span>No comments yet, be the first to comment!</span>
+          ) : (
+            <span>No comments... yet</span>
+          )}
+        </Container>
+      </Col>
+      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+        <PopularProfiles />
+      </Col>
+    </Row>
+  );
 }
 
 export default PostPage;

@@ -39,7 +39,7 @@ function PostCreateForm() {
     image: "",
     hashtags: [],
   });
-  const { title, content, image, hashtags } = postData;
+  const { title, content, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -98,7 +98,10 @@ function PostCreateForm() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
-    formData.append("hashtags", hashtags.join(","));
+    formData.append(
+      "hashtags",
+      selectedHashtags.map((tag) => tag.id).join(",")
+    ); // Append hashtags
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
