@@ -25,7 +25,6 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
-import HashtagDropdown from "../../components/HashtagDropdown";
 import MultiSelect from "../../components/MultiSelect";
 
 // The main component function.
@@ -33,7 +32,6 @@ function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [selectedHashtags, setSelectedHashtags] = useState([]);
-
 
   const [postData, setPostData] = useState({
     title: "",
@@ -85,14 +83,6 @@ function PostCreateForm() {
     }
   };
 
-  // Update the hashtags in the postData state with the selected hashtags
-  const handleHashtagChange = (selectedHashtags) => {
-    setPostData({
-      ...postData,
-      hashtags: selectedHashtags,
-    });
-  };
-
   /*
    * Submit the form data to the backend and navigate to the new post page.
    * Handle errors and update the errors state.
@@ -101,8 +91,7 @@ function PostCreateForm() {
     event.preventDefault();
     const formData = new FormData();
 
-    console.log(selectedHashtags.map(item => item.name).join(','));
-
+    console.log(selectedHashtags.map((item) => item.name).join(","));
 
     // Convert array to comma-separated string
 
@@ -110,7 +99,6 @@ function PostCreateForm() {
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
     formData.append("hashtags", hashtags.join(","));
-    
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
@@ -121,7 +109,6 @@ function PostCreateForm() {
         setErrors(err.response?.data);
       }
     }
-
   };
 
   const textFields = (
@@ -159,7 +146,10 @@ function PostCreateForm() {
 
       <Form.Group>
         <Form.Label>Hashtags</Form.Label>
-        <MultiSelect selectedHashtags={selectedHashtags} setSelectedHashtags={setSelectedHashtags} />
+        <MultiSelect
+          selectedHashtags={selectedHashtags}
+          setSelectedHashtags={setSelectedHashtags}
+        />
       </Form.Group>
       {errors?.hashtags?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
