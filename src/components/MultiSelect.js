@@ -21,9 +21,11 @@ const MultiSelect = ({ selectedHashtags, setSelectedHashtags }) => {
       try {
         const hashtags = await fetchHashtags();
         setHashtags(hashtags);
+        console.log("Fetched Hashtags:", hashtags); // Log fetched hashtags
       } catch (error) {
         // In case of an error, set an empty array for hashtags.
         setHashtags([]);
+        console.error("Error fetching hashtags:", error); // Log error
       }
     };
 
@@ -33,11 +35,13 @@ const MultiSelect = ({ selectedHashtags, setSelectedHashtags }) => {
   // Handle the selection of a new hashtag.
   const onSelect = (selectedList, selectedItem) => {
     setSelectedHashtags([...selectedList]);
+    console.log("Selected Hashtags:", selectedList); // Log selected hashtags
   };
 
   // Handle the removal of a selected hashtag.
   const onRemove = (selectedList, removedItem) => {
     setSelectedHashtags([...selectedList]);
+    console.log("Selected Hashtags after removal:", selectedList); // Log updated hashtags
   };
 
   return (

@@ -54,8 +54,9 @@ function PostCreateForm() {
         const { data } = await axiosReq.get("/hashtags");
         setPostData((prevData) => ({
           ...prevData,
-          availableHashtags: data,
+          availableHashtags: data.results, // Ensure correct format
         }));
+        console.log("Fetched Hashtags:", data.results); // Log fetched hashtags
       } catch (err) {
         console.log(err);
       }
@@ -97,11 +98,15 @@ function PostCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", imageInput.current.files[0]);
+    formData.append("image", imageInput.current.files[0])
     formData.append(
       "hashtags",
-      selectedHashtags.map((tag) => tag.id).join(",")
-    ); // Append hashtags
+      JSON.stringify(selectedHashtags.map((tag) => tag.id))
+    ); // Append hashtags as JSON string
+
+    console.log("Post Data to be submitted:", postData); // Log the data being sent
+    console.log("FormData to be submitted:", formData.get("hashtags")); // Log the formData content
+    console.log("Selected Hashtags at submit:", selectedHashtags); // Log selected hashtags
 
     try {
       const { data } = await axiosReq.post("/posts/", formData);
