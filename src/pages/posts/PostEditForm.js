@@ -23,9 +23,12 @@ function PostEditForm() {
     title: "",
     content: "",
     image: "",
+    category: "",
     hashtags: [],
   });
-  const { title, content, image } = postData;
+  const { title, content, image, category } = postData;
+
+  const [categories, setCategories] = useState([]);
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -35,9 +38,9 @@ function PostEditForm() {
     const handleMount = async () => {
       try {
         const { data } = await axiosReq.get(`/posts/${id}/`);
-        const { title, content, image, hashtags, is_owner } = data;
+        const { title, content, image, category, hashtags, is_owner } = data;
         if (is_owner) {
-          setPostData({ title, content, image, hashtags });
+          setPostData({ title, content, image, category, hashtags });
           setSelectedHashtags(hashtags);
         } else {
           history.push("/");
@@ -49,6 +52,26 @@ function PostEditForm() {
 
     handleMount();
   }, [history, id]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(
+          "https://pixavibe-api-1b79caa01d4f.herokuapp.com/category/"
+        );
+        const data = await response.json();
+        if (Array.isArray(data.results)) {
+          setCategories(data.results);
+        } else {
+          console.error("Fetched data.results is not an array:", data.results);
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const handleChange = (event) => {
     setPostData({
@@ -77,6 +100,7 @@ function PostEditForm() {
     if (imageInput?.current?.files[0]) {
       formData.append("image", imageInput.current.files[0]);
     }
+    formData.append("category", category);
 
     // Convert selected hashtags to a comma separated string
     const hashtagString = selectedHashtags.map((tag) => tag.name).join(",");
@@ -121,6 +145,28 @@ function PostEditForm() {
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group>
+        <Form.Label>Category</Form.Label>
+        <Form.Control
+          as="select"
+          name="category"
+          value={category}
+          onChange={handleChange}
+        >
+          <option value="">Select a Category</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </Form.Control>
+      </Form.Group>
+      {errors?.category?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
