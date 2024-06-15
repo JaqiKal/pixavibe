@@ -37,12 +37,36 @@ function PostCreateForm() {
     title: "",
     content: "",
     image: "",
+    category: "",
     hashtags: [],
   });
-  const { title, content, image } = postData;
+  const { title, content, image, category } = postData;
+
+  const [categories, setCategories] = useState([]);
 
   const imageInput = useRef(null);
   const history = useHistory();
+
+  // Fetch categories from the backend on component mount.
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch(
+          "https://pixavibe-api-1b79caa01d4f.herokuapp.com/category/"
+        );
+        const data = await response.json();
+        if (Array.isArray(data.results)) {
+          setCategories(data.results);
+        } else {
+          console.error("Fetched data.results is not an array:", data.results);
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   /*
    * Fetch available hashtags from the backend on component mount.
@@ -98,7 +122,10 @@ function PostCreateForm() {
 
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("image", imageInput.current.files[0])
+    formData.append("image", imageInput.current.files[0]);
+    if (postData.category) {
+      formData.append("category", postData.category);
+    }
     formData.append(
       "hashtags",
       JSON.stringify(selectedHashtags.map((tag) => tag.id))
@@ -147,6 +174,28 @@ function PostCreateForm() {
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+      <Form.Group>
+        <Form.Label>Category</Form.Label>
+        <Form.Control
+          as="select"
+          name="category"
+          value={category}
+          onChange={handleChange}
+        >
+          <option value="">Select a Category</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </Form.Control>
+      </Form.Group>
+      {errors?.category?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>

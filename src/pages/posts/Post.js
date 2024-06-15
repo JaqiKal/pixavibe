@@ -30,15 +30,14 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    category_name,
     hashtags,
   } = props;
 
   console.log("Hashtags:", hashtags); // Ensure hashtags are passed correctly
 
-  // Getting the current user from the context
-  const currentUser = useCurrentUser();
-  // Checking if the current user is the owner of the post
-  const is_owner = currentUser?.username === owner;
+  const currentUser = useCurrentUser(); // Getting the current user from the context
+  const is_owner = currentUser?.username === owner; // Checking if the current user is the owner of the post
   const history = useHistory();
 
   // Function to edit own post
@@ -120,6 +119,13 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
+
+        {category_name && (
+          <Card.Text className="text-muted">
+            Category: {category_name}
+          </Card.Text>
+        )}
+
         {hashtags && hashtags.length > 0 && (
           <div className={styles.Hashtags} style={{ backgroundColor: "blue" }}>
             {hashtags.map((hashtag) => (

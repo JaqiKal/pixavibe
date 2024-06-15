@@ -20,9 +20,7 @@ const CategoryFilter = ({ setFilter, mobile }) => {
   const [category, setCategories] = useState([]);
 
   useEffect(() => {
-    /**
-     * Fetches categories from the API and updates the state.
-     */
+    //Fetches categories from the API and updates the state.
     const fetchCategories = async () => {
       try {
         const response = await fetch(
@@ -51,7 +49,7 @@ const CategoryFilter = ({ setFilter, mobile }) => {
     >
       <Row className="row d-flex justify-content-center">
         <Form.Group controlId="categorySelect">
-          <Form.Label>Filter by Category</Form.Label>
+          <Form.Label>Category</Form.Label>
           <Form.Control
             className={styles.Dropdown}
             as="select"
