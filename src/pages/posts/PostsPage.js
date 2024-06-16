@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
+import CategoryFilter from "../../components/CategoryFilter";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 
@@ -19,13 +19,14 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-function PostsPage({ message, filter = "" }) {
+function PostsPage({ message }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
   const [blocks, setBlocks] = useState([]);
   const currentUser = useCurrentUser();
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,7 +40,11 @@ function PostsPage({ message, filter = "" }) {
 
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
+        const params = new URLSearchParams();
+        if (filter) params.append("category", filter);
+        if (query) params.append("search", query);
+
+        const { data } = await axiosReq.get(`/posts/?${params.toString()}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
@@ -77,6 +82,10 @@ function PostsPage({ message, filter = "" }) {
             placeholder="Search posts"
           />
         </Form>
+
+        {/* Add the CategoryFilter component */}
+        <CategoryFilter setFilter={setFilter} />
+
         {/* Posts */}
         {hasLoaded ? (
           <>

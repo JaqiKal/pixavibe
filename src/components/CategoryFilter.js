@@ -49,7 +49,7 @@ const CategoryFilter = ({ setFilter, mobile }) => {
     >
       <Row className="row d-flex justify-content-center">
         <Form.Group controlId="categorySelect">
-          <Form.Label>Category</Form.Label>
+          <Form.Label>Filter on Category</Form.Label>
           <Form.Control
             className={styles.Dropdown}
             as="select"
