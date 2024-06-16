@@ -34,6 +34,12 @@ function PostsPage({ message = "" }) {
     };
 
     const fetchPosts = async () => {
+      /**
+       * The fetchPosts function constructs the appropriate API endpoint based
+       *  on the current path and query parameters, fetches posts from the API,
+       *  and updates the state with the fetched data.
+       */
+
       try {
         const params = new URLSearchParams();
         if (filter) params.append("category", filter);
