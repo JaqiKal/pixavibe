@@ -63,7 +63,11 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+            ? {
+                ...post,
+                likes_count: (post.likes_count || 0) + 1, // Use (post.likes_count || 0) to handle null/undefined
+                like_id: data.id,
+              }
             : post;
         }),
       }));
@@ -80,7 +84,12 @@ const Post = (props) => {
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+            ? {
+              ...post,
+              likes_count:
+              post.likes_count - 1,
+              like_id: null
+            }
             : post;
         }),
       }));
@@ -119,23 +128,12 @@ const Post = (props) => {
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
-
         {category_name && (
           <Card.Text className="text-muted">
             Category: {category_name}
           </Card.Text>
         )}
-
-        {hashtags && hashtags.length > 0 && (
-          <div className={styles.Hashtags} style={{ backgroundColor: "blue" }}>
-            {hashtags.map((hashtag) => (
-              <span key={hashtag.id} className={styles.Hashtag}>
-                {hashtag.name}
-              </span>
-            ))}
-          </div>
-        )}
-
+        {/* Placeholder for hashtags display */}
         <div className={styles.PostBar}>
           {is_owner ? (
             <OverlayTrigger

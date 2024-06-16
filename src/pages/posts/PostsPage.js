@@ -1,31 +1,27 @@
 import React, { useEffect, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
+import CategoryFilter from "../../components/CategoryFilter";
 import Post from "./Post";
 import Asset from "../../components/Asset";
-
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-
 import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-function PostsPage({ message, filter = "" }) {
+function PostsPage({ message = "" }) {
+  const [filter, setFilter] = useState("");
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
   const [blocks, setBlocks] = useState([]);
-  const currentUser = useCurrentUser();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,25 +35,36 @@ function PostsPage({ message, filter = "" }) {
 
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
-        setPosts(data);
+        const params = new URLSearchParams();
+        if (filter) params.append("category", filter);
+        if (query) params.append("search", query);
+
+        let endpoint = "/posts/?";
+        if (pathname === "/feed") {
+          endpoint = "/followed-posts/?";
+        } else if (pathname === "/liked") {
+          endpoint = "/liked-post/?";
+        }
+
+        const { data } = await axiosReq.get(`${endpoint}${params.toString()}`);
+        setPosts({ ...data, results: data.results });
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
 
     // Reset hasLoaded to false
     setHasLoaded(false);
     const timer = setTimeout(() => {
-      fetchPosts();
       fetchData();
+      fetchPosts();
     }, 1000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname, currentUser]);
+  }, [filter, query, pathname]);
 
   return (
     <Row className="h-100">
@@ -77,6 +84,11 @@ function PostsPage({ message, filter = "" }) {
             placeholder="Search posts"
           />
         </Form>
+
+        {pathname !== "/liked" && pathname !== "/feed" && (
+          <CategoryFilter mobile setFilter={setFilter} />
+        )}
+
         {/* Posts */}
         {hasLoaded ? (
           <>
