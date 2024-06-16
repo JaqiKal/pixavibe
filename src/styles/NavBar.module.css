@@ -1,6 +1,6 @@
 /* Styling for the navigation bar */
 .NavBar {
-    background-color: #e6e6f8;
+    background-color: #e8f7e5;
     border: 1px solid #dadadf;
 }
 
@@ -12,5 +12,5 @@
 /* Changes icon color when the navigation link is active */
 /* indicating the current page */
 .Active i {
-    color: #2142b2;
+    color: #6d398a;
 }
