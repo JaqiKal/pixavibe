@@ -17,6 +17,7 @@
     padding: 10px;
     border-radius: 20px;
     border: 1px solid #f0d2ee;
+    box-shadow: 3px 3px 5px #bc9bbb;
 }
 
 /* Ensures image fills the container without distortion */

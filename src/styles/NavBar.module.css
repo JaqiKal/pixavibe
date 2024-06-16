@@ -2,8 +2,9 @@
 .NavBar {
     background-color: #e8f7e5;
     border: 1px solid #dadadf;
+    box-shadow: 3px 3px 10px #bc9bbb;
 }
-
+10
 /* General styling for links in the navigation bar */
 .NavLink {
     padding: 5px;
