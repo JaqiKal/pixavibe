@@ -1,8 +1,9 @@
 /* Base container styling for the App component */
 .App {
     font-family: "DM Sans", sans-serif;
-    background-color: #f8f8f8;
+    background-color: #e7d5e6;
     min-height: 100vh;
+    color:#6d398a;
 }
 
 /* Push down underneath navbar */
@@ -14,8 +15,8 @@
 .Content {
     background-color: #ffffff;
     padding: 10px;
-    border-radius: 2px;
-    border: 1px solid #dadadf;
+    border-radius: 20px;
+    border: 1px solid #f0d2ee;
 }
 
 /* Ensures image fills the container without distortion */
@@ -46,11 +47,12 @@ a {
 /* Link hover effects */
 a:hover {
     text-decoration: none;
+    color: #0c7b04;
 }
 
 /* Icon color changes on link hover */
 a:hover i {
-    color: #2142b2;
+    color: #0c7b04;
     transition: color ease-in-out 0.3s;
 }
 
@@ -73,6 +75,7 @@ i:hover {
 figure {
     text-align: center;
     display: inline-block;
+    border-bottom: 20px;
 }
 
 /* Custom scrollbar styling */
