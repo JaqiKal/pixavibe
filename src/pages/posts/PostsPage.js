@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import CategoryFilter from "../../components/CategoryFilter";
+import CategorySelect from "../../components/CategorySelect";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 
@@ -84,7 +84,7 @@ function PostsPage({ message }) {
         </Form>
 
         {/* Add the CategoryFilter component */}
-        <CategoryFilter setFilter={setFilter} />
+        <CategorySelect setFilter={setFilter} />
 
         {/* Posts */}
         {hasLoaded ? (

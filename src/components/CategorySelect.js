@@ -16,7 +16,7 @@ import PropTypes from "prop-types";
  * - setFilter (function): Function to update the selected category filter.
  * - mobile (boolean): Flag to indicate if the component is in mobile view.
  */
-const CategoryFilter = ({ setFilter, mobile }) => {
+const CategorySelect = ({ setFilter, mobile }) => {
   const [category, setCategories] = useState([]);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const CategoryFilter = ({ setFilter, mobile }) => {
       }
     };
 
-    CategoryFilter.propTypes = {
+    CategorySelect.propTypes = {
       setFilter: PropTypes.func.isRequired,
       mobile: PropTypes.bool,
     };
@@ -69,4 +69,4 @@ const CategoryFilter = ({ setFilter, mobile }) => {
   );
 };
 
-export default CategoryFilter;
+export default CategorySelect;
