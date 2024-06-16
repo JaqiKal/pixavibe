@@ -3,7 +3,6 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-import CategoryFilter from "../../components/CategoryFilter";
 import Post from "./Post";
 import Asset from "../../components/Asset";
 import appStyles from "../../App.module.css";
@@ -15,8 +14,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
-function PostsPage({ message = "" }) {
-  const [filter, setFilter] = useState("");
+function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -24,13 +22,11 @@ function PostsPage({ message = "" }) {
   const [blocks, setBlocks] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchBlocks = async () => {
       try {
         const { data: blocksData } = await axiosReq.get("/blocks/");
         setBlocks(blocksData.results);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     };
 
     const fetchPosts = async () => {
@@ -39,32 +35,23 @@ function PostsPage({ message = "" }) {
        *  on the current path and query parameters, fetches posts from the API,
        *  and updates the state with the fetched data.
        */
-
       try {
-        const params = new URLSearchParams();
-        if (filter) params.append("category", filter);
-        if (query) params.append("search", query);
-
-        let endpoint = "/posts/?";
-        if (pathname === "/feed") {
-          endpoint = "/followed-posts/?";
-        } else if (pathname === "/liked") {
-          endpoint = "/liked-post/?";
-        }
-
-        const { data } = await axiosReq.get(`${endpoint}${params.toString()}`);
-        setPosts({ ...data, results: data.results });
+        const { data } = await axiosReq.get(`/posts/?$(filter)search=${query}`);
+        setPosts(data);
         setHasLoaded(true);
       } catch (err) {
         //console.log(err);
       }
     };
 
-    // Reset hasLoaded to false
-    setHasLoaded(false);
+    const fetchData = async () => {
+      setHasLoaded(false);
+      await fetchBlocks();
+      await fetchPosts();
+    };
+
     const timer = setTimeout(() => {
       fetchData();
-      fetchPosts();
     }, 1000);
 
     return () => {
@@ -90,11 +77,6 @@ function PostsPage({ message = "" }) {
             placeholder="Search posts"
           />
         </Form>
-
-        {pathname !== "/liked" && pathname !== "/feed" && (
-          <CategoryFilter mobile setFilter={setFilter} />
-        )}
-
         {/* Posts */}
         {hasLoaded ? (
           <>
