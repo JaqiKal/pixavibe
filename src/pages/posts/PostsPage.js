@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from "react";
+
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+
 import Post from "./Post";
 import Asset from "../../components/Asset";
+
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
+
 import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -20,44 +25,39 @@ function PostsPage({ message, filter = "" }) {
   const { pathname } = useLocation();
   const [query, setQuery] = useState("");
   const [blocks, setBlocks] = useState([]);
+  const currentUser = useCurrentUser();
 
   useEffect(() => {
-    const fetchBlocks = async () => {
+    const fetchData = async () => {
       try {
         const { data: blocksData } = await axiosReq.get("/blocks/");
         setBlocks(blocksData.results);
-      } catch (error) {}
-    };
-
-    const fetchPosts = async () => {
-      /**
-       * The fetchPosts function constructs the appropriate API endpoint based
-       *  on the current path and query parameters, fetches posts from the API,
-       *  and updates the state with the fetched data.
-       */
-      try {
-        const { data } = await axiosReq.get(`/posts/?$(filter)search=${query}`);
-        setPosts(data);
-        setHasLoaded(true);
-      } catch (err) {
-        //console.log(err);
+      } catch (error) {
+        console.log(error);
       }
     };
 
-    const fetchData = async () => {
-      setHasLoaded(false);
-      await fetchBlocks();
-      await fetchPosts();
+    const fetchPosts = async () => {
+      try {
+        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
+        setPosts(data);
+        setHasLoaded(true);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
+    // Reset hasLoaded to false
+    setHasLoaded(false);
     const timer = setTimeout(() => {
+      fetchPosts();
       fetchData();
     }, 1000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname]);
+  }, [filter, query, pathname, currentUser]);
 
   return (
     <Row className="h-100">
