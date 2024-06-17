@@ -79,6 +79,7 @@
     color: #2142b2;
 }
 
+/* Block */
 /* Greige button and hover state */
 .Greige,
 .GreigeOutline:hover {
@@ -86,9 +87,41 @@
     color: #ffffff;
 }
 
+/* Block */
 /* Greige outline button and hover state */
 .GreigeOutline,
 .Greige:hover {
     background-color: #ffffff;
     color: #7d726c;
+}
+
+/* SignUp */
+/* Lilac button and hover state */
+.Lilac,
+.LilacOutline:hover {
+    background-color: #6d398a;
+    color: #ffffff;
+}
+/* SignUp */
+/* Lilac outline button and hover state */
+.LilacOutline,
+.Lilac:hover {
+    background-color: #ed4c32;
+    color: #ffffff;
+}
+
+/* SignIn */
+/* Green button and hover state */
+.Green,
+.GreenOutline:hover {
+    background-color: #0c7b04;
+    color: #ffffff;
+}
+
+/* SignIn */
+/* Green outline button and hover state */
+.GreenOutline,
+.Green:hover {
+    background-color: #ed4c32;
+    color: #ffffff;
 }
