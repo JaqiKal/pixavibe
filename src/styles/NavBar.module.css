@@ -4,7 +4,9 @@
     border: 1px solid #dadadf;
     box-shadow: 3px 3px 10px #bc9bbb;
 }
+
 10
+
 /* General styling for links in the navigation bar */
 .NavLink {
     padding: 5px;
@@ -14,4 +16,14 @@
 /* indicating the current page */
 .Active i {
     color: #6d398a;
+}
+
+/* Logo image transition */
+.logoImg {
+    height: 45px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.logoImg:hover {
+    transform: scale(1.1);
 }
