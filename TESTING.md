@@ -145,6 +145,34 @@
 
   - ![x](/documentation/testing_image/error-all-auth-incomptible-python-3-12-2.webp)
 
-## KNOWN ISSUES
+## KNOWN UNSOLVED ISSUES
 
-- (posts/view.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
+- When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
+  - Mounting when not logged in
+  - Redirecting a logged-in user away from the sign-up/sign-in page
+  - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
+    ![x](/documentation/testing_image/401-error.png)
+- Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
+- (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
+- **Disclaimer on npm Audit Issues**: </br>
+  As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
+
+  - **ansi-html** (<0.0.8): High severity - Uncontrolled Resource Consumption.
+  - **axios** (0.8.1 - 0.27.2): Moderate severity - Cross-Site Request Forgery Vulnerability.
+  - **braces** (<3.0.3): High severity - Uncontrolled Resource Consumption.
+  - **browserslist** (4.0.0 - 4.16.4): Moderate severity - Regular Expression Denial of Service.
+  - **ejs** (<=3.1.9): Critical severity - Template injection vulnerability.
+  - **glob-parent** (<5.1.2): High severity - Regular Expression Denial of Service.
+  - **immer** (7.0.0 - 9.0.5): Critical severity - Prototype Pollution.
+  - **ip**: High severity - Server-Side Request Forgery.
+  - **loader-utils** (2.0.0 - 2.0.3): Critical severity - Prototype Pollution.
+  - **lodash.template**: High severity - Command Injection.
+  - **minimatch** (<3.0.5): High severity - Regular Expression Denial of Service.
+  - **node-forge** (<=1.2.1): High severity - Prototype Pollution.
+  - **nth-check** (<2.0.1): High severity - Inefficient Regular Expression Complexity.
+  - **postcss** (<8.4.31): Moderate severity - Line return parsing error.
+  - **semver** (7.0.0 - 7.5.1): Moderate severity - Regular Expression Denial of Service.
+  - **shell-quote** (<=1.7.2): Critical severity - Improper Neutralization of Special Elements.
+  - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
+
+There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
