@@ -32,6 +32,7 @@ function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [selectedHashtags, setSelectedHashtags] = useState([]);
+  const [showHashtagDropdown] = useState(false);  // Make dropdown invisible for user, reason in TESTING.md
 
   const [postData, setPostData] = useState({
     title: "",
@@ -201,7 +202,7 @@ function PostCreateForm() {
         </Alert>
       ))}
 
-      <Form.Group>
+      {/* <Form.Group>
         <Form.Label>Hashtags</Form.Label>
         <MultiSelect
           selectedHashtags={selectedHashtags}
@@ -212,7 +213,17 @@ function PostCreateForm() {
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
-      ))}
+      ))}*/}
+
+      {/* Conditionally render the MultiSelect component */}
+      {showHashtagDropdown && (
+        <MultiSelect
+          options={postData.availableHashtags}
+          value={selectedHashtags}
+          onChange={setSelectedHashtags}
+          label="Hashtags"
+        />
+      )}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}

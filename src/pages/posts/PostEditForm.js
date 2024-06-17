@@ -14,11 +14,12 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-import MultiSelect from "../../components/MultiSelect";
+//import MultiSelect from "../../components/MultiSelect";  Make dropdown invisible for user, reason in TESTING.md
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
   const [selectedHashtags, setSelectedHashtags] = useState([]);
+
   const [postData, setPostData] = useState({
     title: "",
     content: "",
@@ -133,7 +134,6 @@ function PostEditForm() {
           {message}
         </Alert>
       ))}
-
       <Form.Group>
         <Form.Label>Content</Form.Label>
         <Form.Control
@@ -149,7 +149,6 @@ function PostEditForm() {
           {message}
         </Alert>
       ))}
-
       <Form.Group>
         <Form.Label>Category</Form.Label>
         <Form.Control
@@ -172,7 +171,8 @@ function PostEditForm() {
         </Alert>
       ))}
 
-      <Form.Group>
+      {/* Make dropdown invisible for user, reason in TESTING.md
+       <Form.Group>
         <Form.Label>Hashtags</Form.Label>
         <MultiSelect
           selectedHashtags={selectedHashtags}
@@ -183,7 +183,7 @@ function PostEditForm() {
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
-      ))}
+      ))} */}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
