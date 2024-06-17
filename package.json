@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.4",
     "bootstrap": "^4.6.0",
+    "css-validator": "^0.11.0",
     "jwt-decode": "^3.1.2",
     "multiselect-react-dropdown": "^2.0.25",
     "react": "^17.0.2",
@@ -24,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "validate:css": "node validate-css.js"
+
   },
   "eslintConfig": {
     "extends": [
