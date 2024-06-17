@@ -1,5 +1,5 @@
 .ModalHeader {
-background-color: #f8f9fa;
+    background-color: #f8f9fa;
 }
 
 .ModalTitle {
@@ -15,7 +15,7 @@ background-color: #f8f9fa;
 .ModalFooter {
     border-top: 1px solid #dee2e6;
     display: flex;
-    justify-content: flex-ends;
+    justify-content: flex-end;
 }
 
 .ButtonClose {
