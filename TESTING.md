@@ -136,7 +136,10 @@ I validated my HTML pages using the W3 Nu HTML Checker. They came back with no e
 ### CSS
 
 Validation process was automated by using the css-validator npm package. All pages come back clean without any errors. </br>
-Script used `validate-css.js`
+
+Vendor extensions are CSS properties or pseudo-elements specific to particular browser engines, prefixed with -webkit-, -moz-, etc. Pseudo-elements allow styling of parts of an element, such as scrollbars. In index.css, vendor extensions include -apple-system, -webkit-font-smoothing, and -moz-osx-font-smoothing. In App.module.css, vendor extended pseudo-elements include ::-webkit-scrollbar, ::-webkit-scrollbar-track, and ::-webkit-scrollbar-thumb.
+
+Our project includes a CSS validation script `validate-css.js` that ensures all stylesheets adhere to web standards. This script uses the W3C CSS Validator to check for errors and warnings in our CSS files. Vendor-specific properties and pseudo-elements are flagged as warnings, which are expected and documented. The validation process helps maintain clean, error-free CSS, enhancing cross-browser compatibility and overall code quality. To run the validation, use the command npm run validate:css.
 
 <details>
 <summary>CSS validation results</summary>
