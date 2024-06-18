@@ -5,6 +5,7 @@
   - [JSX](#jsx)
   - [HTML](#html)
   - [CSS](#css)
+  - [Python](#python)
   - [Lighthouse](#lighthouse)
 - [Function Test](#function-test)
   - [Custom Automated Testing](#custom-automated-testing)
@@ -12,8 +13,8 @@
   - [Custom Manual Testing](#custom-manual-testing)
     - [Executed manual test cases and results](#executed-manual-test-cases-and-results)
 - [Issues](#issues)
-  - [Solved issues](#solved-issues)
   - [Known and unsolved issues](#known-and-unsolved-issues)
+    - [Solved issues](#solved-issues)
 
 ## User Story Testing
 
@@ -165,6 +166,18 @@ Our project includes a CSS validation script `validate-css.js` that ensures all 
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+### Python
+
+<details>
+<summary>PEP8</summary>
+<br>
+
+All Python files were run validated with pep8 and cleaned until no errors were found.
+
+![pep8](/documentation/testing_image/validate_python.png)
+
+</details>
 
 ### Lighthouse
 
@@ -483,25 +496,25 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| ID       | Feature        | Action      | Expected Outcome                                        | Result |
-| -------- | -------------- | ----------- | ------------------------------------------------------- | ------ |
-| NAV-M-01 | Navbar Logo    | Hover/Focus | Indicate focus                                          | Pass   |
-| NAV-M-02 | Navbar Logo    | Click       | Redirect to home                                        | Pass   |
-| NAV-M-03 | Navbar toggler | Display     | Visible on small screens only                           | Pass   |
-| NAV-M-04 | Navbar toggler | Click       | Opens dropdown with navigation links                    | Pass   |
-| NAV-M-05 | Following Link | Display     | Only display when user is signed in                     | Pass   |
-| NAV-M-06 | Following Link | Click       | Open following feed page                                | Pass   |
-| NAV-M-07 | Liked Link     | Display     | Only display when user is signed in                     | Pass   |
-| NAV-M-08 | Liked Link     | Click       | Open liked posts feed page                              | Pass   |
-| NAV-M-09 | Navbar Links   | Display     | Links display in header on screens above a certain size | Pass   |
-| NAV-M-10 | Profile Link   | Display     | Only display when user is signed in                     | Pass   |
-| NAV-M-11 | Profile Link   | Click       | Open profile page                                       | Pass   |
-| NAV-M-12 | Register Link  | Display     | Only display when user is not signed in                 | Pass   |
-| NAV-M-13 | Register Link  | Click       | Open signup page                                        | Pass   |
-| NAV-M-14 | Log-in Link    | Display     | Only display when user is not signed in                 | Pass   |
-| NAV-M-15 | Log-in Link    | Click       | Open login page                                         | Pass   |
-| NAV-M-16 | Log-out Link   | Display     | Only display when user is signed in                     | Pass   |
-| NAV-M-17 | Log-out Link   | Click       | Log the user out                                        | Pass   |
+| ID       | Feature        | Action      | Expected Outcome                                        | Result | Comment |
+| -------- | -------------- | ----------- | ------------------------------------------------------- | ------ | ------- |
+| NAV-M-01 | Navbar Logo    | Hover/Focus | Indicate focus                                          | Pass   |         |
+| NAV-M-02 | Navbar Logo    | Click       | Redirect to home                                        | Pass   |         |
+| NAV-M-03 | Navbar toggler | Display     | Visible on small screens only                           | Pass   |         |
+| NAV-M-04 | Navbar toggler | Click       | Opens dropdown with navigation links                    | Pass   |         |
+| NAV-M-05 | Following Link | Display     | Only display when user is signed in                     | Pass   |         |
+| NAV-M-06 | Following Link | Click       | Open following feed page                                | Pass   |         |
+| NAV-M-07 | Liked Link     | Display     | Only display when user is signed in                     | Pass   |         |
+| NAV-M-08 | Liked Link     | Click       | Open liked posts feed page                              | Pass   |         |
+| NAV-M-09 | Navbar Links   | Display     | Links display in header on screens above a certain size | Pass   |         |
+| NAV-M-10 | Profile Link   | Display     | Only display when user is signed in                     | Pass   |         |
+| NAV-M-11 | Profile Link   | Click       | Open profile page                                       | Pass   |         |
+| NAV-M-12 | Register Link  | Display     | Only display when user is not signed in                 | Pass   |         |
+| NAV-M-13 | Register Link  | Click       | Open signup page                                        | Pass   |         |
+| NAV-M-14 | Log-in Link    | Display     | Only display when user is not signed in                 | Pass   |         |
+| NAV-M-15 | Log-in Link    | Click       | Open login page                                         | Pass   |         |
+| NAV-M-16 | Log-out Link   | Display     | Only display when user is signed in                     | Pass   |         |
+| NAV-M-17 | Log-out Link   | Click       | Log the user out                                        | Pass   |         |
 
 </details>
 
@@ -513,29 +526,29 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| ID       | Feature           | Action  | Expected Outcome                                                 | Result |
-| -------- | ----------------- | ------- | ---------------------------------------------------------------- | ------ |
-| HME-M-01 | Post list         | Display | All posts appear in sorted order                                 | Pass   |
-| HME-M-02 | Post              | Display | Post displays title, author, image, content, and time of posting | Pass   |
-| HME-M-03 | Post              | Display | Post displays the number of likes and comments                   | Pass   |
-| HME-M-04 | Avatar            | Display | Post owner's avatar is present on the post                       | Pass   |
-| HME-M-05 | Avatar            | Click   | Clicking an avatar opens the associated profile page             | Pass   |
-| HME-M-06 | Post Link         | Click   | Clicking the post opens the detail page                          | Pass   |
-| HME-M-07 | Like Icon         | Click   | Like/Unlike the post                                             | Pass   |
-| HME-M-08 | Like Counter      | Display | Display the correct number of likes received by the post         | Pass   |
-| HME-M-09 | Comment Icon      | Click   | Open the post's comment section                                  | Pass   |
-| HME-M-10 | Comment Counter   | Display | Display the correct number of comments on the post               | Pass   |
-| HME-M-11 | Search Bar        | Input   | Apply search term and filter posts automatically                 | Pass   |
-| HME-M-12 | Category Filter   | Click   | Apply category term and filter posts automatically               | Pass   |
-| HME-M-13 | 'New Post' Button | Display | Only visible to signed-in users                                  | Pass   |
-| HME-M-14 | 'New Post' Button | Click   | Open post form                                                   | Pass   |
-| HME-M-15 | Post feed         | Display | All posts appear in an infinite scroll feed                      | Pass   |
-| HME-M-16 | Post feed         | Display | Posts by blocked users are not displayed                         | Pass   |
-| HME-M-17 | Post feed         | Display | "Following" feed only displays posts by followed users           | Fail   |
-| HME-M-18 | Post feed         | Display | "Liked" feed only displays posts the current user has liked      | Fail   |
-| HME-M-19 | Report button     | Display | Only displays on other users' posts                              | Pass   |
-| HME-M-20 | Report button     | Click   | Open the report form                                             | Pass   |
-| HME-M-21 | Report form       | Submit  | Sends a report to the admin page                                 | Pass   |
+| ID       | Feature           | Action  | Expected Outcome                                                 | Result | Comment |
+| -------- | ----------------- | ------- | ---------------------------------------------------------------- | ------ | ------- |
+| HME-M-01 | Post list         | Display | All posts appear in sorted order                                 | Pass   |         |
+| HME-M-02 | Post              | Display | Post displays title, author, image, content, and time of posting | Pass   |         |
+| HME-M-03 | Post              | Display | Post displays the number of likes and comments                   | Pass   |         |
+| HME-M-04 | Avatar            | Display | Post owner's avatar is present on the post                       | Pass   |         |
+| HME-M-05 | Avatar            | Click   | Clicking an avatar opens the associated profile page             | Pass   |         |
+| HME-M-06 | Post Link         | Click   | Clicking the post opens the detail page                          | Pass   |         |
+| HME-M-07 | Like Icon         | Click   | Like/Unlike the post                                             | Pass   |         |
+| HME-M-08 | Like Counter      | Display | Display the correct number of likes received by the post         | Pass   |         |
+| HME-M-09 | Comment Icon      | Click   | Open the post's comment section                                  | Pass   |         |
+| HME-M-10 | Comment Counter   | Display | Display the correct number of comments on the post               | Pass   |         |
+| HME-M-11 | Search Bar        | Input   | Apply search term and filter posts automatically                 | Pass   |         |
+| HME-M-12 | Category Filter   | Click   | Apply category term and filter posts automatically               | Pass   |         |
+| HME-M-13 | 'New Post' Button | Display | Only visible to signed-in users                                  | Pass   |         |
+| HME-M-14 | 'New Post' Button | Click   | Open post form                                                   | Pass   |         |
+| HME-M-15 | Post feed         | Display | All posts appear in an infinite scroll feed                      | Pass   |         |
+| HME-M-16 | Post feed         | Display | Posts by blocked users are not displayed                         | Pass   |         |
+| HME-M-17 | Post feed         | Display | "Following" feed only displays posts by followed users           | Pass   |         |
+| HME-M-18 | Post feed         | Display | "Liked" feed only displays posts the current user has liked      | Pass   |         |
+| HME-M-19 | Report button     | Display | Only displays on other users' posts                              | Pass   |         |
+| HME-M-20 | Report button     | Click   | Open the report form                                             | Pass   |         |
+| HME-M-21 | Report form       | Submit  | Sends a report to the admin page                                 | Pass   |         |
 
 </details>
 
@@ -547,23 +560,23 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| ID       | Feature         | Action  | Expected Outcome                                                 | Result |
-| -------- | --------------- | ------- | ---------------------------------------------------------------- | ------ |
-| PST-M-01 | Post            | Display | Post displays title, author, image, content, and time of posting | Pass   |
-| PST-M-02 | Post            | Display | Post displays the number of likes and comments                   | Pass   |
-| PST-M-03 | Avatar          | Display | Post owner's avatar is present on the post                       | Pass   |
-| PST-M-04 | Avatar          | Click   | Clicking an avatar opens the associated profile page             | Pass   |
-| PST-M-05 | Edit Button     | Display | Display if logged in as the author of the post                   | Pass   |
-| PST-M-06 | Edit Button     | Click   | Open the post editing page                                       | Pass   |
-| PST-M-07 | Delete Button   | Display | Display if logged in as the author of the post                   | Pass   |
-| PST-M-08 | Delete Button   | Click   | Delete the post                                                  | Pass   |
-| PST-M-09 | Like Icon       | Click   | Like/Unlike the post                                             | Pass   |
-| PST-M-10 | Like Counter    | Display | Display the correct number of likes received by the post         | Pass   |
-| PST-M-11 | Comment Icon    | Click   | Open the post's comment section                                  | Pass   |
-| PST-M-12 | Comment Counter | Display | Display the correct number of comments on the post               | Pass   |
-| PST-M-13 | Report button   | Display | Only displays on other users' posts                              | Pass   |
-| PST-M-14 | Report button   | Click   | Open the report form                                             | Pass   |
-| PST-M-15 | Report form     | Submit  | Sends a report to the admin page                                 | Pass   |
+| ID       | Feature         | Action  | Expected Outcome                                                 | Result | Comment |
+| -------- | --------------- | ------- | ---------------------------------------------------------------- | ------ | ------- |
+| PST-M-01 | Post            | Display | Post displays title, author, image, content, and time of posting | Pass   |         |
+| PST-M-02 | Post            | Display | Post displays the number of likes and comments                   | Pass   |         |
+| PST-M-03 | Avatar          | Display | Post owner's avatar is present on the post                       | Pass   |         |
+| PST-M-04 | Avatar          | Click   | Clicking an avatar opens the associated profile page             | Pass   |         |
+| PST-M-05 | Edit Button     | Display | Display if logged in as the author of the post                   | Pass   |         |
+| PST-M-06 | Edit Button     | Click   | Open the post editing page                                       | Pass   |         |
+| PST-M-07 | Delete Button   | Display | Display if logged in as the author of the post                   | Pass   |         |
+| PST-M-08 | Delete Button   | Click   | Delete the post                                                  | Pass   |         |
+| PST-M-09 | Like Icon       | Click   | Like/Unlike the post                                             | Pass   |         |
+| PST-M-10 | Like Counter    | Display | Display the correct number of likes received by the post         | Pass   |         |
+| PST-M-11 | Comment Icon    | Click   | Open the post's comment section                                  | Pass   |         |
+| PST-M-12 | Comment Counter | Display | Display the correct number of comments on the post               | Pass   |         |
+| PST-M-13 | Report button   | Display | Only displays on other users' posts                              | Pass   |         |
+| PST-M-14 | Report button   | Click   | Open the report form                                             | Pass   |         |
+| PST-M-15 | Report form     | Submit  | Sends a report to the admin page                                 | Pass   |         |
 
 </details>
 
@@ -575,18 +588,18 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| ID       | Feature       | Action  | Expected Outcome                                                 | Result |
-| -------- | ------------- | ------- | ---------------------------------------------------------------- | ------ |
-| CMT-M-01 | Comment Form  | Display | Display when a user is signed in                                 | Pass   |
-| CMT-M-02 | Comment Form  | Submit  | Submit the form and add the comment to the post                  | Pass   |
-| CMT-M-03 | Comments      | Display | Comments appear in descending order in an infinite scroll format | Pass   |
-| CMT-M-04 | Comments      | Display | Comments display the owner's username and avatar                 | Pass   |
-| CMT-M-05 | Comments      | Display | Comments by blocked users are blocked                            | Pass   |
-| CMT-M-06 | Comments      | Click   | Clicking the avatar opens the associated profile                 | Pass   |
-| CMT-M-07 | Edit Button   | Display | Display if logged in as the author of the post                   | Pass   |
-| CMT-M-08 | Edit Button   | Click   | Open the comment form                                            | Pass   |
-| CMT-M-09 | Delete Button | Display | Display if logged in as the author of the post                   | Pass   |
-| CMT-M-10 | Delete Button | Click   | Delete the comment                                               | Pass   |
+| ID       | Feature       | Action  | Expected Outcome                                                 | Result | Comment |
+| -------- | ------------- | ------- | ---------------------------------------------------------------- | ------ | ------- |
+| CMT-M-01 | Comment Form  | Display | Display when a user is signed in                                 | Pass   |         |
+| CMT-M-02 | Comment Form  | Submit  | Submit the form and add the comment to the post                  | Pass   |         |
+| CMT-M-03 | Comments      | Display | Comments appear in descending order in an infinite scroll format | Pass   |         |
+| CMT-M-04 | Comments      | Display | Comments display the owner's username and avatar                 | Pass   |         |
+| CMT-M-05 | Comments      | Display | Comments by blocked users are blocked                            | Pass   |         |
+| CMT-M-06 | Comments      | Click   | Clicking the avatar opens the associated profile                 | Pass   |         |
+| CMT-M-07 | Edit Button   | Display | Display if logged in as the author of the post                   | Pass   |         |
+| CMT-M-08 | Edit Button   | Click   | Open the comment form                                            | Pass   |         |
+| CMT-M-09 | Delete Button | Display | Display if logged in as the author of the post                   | Pass   |         |
+| CMT-M-10 | Delete Button | Click   | Delete the comment                                               | Pass   |         |
 
 </details>
 
@@ -598,21 +611,19 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| ID       | Feature               | Action  | Expected Outcome                                        | Result |
-| -------- | --------------------- | ------- | ------------------------------------------------------- | ------ |
-| PFM-M-01 | Upload Button         | Display | The upload Button appears                               | Pass   |
-| PFM-M-02 | Upload Button         | Click   | Opens a file selector window                            | Pass   |
-| PFM-M-03 | Title Input           | Display | The title input has a label making its purpose clear    | Pass   |
-| PFM-M-04 | Title Input           | Input   | The user can type in the Title field                    | Pass   |
-| PFM-M-05 | Content Input         | Display | The content input has a label making its purpose clear  | Pass   |
-| PFM-M-06 | Content Input         | Input   | The user can type in the content field                  | Pass   |
-| PFM-M-07 | Category Input        | Display | The category input has a label making its purpose clear | Pass   |
-| PFM-M-08 | Category Input        | Click   | The user can select category the menu                   | Pass   |
-| PFM-M-09 | "Friends only" Toggle | Display | A checkbox with a label explaining its purpose appears  | Pass   |
-| PFM-M-10 | "Friends only" Toggle | Click   | Clicking the checkbox toggles the state                 | Pass   |
-| PFM-M-11 | Cancel Button         | Click   | Close the form without any changes                      | Pass   |
-| PFM-M-12 | Submit Button         | Click   | Submit the form and create/update the post              | Pass   |
-| PFM-M-13 | Submit Button         | Click   | Close the form and redirect the user to the post feed   | Pass   |
+| ID       | Feature        | Action  | Expected Outcome                                        | Result | Comment |
+| -------- | -------------- | ------- | ------------------------------------------------------- | ------ | ------- |
+| PFM-M-01 | Upload Button  | Display | The upload Button appears                               | Pass   |         |
+| PFM-M-02 | Upload Button  | Click   | Opens a file selector window                            | Pass   |         |
+| PFM-M-03 | Title Input    | Display | The title input has a label making its purpose clear    | Pass   |         |
+| PFM-M-04 | Title Input    | Input   | The user can type in the Title field                    | Pass   |         |
+| PFM-M-05 | Content Input  | Display | The content input has a label making its purpose clear  | Pass   |         |
+| PFM-M-06 | Content Input  | Input   | The user can type in the content field                  | Pass   |         |
+| PFM-M-07 | Category Input | Display | The category input has a label making its purpose clear | Pass   |         |
+| PFM-M-08 | Category Input | Click   | The user can select category the menu                   | Pass   |         |
+| PFM-M-09 | Cancel Button  | Click   | Close the form without any changes                      | Pass   |         |
+| PFM-M-09 | Submit Button  | Click   | Submit the form and create/update the post              | Pass   |         |
+| PFM-M-10 | Submit Button  | Click   | Close the form and redirect the user to the post feed   | Pass   |         |
 
 </details>
 
@@ -624,19 +635,19 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| ID       | Feature                  | Action  | Expected Outcome                                                 | Result |
-| -------- | ------------------------ | ------- | ---------------------------------------------------------------- | ------ |
-| PFR-M-01 | Avatar                   | Display | The user's avatar appears on the top of the page                 | Pass   |
-| PFR-M-02 | Username                 | Display | The user's username appears on the top of the page               | Pass   |
-| PFR-M-03 | User Stats               | Display | The number of posts, followers, and followed users are displayed | Pass   |
-| PFR-M-04 | Options Button           | Display | The option button appears if signed-in as the profile owner      | Pass   |
-| PFR-M-05 | Options Button           | Click   | Clicking opens the profile options menu                          | Pass   |
-| PFR-M-06 | Options Menu             | Display | Display options for editing the profile, username and password   | Pass   |
-| PFR-M-07 | "Edit profile" Button    | Click   | Open the profile editing form                                    | Pass   |
-| PFR-M-08 | "Change username" Button | Click   | Open the username editing form                                   | Pass   |
-| PFR-M-09 | "Change password" Button | Click   | Open the password editing form                                   | Pass   |
-| PFR-M-10 | User Posts               | Display | The profile owner's posts are displayed under the profile        | Pass   |
-| PFR-M-11 | User Posts               | Display | The profile post feed has an infinite scroll layout              | Pass   |
+| ID       | Feature                  | Action  | Expected Outcome                                                 | Result | Comment |
+| -------- | ------------------------ | ------- | ---------------------------------------------------------------- | ------ | ------- |
+| PFR-M-01 | Avatar                   | Display | The user's avatar appears on the top of the page                 | Pass   |         |
+| PFR-M-02 | Username                 | Display | The user's username appears on the top of the page               | Pass   |         |
+| PFR-M-03 | User Stats               | Display | The number of posts, followers, and followed users are displayed | Pass   |         |
+| PFR-M-04 | Options Button           | Display | The option button appears if signed-in as the profile owner      | Pass   |         |
+| PFR-M-05 | Options Button           | Click   | Clicking opens the profile options menu                          | Pass   |         |
+| PFR-M-06 | Options Menu             | Display | Display options for editing the profile, username and password   | Pass   |         |
+| PFR-M-07 | "Edit profile" Button    | Click   | Open the profile editing form                                    | Pass   |         |
+| PFR-M-08 | "Change username" Button | Click   | Open the username editing form                                   | Pass   |         |
+| PFR-M-09 | "Change password" Button | Click   | Open the password editing form                                   | Pass   |         |
+| PFR-M-10 | User Posts               | Display | The profile owner's posts are displayed under the profile        | Pass   |         |
+| PFR-M-11 | User Posts               | Display | The profile post feed has an infinite scroll layout              | Pass   |         |
 
 </details>
 
@@ -648,19 +659,19 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| Feature                | Action  | Expected Outcome                                                                    | Result |
-| ---------------------- | ------- | ----------------------------------------------------------------------------------- | ------ |
-| Popular Profiles       | Display | The "popular profiles" section displays across the site                             | Pass   |
-| Popular Profiles       | Display | The list updates to reflect the number of followers for each profile                | Pass   |
-| Popular Profiles       | Display | The list moves to the top and center on smaller screens                             | Pass   |
-| Popular Profiles       | Display | No "popular profiles" section appears on profile pages on smaller screens           | Pass   |
-| Username               | Display | User avatars appear for each profile                                                | Pass   |
-| Username               | Click   | Open the associated profile page                                                    | Pass   |
-| Avatar                 | Display | User avatars appear on larger screens                                               | Pass   |
-| Avatar                 | Click   | Open the associated profile page                                                    | Pass   |
-| Follow/Unfollow Button | Display | A follow/unfollow button appears next to each profile on large screens if signed in | Pass   |
-| Follow/Unfollow Button | Click   | Clicking the button follows/unfollows the user                                      | Pass   |
-| Follow/Unfollow Button | Click   | Clicking the button updates the button and its sibling buttons on other components  | Pass   |
+| Feature                | Action  | Expected Outcome                                                                    | Result | Comment |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------- | ------ | ------- |
+| Popular Profiles       | Display | The "popular profiles" section displays across the site                             | Pass   |         |
+| Popular Profiles       | Display | The list updates to reflect the number of followers for each profile                | Pass   |         |
+| Popular Profiles       | Display | The list moves to the top and center on smaller screens                             | Pass   |         |
+| Popular Profiles       | Display | No "popular profiles" section appears on profile pages on smaller screens           | Pass   |         |
+| Username               | Display | User avatars appear for each profile                                                | Pass   |         |
+| Username               | Click   | Open the associated profile page                                                    | Pass   |         |
+| Avatar                 | Display | User avatars appear on larger screens                                               | Pass   |         |
+| Avatar                 | Click   | Open the associated profile page                                                    | Pass   |         |
+| Follow/Unfollow Button | Display | A follow/unfollow button appears next to each profile on large screens if signed in | Pass   |         |
+| Follow/Unfollow Button | Click   | Clicking the button follows/unfollows the user                                      | Pass   |         |
+| Follow/Unfollow Button | Click   | Clicking the button updates the button and its sibling buttons on other components  | Pass   |         |
 
 </details>
 
@@ -672,20 +683,20 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <br>
 
-| ID       | Feature                | Action  | Expected Outcome                                    | Result |
-| -------- | ---------------------- | ------- | --------------------------------------------------- | ------ |
-| SIU-M-01 | Username Input         | Display | A label and placeholder make the purpose clear      | Pass   |
-| SIU-M-02 | Username Input         | Input   | The user can input a username                       | Pass   |
-| SIU-M-03 | Password Input         | Display | A label and placeholder make the purpose clear      | Pass   |
-| SIU-M-04 | Password Input         | Input   | The user can input a username                       | Pass   |
-| SIU-M-05 | Confirm Password Input | Display | A label and placeholder make the purpose clear      | Pass   |
-| SIU-M-06 | Confirm Password Input | Input   | The user can input a password                       | Pass   |
-| SIU-M-07 | Sign Up Button         | Click   | Validate the form before submission                 | Pass   |
-| SIU-M-08 | Sign Up Button         | Click   | Notify the user about any invalid data              | Pass   |
-| SIU-M-09 | Sign Up Button         | Click   | Submit the form and create the new user and profile | Pass   |
-| SIU-M-10 | Sign In Button         | Click   | Validate the form before submission                 | Pass   |
-| SIU-M-11 | Sign In Button         | Click   | Notify the user about any invalid data              | Pass   |
-| SIU-M-12 | Sign In Button         | Click   | Submit the form and create the new user and profile | Pass   |
+| ID       | Feature                | Action  | Expected Outcome                                    | Result | Comment |
+| -------- | ---------------------- | ------- | --------------------------------------------------- | ------ | ------- |
+| SIU-M-01 | Username Input         | Display | A label and placeholder make the purpose clear      | Pass   |         |
+| SIU-M-02 | Username Input         | Input   | The user can input a username                       | Pass   |         |
+| SIU-M-03 | Password Input         | Display | A label and placeholder make the purpose clear      | Pass   |         |
+| SIU-M-04 | Password Input         | Input   | The user can input a username                       | Pass   |         |
+| SIU-M-05 | Confirm Password Input | Display | A label and placeholder make the purpose clear      | Pass   |         |
+| SIU-M-06 | Confirm Password Input | Input   | The user can input a password                       | Pass   |         |
+| SIU-M-07 | Sign Up Button         | Click   | Validate the form before submission                 | Pass   |         |
+| SIU-M-08 | Sign Up Button         | Click   | Notify the user about any invalid data              | Pass   |         |
+| SIU-M-09 | Sign Up Button         | Click   | Submit the form and create the new user and profile | Pass   |         |
+| SIU-M-10 | Sign In Button         | Click   | Validate the form before submission                 | Pass   |         |
+| SIU-M-11 | Sign In Button         | Click   | Notify the user about any invalid data              | Pass   |         |
+| SIU-M-12 | Sign In Button         | Click   | Submit the form and create the new user and profile | Pass   |         |
 
 </details>
 
@@ -695,24 +706,9 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ## Issues
 
-### Solved Issues
-
-- Social Authentication Installation Error:
-
-  - During the process of setting up our Django application in the pixavibe-api environment, we encountered a specific error related to package dependencies when attempting to install `dj-rest-auth[with_social]`. This issue was triggered by an incompatibility between the django-allauth package and the version of Python we were using (Python 3.12.2).
-    - Downgraded to Python 3.11.9 to resolve this.
-    - Added runtime.txt with python-3.9.11 to ensure consistent Python version across environments and prevent future issues.
-      To execute the final migration required for enabling JSON Web Token authentication.
-    - pip install django-allauth==0.54.0
-    - In settings.py MIDDLEWARE remove 'allauth.account.middleware.AccountMiddleware' this is only required since django-allauth==0.56.0
-
-  **Error message**:
-
-  - ![x](/documentation/testing_image/error-all-auth-incomptible-python-3-12-2.webp)
-
 ### Known and unsolved issues
 
-- Hashtag Error [BUG#68](https://github.com/users/JaqiKal/projects/14/views/1?pane=issue&itemId=67558382): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post in the test. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app.
+- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
 - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
 
   - Mounting when not logged in
@@ -748,6 +744,26 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
   - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
 
 There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
+
+### Solved Issues
+
+- Social Authentication Installation Error:
+
+  - During the process of setting up our Django application in the pixavibe-api environment, we encountered a specific error related to package dependencies when attempting to install `dj-rest-auth[with_social]`. This issue was triggered by an incompatibility between the django-allauth package and the version of Python we were using (Python 3.12.2).
+    - Downgraded to Python 3.11.9 to resolve this.
+    - Added runtime.txt with python-3.9.11 to ensure consistent Python version across environments and prevent future issues.
+      To execute the final migration required for enabling JSON Web Token authentication.
+    - pip install django-allauth==0.54.0
+    - In settings.py MIDDLEWARE remove 'allauth.account.middleware.AccountMiddleware' this is only required since django-allauth==0.56.0
+
+  **Error message**:
+
+  - ![x](/documentation/testing_image/error-all-auth-incomptible-python-3-12-2.webp)
+
+- [BUG#61: Comment edit save fails to display updated content](https://github.com/JaqiKal/pixavibe-frontend/issues/61)
+- [BUG#65: Avatar broken in posts card](https://github.com/JaqiKal/pixavibe-frontend/issues/65)
+- [BUG#66: Post detail CRUD lost](https://github.com/JaqiKal/pixavibe-frontend/issues/66)
+- [BUG#69: ot possible to edit Category when editing post](https://github.com/JaqiKal/pixavibe-frontend/issues/69)
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
