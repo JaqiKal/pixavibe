@@ -607,6 +607,7 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
 
 - Logo used was created at
 - [React Multiselect dropdown](https://www.npmjs.com/package/multiselect-react-dropdown), this library is used for handling hashtags. It helps keep the codebase cleaner and more maintainable.
+- [css-validator](https://www.npmjs.com/package/css-validator) together with GPT was used to create `validate-css.js`. It was used to validate CSS.
 - **Bootstrap**: Used for styling and responsive design, making the site accessible on a variety of devices - [Bootstrap documentation](https://getbootstrap.com/).
 - **Sources of inspiration and guidance in general**:
   - X
@@ -623,7 +624,7 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
   - [serie of videos - Django Testing Tutorial - What Is Testing?](https://youtu.be/qwypH3YvMKc?si=1OptYFWRajgREWh_)
   - [Unit Tests in Python || Python Tutorial || Learn Python Programming](https://youtu.be/1Lfv5tUGsn8?si=ZgIDWVjSQqTIUYYK)
   - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) are used in test cases to validate that the application is behaving as expected under various conditions.
-  - GPT was used to create `validate-css.js`. It was used to validate CSS.
+
 
 #### Acknowledgements
 
