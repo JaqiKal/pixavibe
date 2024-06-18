@@ -6,8 +6,14 @@
   - [HTML](#html)
   - [CSS](#css)
   - [Lighthouse](#lighthouse)
+- [Function Test](#function-test)
+
   - [Custom Automated Testing](#custom-automated-testing)
-- [Manual Testing](#manual-testing)
+    - [Executed automatic test cases and results](#executed-automatic-test-cases-and-results)
+  - [Custom Manual Testing](#custom-manual-testing)
+
+    - [Executed manual test cases and results](#executed-manual-test-cases-and-results)
+
   - [Site Navigation](#site-navigation)
   - [Home Page](#home-page)
   - [Post Detail](#post-detail)
@@ -16,13 +22,20 @@
   - [Profile Page](#profile-page)
   - [Popular Profiles Section](#popular-profiles-section)
   - [Sign In/Up Pages](#sign-inup-pages)
-- [Issues](issues)
-  - [Open issues](open-issues)
-  - [Known and unsolved issues](known-and-unsolved-issues)
+
+- [Issues](#issues)
+  - [Solved issues](#solved-issues)
+  - [Known and unsolved issues](#known-and-unsolved-issues)
 
 [Back to README](README.md)
 
 ## User Story Testing
+
+A detailed breakdown of the project's user stories categorized into various epics. Each epic outlines specific goals and how they are achieved, providing insights into the development process.
+
+<details>
+<summary>US and Epics</summary> 
+<br>
 
 **EPIC - Scope**
 | Goals | How are they achieved? | Comment |
@@ -102,6 +115,11 @@
 | As a developer, I want to create a contact form that stores user queries, complaints, or suggestions in the Contact model so that the platform can handle user feedback | Implement a contact form that submits user feedback to the API and stores it in the database | |
 | As a user, I want to send feedback or queries to the platform administrators so that I can report issues or suggest improvements | Add a feedback form accessible from the user menu that submits feedback to the platform administrators | |
 
+</details>
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
 ## Validator Testing
 
 ### JSX
@@ -114,6 +132,8 @@ I validated my HTML pages using the W3 Nu HTML Checker. They came back with no e
 
 <details>
 <summary>HTML validation results</summary>
+
+<br>
 
 [PostsPage](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpixavibe-frontend-e53fa907f215.herokuapp.com%2F)
 
@@ -133,16 +153,22 @@ I validated my HTML pages using the W3 Nu HTML Checker. They came back with no e
 
 </details>
 
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
 ### CSS
 
 Validation process was automated by using the css-validator npm package. All pages come back clean without any errors. </br>
 
 Vendor extensions are CSS properties or pseudo-elements specific to particular browser engines, prefixed with -webkit-, -moz-, etc. Pseudo-elements allow styling of parts of an element, such as scrollbars. In index.css, vendor extensions include -apple-system, -webkit-font-smoothing, and -moz-osx-font-smoothing. In App.module.css, vendor extended pseudo-elements include ::-webkit-scrollbar, ::-webkit-scrollbar-track, and ::-webkit-scrollbar-thumb.
 
-Our project includes a CSS validation script `validate-css.js` that ensures all stylesheets adhere to web standards. This script uses the [W3C CSS Validator](http://jigsaw.w3.org/css-validator/validator) to check for errors and warnings in our CSS files. Vendor-specific properties and pseudo-elements are flagged as warnings, which are expected and documented. The validation process helps maintain clean, error-free CSS, enhancing cross-browser compatibility and overall code quality. To run the validation, use the command npm run validate:css.
+Our project includes a CSS validation script `validate-css.js` that ensures all stylesheets adhere to web standards. This script uses the [W3C CSS Validator](http://jigsaw.w3.org/css-validator/validator) to check for errors and warnings in our CSS files. Vendor-specific properties and pseudo-elements are flagged as warnings, which are expected. The validation process helps maintain clean, error-free CSS, enhancing cross-browser compatibility and overall code quality. To run the validation, use the command npm run validate:css.
 
 <details>
 <summary>CSS validation results</summary>
+
+<br>
 
 ![CSS-01](/documentation/testing_image/validate_css_01.png)
 
@@ -150,11 +176,17 @@ Our project includes a CSS validation script `validate-css.js` that ensures all 
 
 </details>
 
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
 ### Lighthouse
 
 I used Lighthouse to test all pages. Performance results were quite low, but this is to be expected when loading multiple images from an API, and sending lots of requests to another API. All other scores are good.
 
-#### Desktop
+<details>
+<summary>Desktop</summary>
+<br>
 
 | Page         | Performance | Accessibility | Best Practices | SEO |
 | ------------ | ----------- | ------------- | -------------- | --- |
@@ -165,7 +197,12 @@ I used Lighthouse to test all pages. Performance results were quite low, but thi
 | Login        | 97          | 86            | 96             | 91  |
 | Register     | 97          | 86            | 96             | 91  |
 
-#### Mobile
+</details>
+<br>
+
+<details>
+<summary>Mobile</summary>
+<br>
 
 | Page         | Performance | Accessibility | Best Practices | SEO |
 | ------------ | ----------- | ------------- | -------------- | --- |
@@ -176,27 +213,62 @@ I used Lighthouse to test all pages. Performance results were quite low, but thi
 | Login        | 85          | 95            | 74             | 100 |
 | Register     | 88          | 95            | 74             | 100 |
 
+</details>
+
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+## Function Test
+
+<details>
+<summary>Test configuration</summary>
+
+<br>
+
+**Test Environment**
+
+- Desktop:
+  - Lenovo Legion T7
+- Screen:
+  - Samsung Odyssey G3 / 27" / 1920 x 1080 /
+- Mobile:
+  - Samsung Galaxy S20
+
+**Browser compatibility**
+
+I have tested this site on the following browsers:
+
+- Google Chrome, version 121.0.6167.86 (Official Build) (64-bit)
+- Firefox, version 123.0 (64-bit)
+
+**React Bootstrap Breakpoints**
+<br>
+[Link for reference](https://react-bootstrap-v4.netlify.app/layout/grid/#col-props)
+
+| **Breakpoint**    | **Prefix** | **Minimum Width** |
+| ----------------- | ---------- | ----------------- |
+| Extra Small       | `xs`       | `< 576px`         |
+| Small             | `sm`       | `≥ 576px`         |
+| Medium            | `md`       | `≥ 768px`         |
+| Large             | `lg`       | `≥ 992px`         |
+| Extra Large       | `xl`       | `≥ 1200px`        |
+| Extra Extra Large | `xxl`      | `≥ 1400px`        |
+
+</details>
+
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
 ### Custom Automated Testing
 
 In addition to the various validators and automated tests above, I created some automated tests to test my code. Most of these tests check models, serializers, and validators used on the backend.
 
-## Manual Testing
+<details>
+<summary>Preparation and setup for automatic test in API</summary>
 
-**Browser Testing**
-
-I have tested this site on the following browsers:
-
-- Google Chrome
-- Android Internet
-
-**Device Testing**
-
-- Lenovo Thinkpad t480
-- Samsung Galaxy S20
-
-## Function Test
-
-### Test case naming convention
+#### Test case naming convention
 
 'xxx-m/a-nn'
 
@@ -204,18 +276,18 @@ I have tested this site on the following browsers:
 - m/a = manual or automatic script
 - nn = test case IS no.
 
-### App abbreviation
+#### App abbreviation
 
 - BLK = blocks
-- COM = comments
+- CAT = category
+- CMT = comments
 - CON = contacts
 - FOL = followers
-- HTG = hashtags
-- LKS = likes
+- LKE = likes
 - PST = posts
 - PRF = profiles
 
-### Preparation and setup
+#### Preparation and setup
 
 **setUp Method**:
 
@@ -231,250 +303,413 @@ I have tested this site on the following browsers:
 - Logs out the user.
 - Deletes all User and Post instances to ensure a clean state for the next test.
 
-#### Executed test cases
+</details>
 
-##### blocks
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+#### Executed automatic test cases and results
+
+<details>
+<summary>blocks</summary>
 
 | ID       | Description                                                                                                                                                                                                | Expected Outcome                                                                                                                  | Result | Comment |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
 | BLK-A-01 | Test `def test_create_block(self):` checks if a block can be created successfully. It sends a POST request to the `/blocks/` endpoint.                                                                     | The block is created successfully with a status code of 201 Created.                                                              | PASS   |         |
-| BLK-A-02 | Test `def test_create_block(self):` checks the creation of a block. It sends a POST request to the `/blocks/` endpoint.                                                                                    | The block is created successfully with a status code of 201 Created.                                                              | PASS   |         |
-| BLK-A-01 | Test `def test_list_blocks(self):` checks if the list of blocks can be retrieved successfully. It sends a GET request to the `/blocks/` endpoint.                                                          | The list of blocks is retrieved successfully with a status code of 200 OK.                                                        | PASS   |         |
-| BLK-A-01 | Test `def test_retrieve_block(self):` checks if a specific block can be retrieved successfully. It sends a GET request to the `/blocks/<int:pk>/` endpoint.                                                | The specific block is retrieved successfully with a status code of 200 OK.                                                        | PASS   |         |
-| BLK-A-01 | Test `def test_delete_block(self):` checks if a block can be deleted successfully. It sends a DELETE request to the `/blocks/<int:pk>/` endpoint.                                                          | The block is deleted successfully with a status code of 204 No Content.                                                           | PASS   |         |
-| BLK-A-02 | Test `def test_block_duplicate(self):` checks that a duplicate block cannot be created. It sends a POST request to the `/blocks/` endpoint.                                                                | An error is returned with a status code of 400 Bad Request, preventing the creation of a duplicate block.                         | PASS   |         |
-| BLK-A-01 | Test `def test_cannot_block_without_authentication(self):` checks that a user cannot block another user without authentication. It sends a POST request to the `/blocks/` endpoint without authentication. | An error is returned with a status code of 401 Unauthorized, preventing the block from being created without user authentication. | PASS   |         |
+| BLK-A-02 | Test `def test_list_blocks(self):` checks if the list of blocks can be retrieved successfully. It sends a GET request to the `/blocks/` endpoint.                                                          | The list of blocks is retrieved successfully with a status code of 200 OK.                                                        | PASS   |         |
+| BLK-A-03 | Test `def test_retrieve_block(self):` checks if a specific block can be retrieved successfully. It sends a GET request to the `/blocks/<int:pk>/` endpoint.                                                | The specific block is retrieved successfully with a status code of 200 OK.                                                        | PASS   |         |
+| BLK-A-04 | Test `def test_delete_block(self):` checks if a block can be deleted successfully. It sends a DELETE request to the `/blocks/<int:pk>/` endpoint.                                                          | The block is deleted successfully with a status code of 204 No Content.                                                           | PASS   |         |
+| BLK-A-05 | Test `def test_block_duplicate(self):` checks that a duplicate block cannot be created. It sends a POST request to the `/blocks/` endpoint.                                                                | An error is returned with a status code of 400 Bad Request, preventing the creation of a duplicate block.                         | PASS   |         |
+| BLK-A-06 | Test `def test_cannot_block_without_authentication(self):` checks that a user cannot block another user without authentication. It sends a POST request to the `/blocks/` endpoint without authentication. | An error is returned with a status code of 401 Unauthorized, preventing the block from being created without user authentication. | PASS   |         |
+| BLK-A-07 | Test `def test_block_user(self):` checks that blocking a user hides their posts from the blocking user. It sends a POST request to the `/blocks/` endpoint.                                                | The user is blocked successfully with a status code of 201 Created, and the blocked user's posts are not visible to the blocker.  | PASS   |         |
+| BLK-A-08 | Test `def test_unblock_user(self):` checks that unblocking a user makes their posts visible to the unblocking user. It sends a DELETE request to the `/blocks/<int:pk>/` endpoint.                         | The user is unblocked successfully with a status code of 204 No Content, and the unblocked user's posts are visible again.        | PASS   |         |
+| BLK-A-09 | Test `def test_visibility_of_own_posts(self):` checks that users can always see their own posts regardless of blocks.                                                                                      | The user's own posts remain visible to them, even if they have blocked the target user.                                           | PASS   |         |
+| BLK-A-10 | Test `def test_block_without_authentication(self):` checks that blocking another user without authentication is not allowed. It sends a POST request to the `/blocks/` endpoint without authentication.    | An error is returned with a status code of 403 Forbidden, preventing the block from being created without authentication.         | PASS   |         |
+| BLK-A-11 | Test `def test_post_visibility_after_block_and_unblock(self):` checks that posts from a blocked user are hidden and then shown after unblocking.                                                           | Posts from the blocked user are hidden, and after unblocking, the posts become visible again.                                     | PASS   |         |
 
 ##### Results in terminal
 
-![BLK](/documentation/testing_image/blocks-tc-result.png)
+![BLK](/documentation/testing_image/test-result-blocks.png)
 
-##### comments
+</details>
 
-| ID       | Description                                                                                                                                                                                                                                                                                                                                                                                                | Expected Outcome                                                                              | Result | Comment |
-| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------ | ------- |
-| COM-A-01 | Test `def test_can_list_comments(self):` checks if the list of comments can be retrieved successfully. It creates a comment, sends a GET request to the `/comments/` endpoint, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`200 OK`).                                                                                           | The test will first fail with a status code assertion error, then pass with `200 OK`.         | PASS   |         |
-| COM-A-02 | Test `def test_can_create_comment(self):` checks if an authenticated user can create a comment. It sends a POST request to the `/comments/` endpoint with the comment data, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`201 Created`).                                                                                         | The test will first fail with a status code assertion error, then pass with `201 Created`.    | PASS   |         |
-| COM-A-03 | Test `def test_can_retrieve_comment_using_valid_id(self):` checks if a comment can be retrieved using a valid ID. It creates a comment, sends a GET request to the `/comments/{comment_id}/` endpoint, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`200 OK`).                                                                   | The test will first fail with a status code assertion error, then pass with `200 OK`.         | PASS   |         |
-| COM-A-04 | Test `def test_cant_retrieve_comment_using_invalid_id(self):`checks that retrieving a comment with an invalid ID returns a `404 Not Found` status. It sends a GET request to the `/comments/999/` endpoint (assuming ID 999 does not exist), asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`404 Not Found`).                      | The test will first fail with a status code assertion error, then pass with `404 Not Found`.  | PASS   |         |
-| COM-A-05 | Test `def test_user_can_update_own_comment(self):`checks if a user can update their own comment. It creates a comment, sends a PUT request to the `/comments/{comment_id}/` endpoint with the updated data, asserts an incorrect status code first (intentional fail), reruns the test with the correct status code assertion (`200 OK`), and asserts that the comment content has been updated correctly. | The test will first fail with a status code assertion error, then pass with `200 OK`.         | PASS   |         |
-| COM-A-06 | Test `def test_user_can_delete_own_comment(self):` checks if a user can delete their own comment. It creates a comment, sends a DELETE request to the `/comments/{comment_id}/` endpoint, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`204 No Content`).                                                                        | The test will first fail with a status code assertion error, then pass with `204 No Content`. | PASS   |         |
-| COM-A-07 | Test `def test_user_cant_create_comment_without_authentication(self):` checks that a user cannot create a comment without being authenticated. It logs out the user, sends a POST request to the `/comments/` endpoint with the comment data, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`403 Forbidden`).                     | The test will first fail with a status code assertion error, then pass with `403 Forbidden`.  | PASS   |         |
+<br>
 
-#### Result in Terminal
+<details>
 
-![COM]()
+<summary>category</summary>
 
-##### contacts
+<br>
 
-| ID  | Description | Expected Outcome | Result | Comment |
-| --- | ----------- | ---------------- | ------ | ------- |
+No automatic test executed, only manual.
 
-##### Result in Terminal
+</details>
 
-![CON]()
+<br>
 
-##### followers
+<details>
 
-| ID  | Description | Expected Outcome | Result | Comment |
-| --- | ----------- | ---------------- | ------ | ------- |
+<summary>comments</summary>
 
-##### Result in Terminal
-
-![FLW]()
-
-##### likes
-
-| ID  | Description | Expected Outcome | Result | Comment |
-| --- | ----------- | ---------------- | ------ | ------- |
+| ID       | Description                                                                                                                                                                                               | Expected Outcome                                                                                                        | Result | Comment |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------ | ------- |
+| CMT-A-01 | Test `def test_can_list_comments(self):` checks if comments can be listed successfully. It sends a GET request to `/comments/`.                                                                           | Comments are listed successfully with a status code of 200 OK.                                                          | PASS   |         |
+| CMT-A-02 | Test `def test_can_create_comment(self):` checks if a comment can be created successfully. It sends a POST request to `/comments/`.                                                                       | The comment is created successfully with a status code of 201 Created.                                                  | PASS   |         |
+| CMT-A-03 | Test `def test_can_retrieve_comment_using_valid_id(self):` checks if a comment can be retrieved using a valid ID. It sends a GET request to `/comments/<id>/`.                                            | The comment is retrieved successfully with a status code of 200 OK.                                                     | PASS   |         |
+| CMT-A-04 | Test `def test_cant_retrieve_comment_using_invalid_id(self):` checks that retrieving a comment with an invalid ID returns 404. It sends a GET request to `/comments/999/`.                                | The request returns a status code of 404 Not Found.                                                                     | PASS   |         |
+| CMT-A-05 | Test `def test_user_can_update_own_comment(self):` checks if a user can update their own comment. It sends a PUT request to `/comments/<id>/`.                                                            | The comment is updated successfully with a status code of 200 OK and the updated content is reflected in the response.  | PASS   |         |
+| CMT-A-06 | Test `def test_user_can_delete_own_comment(self):` checks if a user can delete their own comment. It sends a DELETE request to `/comments/<id>/`.                                                         | The comment is deleted successfully with a status code of 204 No Content.                                               | PASS   |         |
+| CMT-A-07 | Test `def test_user_cant_create_comment_without_authentication(self):` checks that a user cannot create a comment without authentication. It sends a POST request to `/comments/` without authentication. | The request returns a status code of 403 Forbidden, preventing the creation of the comment without user authentication. | PASS   |         |
 
 ##### Results in terminal
 
-![LKS]()
+![BLK](/documentation/testing_image/test-result-comments.png)
 
-##### posts
+</details>
 
-| ID        | Description                                                                                                                                                                                                                                                                                                                                                                   | Expected Outcome                                                                             | Result | Comment |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------ | ------- |
-| POST-A-01 | Test `def test_can_list_posts(self):` checks if the list of posts can be retrieved successfully. It creates a post, sends a GET request to the `/posts/` endpoint, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`200 OK`).                                                                          | The test will first fail with a status code assertion error, then pass with `200 OK`.        | PASS   |
-| POST-A-02 | Test `def test_logged_in_user_can_create_post(self):` checks if an authenticated user can create a post. It sends a POST request to the `/posts/` endpoint with the post data, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`201 Created`).                                                         | The test will first fail with a status code assertion error, then pass with `201 Created`.   | PASS   |
-| POST-A-03 | Test `def test_user_not_logged_in_cant_create_post(self):` checks that a user cannot create a post without being authenticated. It logs out the user, sends a POST request to the `/posts/` endpoint with the post data, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`403 Forbidden`).             | The test will first fail with a status code assertion error, then pass with `403 Forbidden`. | PASS   |
-| POST-A-04 | Test `def test_can_retrieve_post_using_valid_id(self):` checks if a post can be retrieved using a valid ID. It sends a GET request to the `/posts/{post_id}/` endpoint, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`200 OK`).                                                                     | The test will first fail with a status code assertion error, then pass with `200 OK`.        | PASS   |
-| POST-A-05 | Test `def test_cant_retrieve_post_using_invalid_id(self):` checks that retrieving a post with an invalid ID returns a `404 Not Found` status. It sends a GET request to the `/posts/999/` endpoint (assuming ID 999 does not exist), asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`404 Not Found`). | The test will first fail with a status code assertion error, then pass with `404 Not Found`. | PASS   |
-| POST-A-06 | Test `def test_user_can_update_own_post(self):` checks if a user can update their own post. It sends a PUT request to the `/posts/{post_id}/` endpoint with the updated data, asserts an incorrect status code first (intentional fail), reruns the test with the correct status code assertion (`200 OK`), and asserts that the post content has been updated correctly.     | The test will first fail with a status code assertion error, then pass with `200 OK`.        | PASS   |
-| POST-A-07 | Test `def test_user_cant_update_another_users_post(self):` checks that a user cannot update another user's post. It sends a PUT request to the `/posts/{post_id}/` endpoint with the updated data, asserts an incorrect status code first (intentional fail), and reruns the test with the correct status code assertion (`403 Forbidden`).                                   | The test will first fail with a status code assertion error, then pass with `403 Forbidden`. | PASS   |
+<br>
 
-###### Result in Terminal
+<details>
 
-![PST]()
+<summary>contacts</summary>
 
-##### profiles
+<br>
 
-| ID  | Description | Expected Outcome | Result | Comment |
-| --- | ----------- | ---------------- | ------ | ------- |
+| ID       | Description                                                                                                                                                                                 | Expected Outcome                                                                                                | Result | Comment |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------ | ------- |
+| CON-A-01 | Test `def test_create_contact_valid(self):` checks if a contact can be created with valid data. It sends a POST request to `/contacts/`.                                                    | The contact is created successfully with a status code of 201 Created.                                          | PASS   |         |
+| CON-A-02 | Test `def test_create_contact_invalid_reason(self):` checks if the API responds correctly to an invalid reason. It sends a POST request to `/contacts/`.                                    | The request returns a status code of 400 Bad Request and includes an error for the 'reason' field.              | PASS   |         |
+| CON-A-03 | Test `def test_create_contact_invalid_content(self):` checks if the API responds correctly to invalid content. It sends a POST request to `/contacts/`.                                     | The request returns a status code of 400 Bad Request and includes an error for the 'content' field.             | PASS   |         |
+| CON-A-04 | Test `def test_create_contact_unauthenticated(self):` checks if unauthenticated users are prevented from creating contacts. It sends a POST request to `/contacts/` without authentication. | The request returns a status code of 403 Forbidden, preventing unauthenticated users from creating contacts.    | PASS   |         |
+| CON-A-05 | Test `def test_valid_contact_serializer(self):` checks if the serializer accepts valid data.                                                                                                | The serializer accepts the valid data, indicating that the data is correct and can be used to create a contact. | PASS   |         |
+| CON-A-06 | Test `def test_invalid_contact_serializer_reason(self):` checks if the serializer rejects invalid reason data.                                                                              | The serializer rejects the invalid reason data, indicating that the 'reason' field must contain valid input.    | PASS   |         |
+| CON-A-07 | Test `def test_invalid_contact_serializer_content(self):` checks if the serializer rejects invalid content data.                                                                            | The serializer rejects the invalid content data, indicating that the 'content' field must contain valid input.  | PASS   |         |
 
-###### Results in terminal
+##### Results in terminal
 
-![PRF]()
+![BLK](/documentation/testing_image/test-result-contacts.png)
 
-## Manual Test
+</details>
 
-### Site Navigation
+<br>
 
-| Feature        | Action      | Expected Outcome                                        | Pass/Fail |
-| -------------- | ----------- | ------------------------------------------------------- | --------- |
-| Navbar Logo    | Hover/Focus | Indicate focus                                          | Pass      |
-| Navbar Logo    | Click       | Redirect to home                                        | Pass      |
-| Navbar toggler | Display     | Visible on small screens only                           | Pass      |
-| Navbar toggler | Click       | Opens dropdown with navigation links                    | Pass      |
-| Following Link | Display     | Only display when user is signed in                     | Pass      |
-| Following Link | Click       | Open following feed page                                | Pass      |
-| Liked Link     | Display     | Only display when user is signed in                     | Pass      |
-| Liked Link     | Click       | Open liked posts feed page                              | Pass      |
-| Navbar Links   | Display     | Links display in header on screens above a certain size | Pass      |
-| Profile Link   | Display     | Only display when user is signed in                     | Pass      |
-| Profile Link   | Click       | Open profile page                                       | Pass      |
-| Register Link  | Display     | Only display when user is not signed in                 | Pass      |
-| Register Link  | Click       | Open signup page                                        | Pass      |
-| Log-in Link    | Display     | Only display when user is not signed in                 | Pass      |
-| Log-in Link    | Click       | Open login page                                         | Pass      |
-| Log-out Link   | Display     | Only display when user is signed in                     | Pass      |
-| Log-out Link   | Click       | Log the user out                                        | Pass      |
+<details>
 
-### Home Page
+<summary>followers</summary>
 
-| Feature           | Action  | Expected Outcome                                                 | Pass/Fail |
-| ----------------- | ------- | ---------------------------------------------------------------- | --------- |
-| Post list         | Display | All posts appear in sorted order                                 | Pass      |
-| Post              | Display | Post displays title, author, image, content, and time of posting | Pass      |
-| Post              | Display | Post displays the number of likes and comments                   | Pass      |
-| Avatar            | Display | Post owner's avatar is present on the post                       | Pass      |
-| Avatar            | Click   | Clicking an avatar opens the associated profile page             | Pass      |
-| Post Link         | Click   | Clicking the post opens the detail page                          | Pass      |
-| Like Icon         | Click   | Like/Unlinke the post                                            | Pass      |
-| Like Counter      | Display | Display the correct number of likes received by the post         | Pass      |
-| Comment Icon      | Click   | Open the post's comment section                                  | Pass      |
-| Comment Counter   | Display | Display the correct number of comments on the post               | Pass      |
-| Search Bar        | Input   | Apply search term and filter posts automatically                 | Pass      |
-| 'New Post' Button | Display | Only visible to signed-in users                                  | Pass      |
-| 'New Post' Button | Click   | Open post form                                                   | Pass      |
-| Post feed         | Display | All posts appear in an infinite scroll feed                      | Pass      |
-| Post feed         | Display | Posts by blocked users are not displayed                         | Pass      |
-| Post feed         | Display | "Following" feed only displays posts by followed users           | Pass      |
-| Post feed         | Display | "Liked" feed only displays posts the current user has liked      | Pass      |
-| Report button     | Display | Only displays on other users' posts                              | Pass      |
-| Report button     | Click   | Open the report form                                             | Pass      |
-| Report form       | Submit  | Sends a report to the admin page                                 | Pass      |
+<br>
 
-### Post Detail
+No automatic test executed, only manual.
 
-| Feature         | Action  | Expected Outcome                                                 | Pass/Fail |
-| --------------- | ------- | ---------------------------------------------------------------- | --------- |
-| Post            | Display | Post displays title, author, image, content, and time of posting | Pass      |
-| Post            | Display | Post displays the number of likes and comments                   | Pass      |
-| Avatar          | Display | Post owner's avatar is present on the post                       | Pass      |
-| Avatar          | Click   | Clicking an avatar opens the associated profile page             | Pass      |
-| Edit Button     | Display | Display if logged in as the author of the post                   | Pass      |
-| Edit Button     | Click   | Open the post editing page                                       | Pass      |
-| Delete Button   | Display | Display if logged in as the author of the post                   | Pass      |
-| Delete Button   | Click   | Delete the post                                                  | Pass      |
-| Like Icon       | Click   | Like/Unlinke the post                                            | Pass      |
-| Like Counter    | Display | Display the correct number of likes received by the post         | Pass      |
-| Comment Icon    | Click   | Open the post's comment section                                  | Pass      |
-| Comment Counter | Display | Display the correct number of comments on the post               | Pass      |
-| Report button   | Display | Only displays on other users' posts                              | Pass      |
-| Report button   | Click   | Open the report form                                             | Pass      |
-| Report form     | Submit  | Sends a report to the admin page                                 | Pass      |
+</details>
 
-#### Comments
+<br>
 
-| Feature       | Action  | Expected Outcome                                                  | Pass/Fail |
-| ------------- | ------- | ----------------------------------------------------------------- | --------- |
-| Comment Form  | Display | Display when a user is signed in                                  | Pass      |
-| Comment Form  | Submit  | Submit the form and add the comment to the post                   | Pass      |
-| Comments      | Display | Commments appear in descending order in an infinite scroll format | Pass      |
-| Comments      | Display | Comments display the owner's username and avatar                  | Pass      |
-| Comments      | Display | Comments by blocked users are blocked                             | Pass      |
-| Comments      | Click   | Clicking the avatar opens the associated profile                  | Pass      |
-| Edit Button   | Display | Display if logged in as the author of the post                    | Pass      |
-| Edit Button   | Click   | Open the comment form                                             | Pass      |
-| Delete Button | Display | Display if logged in as the author of the post                    | Pass      |
-| Delete Button | Click   | Delete the comment                                                | Pass      |
+<details>
 
-### Post Form
+<summary>hashtags</summary>
+<br>
 
-| Feature               | Action  | Expected Outcome                                       | Pass/Fail |
-| --------------------- | ------- | ------------------------------------------------------ | --------- |
-| Upload Button         | Display | The upload Button appears                              | Pass      |
-| Upload Button         | Click   | Opens a file Belector window                           | Pass      |
-| Title Input           | Display | The title inIut has a label making its purpose clear   | Pass      |
-| Title Input           | Input   | The user can type in the Title field                   | Pass      |
-| Content Input         | Display | The content input has a label making its purpose clear | Pass      |
-| Contnet Input         | Input   | The user can type in the content field                 | Pass      |
-| "Friends only" Toggle | Display | A checkbox with a label explaining its purpose appears | Pass      |
-| "Friends only" Toggle | Click   | Clicking the checkbox toggles the state                | Pass      |
-| Cancel Button         | Click   | Close the form without any changes                     | Pass      |
-| Submit Button         | Click   | Submit the form and create/update the post             | Pass      |
-| Submit Button         | Click   | Close the form and redirect the user to the post feed  | Pass      |
+| ID       | Description                                                                                                                                                       | Expected Outcome                                                                                                                                                            | Result | Comment                                                                                                                 |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------- |
+| HTG-A-01 | Test `def test_create_hashtag(self):` checks if a hashtag can be created successfully. It sends a POST request to the `/hashtags/` endpoint.                      | The hashtag is created successfully with a status code of 201 Created.                                                                                                      | PASS   |                                                                                                                         |
+| HTG-A-02 | Test `def test_create_post_with_hashtag(self):` checks if a post can be created with an associated hashtag. It sends a POST request to the `/posts/` endpoint.    | The post is created successfully with the associated hashtag and a status code of 201 Created. The response includes the 'hashtags' field containing the ID of the hashtag. | FAIL   | 'hashtag_ids' not found in response data. See [Known and unsolved issues](#known-and-unsolved-issues)                   |
+| HTG-A-03 | Test `def test_search_post_by_hashtag(self):` checks if a post can be retrieved by searching for a hashtag. It sends a GET request to the `/posts/` endpoint.     | The post is retrieved successfully with a status code of 200 OK. The response includes the 'hashtags' field containing the ID of the hashtag.                               | ERROR  | 'hashtag_ids' not found in response data. Causing KeyError. See [Known and unsolved issues](#known-and-unsolved-issues) |
+| HTG-A-04 | Test `def test_add_remove_hashtag_to_post(self):` checks if a hashtag can be added and removed from a post. It sends requests to the `/posts/<int:pk>/` endpoint. | The hashtag is added to the post successfully and reflected in the response. The hashtag is removed from the post successfully and reflected in the response.               | PASS   |                                                                                                                         |
 
-### Profile Page
+##### Results in terminal
 
-| Feature                   | Action  | Expected Outcome                                                                                                      | Pass/Fail |
-| ------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------- | --------- |
-| Avatar                    | Display | The user's avatar appears on the top of the page                                                                      | Pass      |
-| Username                  | Display | The user's username appears on the top of the page                                                                    | Pass      |
-| User Stats                | Display | The number of posts, followers, and followed users are displayed                                                      | Pass      |
-| "Follows you" Message     | Display | If the profile owner follows the signed-in user, a line about it appears                                              | Pass      |
-| Options Button            | Display | The option button appears if signed-in as the profile owner                                                           | Pass      |
-| Options Button            | Click   | Clicking opens the profile options menu                                                                               | Pass      |
-| Options Menu              | Display | Display options for editing the profile, username, password, and deleting the account                                 | Pass      |
-| "Edit profile" Button     | Click   | Open the profile editing form                                                                                         | Pass      |
-| "Change username" Button  | Click   | Open the username editing form                                                                                        | Pass      |
-| "Change password" Button  | Click   | Open the password editing form                                                                                        | Pass      |
-| "Delete account" Button   | Click   | Opens a delete confirmation modal                                                                                     | Pass      |
-| Delete Confirmation Modal | Display | Displays a message about permanent deletion and options to confirm or cancel                                          | Pass      |
-| Delete Confirmation Modal | Effect  | Modal prevents interaction with the page until user responds to the modal                                             | Pass      |
-| Cancel Button             | Click   | Closes the deltion modal without any action                                                                           | Pass      |
-| Delete Button             | Click   | Deletes the profile and its associated user instance, along with any cookies and auth tokens, then redirects the user | Pass      |
-| User Posts                | Display | The profile owner's posts are displayed under the profile                                                             | Pass      |
-| User Posts                | Display | The profile post feed has an infinite scroll layout                                                                   | Pass      |
+![BLK](/documentation/testing_image/test-result-hashtags.png)
 
-### Popular Profiles Section
+</details>
 
-| Feature                | Action  | Expected Outcome                                                                    | Pass/Fail |
-| ---------------------- | ------- | ----------------------------------------------------------------------------------- | --------- |
-| Popular Profiles       | Display | The "popular profiles" section displays across the site                             | Pass      |
-| Popular Profiles       | Display | The list updates to reflect the number of followers for each profile                | Pass      |
-| Popular Profiles       | Display | The list moves to the top and center on smaller screens                             | Pass      |
-| Popular Profiles       | Display | No "popular profiles" section appears on profile pages on smaller screens           | Pass      |
-| Username               | Display | User avatars appear for each profile                                                | Pass      |
-| Username               | Click   | Open the associated profile page                                                    | Pass      |
-| Avatar                 | Display | User avatars appear on larger screens                                               | Pass      |
-| Avatar                 | Click   | Open the associated profile page                                                    | Pass      |
-| Follow/Unfollow Button | Display | A follow/unfollow button appears next to each profile on large screens if signed in | Pass      |
-| Follow/Unfollow Button | Click   | Clicking the button follows/unfollows the user                                      | Pass      |
-| Follow/Unfollow Button | Click   | Clicking the button updates the button and its sibling buttons on other components  | Pass      |
+<br>
 
-### Sign In/Up Pages
+<details>
 
-| Feature                | Action  | Expected Outcome                                    | Pass/Fail |
-| ---------------------- | ------- | --------------------------------------------------- | --------- |
-| Username Input         | Display | A label and placeholder make the purpose clear      | Pass      |
-| Username Input         | Input   | The user can input a username                       | Pass      |
-| Password Input         | Display | A label and placeholder make the purpose clear      | Pass      |
-| Password Input         | Input   | The user can input a username                       | Pass      |
-| Confirm Password Input | Display | A label and placeholder make the purpose clear      | Pass      |
-| Confirm Password Input | Input   | The user can input a password                       | Pass      |
-| Sign Up Button         | Click   | Validate the form before submission                 | Pass      |
-| Sign Up Button         | Click   | Notify the user about any invalid data              | Pass      |
-| Sign Up Button         | Click   | Submit the form and create the new user and profile | Pass      |
-| Sign In Button         | Click   | Validate the form before submission                 | Pass      |
-| Sign In Button         | Click   | Notify the user about any invalid data              | Pass      |
-| Sign In Button         | Click   | Submit the form and create the new user and profile | Pass      |
+<summary>likes</summary>
 
-[Back to README](README.md)
+<br>
+
+| ID       | Description                                                                                                                                                   | Expected Outcome                                                                                                | Result | Comment |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------ | ------- |
+| LKE-A-01 | Test `def test_like_post(self):` checks if a user can like a post. It sends a POST request to `/likes/`.                                                      | The like is created successfully with a status code of 201 Created and the post ID is returned in the response. | PASS   |         |
+| LKE-A-02 | Test `def test_cannot_like_post_twice(self):` checks if a user cannot like a post twice. It sends a POST request to `/likes/`.                                | The request returns a status code of 400 Bad Request, indicating that the user cannot like the same post twice. | PASS   |         |
+| LKE-A-03 | Test `def test_unlike_post(self):` checks if a user can unlike a post. It sends a DELETE request to `/likes/<id>/`.                                           | The like is deleted successfully with a status code of 204 No Content.                                          | PASS   |         |
+| LKE-A-04 | Test `def test_user_cannot_unlike_another_users_like(self):` checks if a user cannot unlike another user's like. It sends a DELETE request to `/likes/<id>/`. | The request returns a status code of 403 Forbidden, indicating that a user cannot unlike another user's like.   | PASS   |         |
+
+##### Results in terminal
+
+![BLK](/documentation/testing_image/test-result-likes.png)
+
+</details>
+
+<br>
+
+<details>
+
+<summary>posts</summary>
+
+<br>
+
+| ID       | Description                                                                                                                                                       | Expected Outcome                                                                                           | Result | Comment |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------ | ------- |
+| PST-A-01 | Test `def test_can_list_posts(self):` checks if posts can be listed successfully. It sends a GET request to `/posts/`.                                            | Posts are listed successfully with a status code of 200 OK.                                                | PASS   |         |
+| PST-A-02 | Test `def test_logged_in_user_can_create_post(self):` checks if a logged-in user can create a post. It sends a POST request to `/posts/`.                         | The post is created successfully with a status code of 201 Created.                                        | PASS   |         |
+| PST-A-03 | Test `def test_user_not_logged_in_cant_create_post(self):` checks if an unauthenticated user cannot create a post. It sends a POST request to `/posts/`.          | The request returns a status code of 403 Forbidden, indicating that the user must be authenticated.        | PASS   |         |
+| PST-A-04 | Test `def test_can_retrieve_post_using_valid_id(self):` checks if a post can be retrieved using a valid ID. It sends a GET request to `/posts/<id>/`.             | The post is retrieved successfully with a status code of 200 OK.                                           | PASS   |         |
+| PST-A-05 | Test `def test_cant_retrieve_post_using_invalid_id(self):` checks that retrieving a post with an invalid ID returns 404. It sends a GET request to `/posts/999/`. | The request returns a status code of 404 Not Found.                                                        | PASS   |         |
+| PST-A-06 | Test `def test_user_can_update_own_post(self):` checks if a user can update their own post. It sends a PUT request to `/posts/<id>/`.                             | The post is updated successfully with a status code of 200 OK and the updated content is reflected.        | PASS   |         |
+| PST-A-07 | Test `def test_user_cant_update_another_users_post(self):` checks that a user cannot update another user's post. It sends a PUT request to `/posts/<id>/`.        | The request returns a status code of 403 Forbidden, indicating that the user cannot update another's post. | PASS   |         |
+| PST-A-08 | Test `def test_user_can_delete_own_post(self):` checks if a user can delete their own post. It sends a DELETE request to `/posts/<id>/`.                          | The post is deleted successfully with a status code of 204 No Content.                                     | PASS   |         |
+| PST-A-09 | Test `def test_user_cannot_delete_another_users_post(self):` checks that a user cannot delete another user's post. It sends a DELETE request to `/posts/<id>/`.   | The request returns a status code of 403 Forbidden, indicating that the user cannot delete another's post. | PASS   |         |
+
+##### Results in terminal
+
+![BLK](/documentation/testing_image/test-result-posts.png)
+
+</details>
+
+<br>
+
+<details>
+
+<summary>profiles</summary>
+
+<br>
+
+No automatic test executed, only manual.
+
+</details>
+
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+### Custom Manual Testing
+
+#### Executed manual test cases and results
+
+<details>
+
+<summary>Navigation</summary>
+
+<br>
+
+| ID       | Feature        | Action      | Expected Outcome                                        | Result |
+| -------- | -------------- | ----------- | ------------------------------------------------------- | ------ |
+| NAV-M-01 | Navbar Logo    | Hover/Focus | Indicate focus                                          | Pass   |
+| NAV-M-02 | Navbar Logo    | Click       | Redirect to home                                        | Pass   |
+| NAV-M-03 | Navbar toggler | Display     | Visible on small screens only                           | Pass   |
+| NAV-M-04 | Navbar toggler | Click       | Opens dropdown with navigation links                    | Pass   |
+| NAV-M-05 | Following Link | Display     | Only display when user is signed in                     | Pass   |
+| NAV-M-06 | Following Link | Click       | Open following feed page                                | Pass   |
+| NAV-M-07 | Liked Link     | Display     | Only display when user is signed in                     | Pass   |
+| NAV-M-08 | Liked Link     | Click       | Open liked posts feed page                              | Pass   |
+| NAV-M-09 | Navbar Links   | Display     | Links display in header on screens above a certain size | Pass   |
+| NAV-M-10 | Profile Link   | Display     | Only display when user is signed in                     | Pass   |
+| NAV-M-11 | Profile Link   | Click       | Open profile page                                       | Pass   |
+| NAV-M-12 | Register Link  | Display     | Only display when user is not signed in                 | Pass   |
+| NAV-M-13 | Register Link  | Click       | Open signup page                                        | Pass   |
+| NAV-M-14 | Log-in Link    | Display     | Only display when user is not signed in                 | Pass   |
+| NAV-M-15 | Log-in Link    | Click       | Open login page                                         | Pass   |
+| NAV-M-16 | Log-out Link   | Display     | Only display when user is signed in                     | Pass   |
+| NAV-M-17 | Log-out Link   | Click       | Log the user out                                        | Pass   |
+
+</details>
+
+<br>
+
+<details>
+
+<summary>Home</summary>
+
+<br>
+
+| ID       | Feature           | Action  | Expected Outcome                                                 | Result |
+| -------- | ----------------- | ------- | ---------------------------------------------------------------- | ------ |
+| HME-M-01 | Post list         | Display | All posts appear in sorted order                                 | Pass   |
+| HME-M-02 | Post              | Display | Post displays title, author, image, content, and time of posting | Pass   |
+| HME-M-03 | Post              | Display | Post displays the number of likes and comments                   | Pass   |
+| HME-M-04 | Avatar            | Display | Post owner's avatar is present on the post                       | Pass   |
+| HME-M-05 | Avatar            | Click   | Clicking an avatar opens the associated profile page             | Pass   |
+| HME-M-06 | Post Link         | Click   | Clicking the post opens the detail page                          | Pass   |
+| HME-M-07 | Like Icon         | Click   | Like/Unlike the post                                             | Pass   |
+| HME-M-08 | Like Counter      | Display | Display the correct number of likes received by the post         | Pass   |
+| HME-M-09 | Comment Icon      | Click   | Open the post's comment section                                  | Pass   |
+| HME-M-10 | Comment Counter   | Display | Display the correct number of comments on the post               | Pass   |
+| HME-M-11 | Search Bar        | Input   | Apply search term and filter posts automatically                 | Pass   |
+| HME-M-12 | Category Filter   | Click   | Apply category term and filter posts automatically               | Pass   |
+| HME-M-13 | 'New Post' Button | Display | Only visible to signed-in users                                  | Pass   |
+| HME-M-14 | 'New Post' Button | Click   | Open post form                                                   | Pass   |
+| HME-M-15 | Post feed         | Display | All posts appear in an infinite scroll feed                      | Pass   |
+| HME-M-16 | Post feed         | Display | Posts by blocked users are not displayed                         | Pass   |
+| HME-M-17 | Post feed         | Display | "Following" feed only displays posts by followed users           | Fail   |
+| HME-M-18 | Post feed         | Display | "Liked" feed only displays posts the current user has liked      | Fail   |
+| HME-M-19 | Report button     | Display | Only displays on other users' posts                              | Pass   |
+| HME-M-20 | Report button     | Click   | Open the report form                                             | Pass   |
+| HME-M-21 | Report form       | Submit  | Sends a report to the admin page                                 | Pass   |
+
+</details>
+
+<br>
+
+<details>
+
+<summary>PostPage</summary>
+
+<br>
+
+| ID       | Feature         | Action  | Expected Outcome                                                 | Result |
+| -------- | --------------- | ------- | ---------------------------------------------------------------- | ------ |
+| PST-M-01 | Post            | Display | Post displays title, author, image, content, and time of posting | Pass   |
+| PST-M-02 | Post            | Display | Post displays the number of likes and comments                   | Pass   |
+| PST-M-03 | Avatar          | Display | Post owner's avatar is present on the post                       | Pass   |
+| PST-M-04 | Avatar          | Click   | Clicking an avatar opens the associated profile page             | Pass   |
+| PST-M-05 | Edit Button     | Display | Display if logged in as the author of the post                   | Pass   |
+| PST-M-06 | Edit Button     | Click   | Open the post editing page                                       | Pass   |
+| PST-M-07 | Delete Button   | Display | Display if logged in as the author of the post                   | Pass   |
+| PST-M-08 | Delete Button   | Click   | Delete the post                                                  | Pass   |
+| PST-M-09 | Like Icon       | Click   | Like/Unlike the post                                             | Pass   |
+| PST-M-10 | Like Counter    | Display | Display the correct number of likes received by the post         | Pass   |
+| PST-M-11 | Comment Icon    | Click   | Open the post's comment section                                  | Pass   |
+| PST-M-12 | Comment Counter | Display | Display the correct number of comments on the post               | Pass   |
+| PST-M-13 | Report button   | Display | Only displays on other users' posts                              | Pass   |
+| PST-M-14 | Report button   | Click   | Open the report form                                             | Pass   |
+| PST-M-15 | Report form     | Submit  | Sends a report to the admin page                                 | Pass   |
+
+</details>
+
+<br>
+
+<details>
+
+<summary>Comments</summary>
+
+<br>
+
+| ID       | Feature       | Action  | Expected Outcome                                                 | Result |
+| -------- | ------------- | ------- | ---------------------------------------------------------------- | ------ |
+| CMT-M-01 | Comment Form  | Display | Display when a user is signed in                                 | Pass   |
+| CMT-M-02 | Comment Form  | Submit  | Submit the form and add the comment to the post                  | Pass   |
+| CMT-M-03 | Comments      | Display | Comments appear in descending order in an infinite scroll format | Pass   |
+| CMT-M-04 | Comments      | Display | Comments display the owner's username and avatar                 | Pass   |
+| CMT-M-05 | Comments      | Display | Comments by blocked users are blocked                            | Pass   |
+| CMT-M-06 | Comments      | Click   | Clicking the avatar opens the associated profile                 | Pass   |
+| CMT-M-07 | Edit Button   | Display | Display if logged in as the author of the post                   | Pass   |
+| CMT-M-08 | Edit Button   | Click   | Open the comment form                                            | Pass   |
+| CMT-M-09 | Delete Button | Display | Display if logged in as the author of the post                   | Pass   |
+| CMT-M-10 | Delete Button | Click   | Delete the comment                                               | Pass   |
+
+</details>
+
+<br>
+
+<details>
+
+<summary>PostCreateForm & PostEditForm</summary>
+
+<br>
+
+| ID       | Feature               | Action  | Expected Outcome                                        | Result |
+| -------- | --------------------- | ------- | ------------------------------------------------------- | ------ |
+| PFM-M-01 | Upload Button         | Display | The upload Button appears                               | Pass   |
+| PFM-M-02 | Upload Button         | Click   | Opens a file selector window                            | Pass   |
+| PFM-M-03 | Title Input           | Display | The title input has a label making its purpose clear    | Pass   |
+| PFM-M-04 | Title Input           | Input   | The user can type in the Title field                    | Pass   |
+| PFM-M-05 | Content Input         | Display | The content input has a label making its purpose clear  | Pass   |
+| PFM-M-06 | Content Input         | Input   | The user can type in the content field                  | Pass   |
+| PFM-M-07 | Category Input        | Display | The category input has a label making its purpose clear | Pass   |
+| PFM-M-08 | Category Input        | Click   | The user can select category the menu                   | Pass   |
+| PFM-M-09 | "Friends only" Toggle | Display | A checkbox with a label explaining its purpose appears  | Pass   |
+| PFM-M-10 | "Friends only" Toggle | Click   | Clicking the checkbox toggles the state                 | Pass   |
+| PFM-M-11 | Cancel Button         | Click   | Close the form without any changes                      | Pass   |
+| PFM-M-12 | Submit Button         | Click   | Submit the form and create/update the post              | Pass   |
+| PFM-M-13 | Submit Button         | Click   | Close the form and redirect the user to the post feed   | Pass   |
+
+</details>
+
+<br>
+
+<details>
+
+<summary>ProfilePage</summary>
+
+<br>
+
+| ID       | Feature                  | Action  | Expected Outcome                                                 | Result |
+| -------- | ------------------------ | ------- | ---------------------------------------------------------------- | ------ |
+| PFR-M-01 | Avatar                   | Display | The user's avatar appears on the top of the page                 | Pass   |
+| PFR-M-02 | Username                 | Display | The user's username appears on the top of the page               | Pass   |
+| PFR-M-03 | User Stats               | Display | The number of posts, followers, and followed users are displayed | Pass   |
+| PFR-M-04 | Options Button           | Display | The option button appears if signed-in as the profile owner      | Pass   |
+| PFR-M-05 | Options Button           | Click   | Clicking opens the profile options menu                          | Pass   |
+| PFR-M-06 | Options Menu             | Display | Display options for editing the profile, username and password   | Pass   |
+| PFR-M-07 | "Edit profile" Button    | Click   | Open the profile editing form                                    | Pass   |
+| PFR-M-08 | "Change username" Button | Click   | Open the username editing form                                   | Pass   |
+| PFR-M-09 | "Change password" Button | Click   | Open the password editing form                                   | Pass   |
+| PFR-M-10 | User Posts               | Display | The profile owner's posts are displayed under the profile        | Pass   |
+| PFR-M-11 | User Posts               | Display | The profile post feed has an infinite scroll layout              | Pass   |
+
+</details>
+
+<br>
+
+<details>
+
+<summary>PopularProfile</summary>
+
+<br>
+
+| Feature                | Action  | Expected Outcome                                                                    | Result |
+| ---------------------- | ------- | ----------------------------------------------------------------------------------- | ------ |
+| Popular Profiles       | Display | The "popular profiles" section displays across the site                             | Pass   |
+| Popular Profiles       | Display | The list updates to reflect the number of followers for each profile                | Pass   |
+| Popular Profiles       | Display | The list moves to the top and center on smaller screens                             | Pass   |
+| Popular Profiles       | Display | No "popular profiles" section appears on profile pages on smaller screens           | Pass   |
+| Username               | Display | User avatars appear for each profile                                                | Pass   |
+| Username               | Click   | Open the associated profile page                                                    | Pass   |
+| Avatar                 | Display | User avatars appear on larger screens                                               | Pass   |
+| Avatar                 | Click   | Open the associated profile page                                                    | Pass   |
+| Follow/Unfollow Button | Display | A follow/unfollow button appears next to each profile on large screens if signed in | Pass   |
+| Follow/Unfollow Button | Click   | Clicking the button follows/unfollows the user                                      | Pass   |
+| Follow/Unfollow Button | Click   | Clicking the button updates the button and its sibling buttons on other components  | Pass   |
+
+</details>
+
+<br>
+
+<details>
+
+<summary>Sing In & Sign Up</summary>
+
+<br>
+
+| ID       | Feature                | Action  | Expected Outcome                                    | Result |
+| -------- | ---------------------- | ------- | --------------------------------------------------- | ------ |
+| SIU-M-01 | Username Input         | Display | A label and placeholder make the purpose clear      | Pass   |
+| SIU-M-02 | Username Input         | Input   | The user can input a username                       | Pass   |
+| SIU-M-03 | Password Input         | Display | A label and placeholder make the purpose clear      | Pass   |
+| SIU-M-04 | Password Input         | Input   | The user can input a username                       | Pass   |
+| SIU-M-05 | Confirm Password Input | Display | A label and placeholder make the purpose clear      | Pass   |
+| SIU-M-06 | Confirm Password Input | Input   | The user can input a password                       | Pass   |
+| SIU-M-07 | Sign Up Button         | Click   | Validate the form before submission                 | Pass   |
+| SIU-M-08 | Sign Up Button         | Click   | Notify the user about any invalid data              | Pass   |
+| SIU-M-09 | Sign Up Button         | Click   | Submit the form and create the new user and profile | Pass   |
+| SIU-M-10 | Sign In Button         | Click   | Validate the form before submission                 | Pass   |
+| SIU-M-11 | Sign In Button         | Click   | Notify the user about any invalid data              | Pass   |
+| SIU-M-12 | Sign In Button         | Click   | Submit the form and create the new user and profile | Pass   |
+
+</details>
+
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ## Issues
+
+### Solved Issues
 
 - Social Authentication Installation Error:
 
@@ -489,16 +724,22 @@ I have tested this site on the following browsers:
 
   - ![x](/documentation/testing_image/error-all-auth-incomptible-python-3-12-2.webp)
 
-## Known and unsolved issues
+### Known and unsolved issues
 
-- Hashtag----
+- Hashtag Error [BUG#68](https://github.com/users/JaqiKal/projects/14/views/1?pane=issue&itemId=67558382): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post in the test. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app.
 - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
+
   - Mounting when not logged in
   - Redirecting a logged-in user away from the sign-up/sign-in page
   - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
+
     ![x](/documentation/testing_image/401-error.png)
+
 - Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
 - (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
+
+  ![x](/documentation/testing_image/field-filters-label-invalid-name.png)
+
 - **Disclaimer on npm Audit Issues**: </br>
   As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
 
