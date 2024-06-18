@@ -7,27 +7,13 @@
   - [CSS](#css)
   - [Lighthouse](#lighthouse)
 - [Function Test](#function-test)
-
   - [Custom Automated Testing](#custom-automated-testing)
     - [Executed automatic test cases and results](#executed-automatic-test-cases-and-results)
   - [Custom Manual Testing](#custom-manual-testing)
-
     - [Executed manual test cases and results](#executed-manual-test-cases-and-results)
-
-  - [Site Navigation](#site-navigation)
-  - [Home Page](#home-page)
-  - [Post Detail](#post-detail)
-    - [Comments](#comments)
-  - [Post Form](#post-form)
-  - [Profile Page](#profile-page)
-  - [Popular Profiles Section](#popular-profiles-section)
-  - [Sign In/Up Pages](#sign-inup-pages)
-
 - [Issues](#issues)
   - [Solved issues](#solved-issues)
   - [Known and unsolved issues](#known-and-unsolved-issues)
-
-[Back to README](README.md)
 
 ## User Story Testing
 
@@ -762,3 +748,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
   - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
 
 There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+[Back to README](README.md)
