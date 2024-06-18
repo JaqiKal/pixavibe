@@ -19,7 +19,7 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-function PostsPage({ message }) {
+function PostsPage({ message, isFollowingFeed, isLikedFeed }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -41,6 +41,13 @@ function PostsPage({ message }) {
     const fetchPosts = async () => {
       try {
         const params = new URLSearchParams();
+        if (isFollowingFeed) {
+          params.append("owner__followed__owner__profile", currentUser?.pk);
+        }
+        if (isLikedFeed) {
+          params.append("likes__owner__profile", currentUser?.profile_id);
+          params.append("ordering", "-likes__created_at");
+        }
         if (filter) params.append("category", filter);
         if (query) params.append("search", query);
 
@@ -62,7 +69,7 @@ function PostsPage({ message }) {
     return () => {
       clearTimeout(timer);
     };
-  }, [filter, query, pathname, currentUser]);
+  }, [filter, query, pathname, currentUser, isFollowingFeed, isLikedFeed]);
 
   return (
     <Row className="h-100">

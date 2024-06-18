@@ -76,7 +76,7 @@ const Post = (props) => {
     }
   };
 
-  // Function to handle unliking the post
+  // Function to handle unlike the post
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
