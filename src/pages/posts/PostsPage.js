@@ -81,13 +81,17 @@ function PostsPage({ message, isFollowingFeed, isLikedFeed }) {
           className={styles.SearchBar}
           onSubmit={(event) => event.preventDefault()}
         >
-          <Form.Control
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            type="text"
-            className="mr-sm-2"
-            placeholder="Search posts"
-          />
+          <Form.Group controlId="searchPosts">
+            <Form.Label className="sr-only">Search Posts</Form.Label>
+            <Form.Control
+              id="searchPosts"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              type="text"
+              className="mr-sm-2"
+              placeholder="Search posts"
+            />
+          </Form.Group>
         </Form>
 
         {/* Add the CategoryFilter component */}

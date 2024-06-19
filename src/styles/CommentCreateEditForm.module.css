@@ -1,6 +1,11 @@
 .Form {
     border: none;
     border-bottom: 2px #00d1ff solid;
+    color: #966496;
+}
+
+.Form textarea {
+    color: #966496;
 }
 
 .Button {

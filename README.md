@@ -13,6 +13,7 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
 ## Table of Contents
 
 - [Pixavibe](#Pixavibe)
+
   - [Live Site](#live-site)
   - [API Backend](#api-backend)
   - [The Strategy Plane](#the-strategy-plane)
@@ -34,7 +35,6 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
       - [Typography](#typography)
       - [Imagery](#imagery)
       - [Reusable Component Design](#reusable-component-design)
-
     - [Technologies](#technologies)
     - [Testing](#testing)
     - [Deployment](#deployment)
@@ -518,7 +518,98 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Reusable Component Design
 
+This application emphasizes modularity and reusability. Each component is designed to function independently and can be easily repurposed in different contexts. Some components have multiple uses across the app and offer potential for further applications.
 
+##### Asset component\*\*
+
+- Purpose: Display a media asset, such as images, spinner animations, and messages.
+
+- Props:
+
+  - spinner: Boolean to display a loading spinner.
+  - src: URL of the image to be displayed.
+  - message: Text message to accompany the asset.
+
+- Used in: Post feed, Post detail page, Profile page, NavBar.
+
+- Potential uses: Displaying static images, loading animations, error messages.
+
+##### Avatar component
+
+- Purpose: Display user profile images.
+
+- Props:
+
+  - src: URL of the profile image.
+  - height: Height of the avatar image.
+  - text: Optional text to display alongside the avatar.
+
+- Used in: Post feed, Post detail page, Profile page, NavBar.
+
+- Potential uses: Displaying user avatars in various sections of the application.
+
+##### MoreDropdown Component\*\*
+
+- Purpose: Provide a dropdown menu for actions like editing and deleting items.
+
+- Props:
+
+  - handleEdit: Function to handle the edit action.
+  - handleDelete: Function to handle the delete action.
+
+- Used in: Post component, ProfilePage.
+
+- Potential uses: Context menus for various content types that support edit and delete actions.
+
+##### MultiSelect Component\*\*
+
+Note: The component is out of sight due to [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68).
+
+- Purpose: Select multiple hashtags.
+
+- Props:
+
+  - selectedHashtags: Array of selected hashtags.
+  - setSelectedHashtags: Function to update the selected hashtags state.
+
+- Used in: PostCreateForm, PostEditForm.
+
+- Potential uses: Any form or interface requiring multi-select functionality.
+
+##### CategorySelect Component\*\*
+
+- Purpose: Fetch and display categories for filtering content.
+
+- Props:
+
+  - setFilter: Function to update the selected category filter.
+  - mobile: Boolean to indicate if the component is in mobile view.
+
+- Used in: PostsPage.
+
+- Potential uses: Filtering options in other lists or content sections.
+
+##### ProfileDataContext and CurrentUserContext\*\*
+
+- Purpose: Manage user and profile data across the application.
+
+- Usage:
+
+  - CurrentUserContext: Provides current user data.
+  - ProfileDataContext: Provides profile data, such as popular profiles.
+
+- Used in: Various components requiring user or profile data.
+
+- Potential uses: Any component that needs to access or manipulate user-related state efficiently.
+
+##### CRUD functionality\*\*
+
+Pixavibe features full Create, Read, Update and Delete functionality, via the UI implemented in React and the Django Rest Framework API. Pixavibe administrator have superuser authority and manages full CRUD.
+
+- Create - users can register a new user account, authenticated users can create post(s) and create a comment(s)
+- Read - authenticated users can view their posts, comments, and their profile image.
+- Update - authenticated users can update their profile image, username and password, and edit and save comments, its title, and select/deselect category and save it.
+- Delete - authenticated users can delete their own comments and posts.
 
 ### Technologies
 
@@ -531,7 +622,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Frameworks, libraries and dependencies
 
-- [Axios](https://axios-http.com/) - A promise-based HTTP client for both the browser and Node.js, Axios has been crucial for ensuring smooth communication between the frontend and backend.
+- [Axios](https://axios-http.com/) - A promise-based HTTP client for both the browser and Node.js, Axios plays a key role in facilitating smooth communication between the frontend and backend. It was chosen for its ability to simplify HTTP requests to the REST API, eliminating the need to manually configure HTTP headers. Additionally, Axios supports 'interceptors', which are used to request a refresh token in the event of an HTTP 401 error. This feature enhances the user experience by keeping authenticated users signed in for up to 24 hours, rather than requiring them to sign in again after five minutes.
 - [CSS Validator 0.11.0]() - A tool used to validate CSS code. It ensures that all CSS written for the project adheres to standard syntax rules and best practices. Using this validator helps in maintaining clean and error-free stylesheets, which is essential for consistent and predictable rendering across different browsers.
 - [jwt-decode 3.1.2](https://www.npmjs.com/package/jwt-decode) - Used for decoding JSON web tokens, this tool has been essential for maintaining secure user authentication between the frontend and backend.
 - [Multiselect React Dropdown 2.0.25]() - This component is used to provide a multi-select dropdown functionality in React applications. It allows users to select multiple options from a dropdown menu, enhancing the user interface by making it more interactive and user-friendly. This component is particularly useful for forms and filtering data where multiple selections are needed. It was chosen mostly because it is fun to try out. The functionality was proven, and very handy but unfortunately a bug in our code base is stopping us from showcasing it to users. It is going to be used for the Hashtag feature.

@@ -48,7 +48,11 @@ function CommentCreateForm(props) {
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
           </Link>
+          <Form.Label htmlFor="commentContent" className="sr-only">
+            Comment
+          </Form.Label>
           <Form.Control
+            id="commentContent"
             className={styles.Form}
             placeholder="my comment..."
             as="textarea"

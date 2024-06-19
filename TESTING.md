@@ -218,12 +218,73 @@ I used Lighthouse to test all pages. Performance results were quite low, but thi
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
+### Wave
+
+<details>
+<summary>Wave issues and solutions</summary>
+<br>
+By solving these issues, Wave reports no Error and no Contrast Errors.
+
+![Wave](/documentation/testing_image/validate_wave.png)
+
+- Contrast issue in comments for the timestamp: I changed the color from #BC9BBB to a slightly darker hue, #966496.
+- Error Missing form label. A form control does not have a corresponding label: <br>
+  This was solved by adding a form label for <Form.Control> in both CommentCreateForm.ja and CommentEditForm.js. <br>
+  ` <Form.Label htmlFor="commentContent" className="sr-only">` <br>
+  and <br>
+  `<Form.Label htmlFor="editCommentContent" className="sr-only">`
+
+- Error. Empty Link. A link contains no text: <br>
+  Added 'aria-label' to links in Post.js
+
+```
+{likes_count}
+<Link to={`/posts/${id}`} aria-label="View comments count">
+  <i className="far fa-comments" aria-hidden="true" /> {comments_count}
+</Link>
+```
+
+- Error. Missing alternative text for the avatar image: <br>
+  Added the alt attribute to the <img> tag in ProfilePage.js. The alt attribute provides alternative text for screen readers, making the image accessible. <br>
+
+```
+<Col lg={3} className="text-lg-left">
+  <Image
+    className={styles.ProfileImage}
+    roundedCircle
+    src={profile?.image}
+    alt={`${profile?.owner}'s profile image`}
+  />
+</Col>
+```
+
+- Error Missing form label in PostsPAge.js. A form control does not have a corresponding label: <br>
+  This was solved by adding a form label for search input.
+
+```
+<Form.Group controlId="searchPosts">
+  <Form.Label className="sr-only">Search Posts</Form.Label>
+  <Form.Control
+    id="searchPosts"
+    value={query}
+    onChange={(event) => setQuery(event.target.value)}
+    type="text"
+    className="mr-sm-2"
+    placeholder="Search posts"
+  />
+</Form.Group>
+```
+
+</details>
+
 ## Function Test
 
 <details>
 <summary>Test configuration</summary>
 
 <br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 **Test Environment**
 

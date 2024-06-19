@@ -85,11 +85,10 @@ const Post = (props) => {
         results: prevPosts.results.map((post) => {
           return post.id === id
             ? {
-              ...post,
-              likes_count:
-              post.likes_count - 1,
-              like_id: null
-            }
+                ...post,
+                likes_count: post.likes_count - 1,
+                like_id: null,
+              }
             : post;
         }),
       }));
@@ -159,8 +158,8 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
-          <Link to={`/posts/${id}`}>
-            <i className="far fa-comments" />
+          <Link to={`/posts/${id}`} aria-label="View comments count">
+            <i className="far fa-comments" aria-hidden="true" />
           </Link>
           {comments_count}
         </div>
