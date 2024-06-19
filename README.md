@@ -452,25 +452,95 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Implemented Features:
 
-A list of the implemented and planned features in the project.
+<details>
+<summary>List of existing features</summary>
+<br>
 
-EPIC name
+**General Features**
 
-Users Story:
-`xx`
+- Authorization checks - Keeping It Secure
 
-Implementation:
-example: A site favicon was implemented with the sites logo. This will allow users to easily identify Pixavibe when they have multiple tabs open.
+  - Strong Authorization Checks: We’ve got layers of protection with JWT tokens and CORS headers. Only authorized users get in!
+  - Access Control: Unauthorized? Sorry, but you’ll be sent packing. We always check your credentials before you get to see any user data.
 
-![favicon](#)
+- Form validation - Smooth and Error-Free Forms
+
+  - Data Validation: We make sure your data is good to go, both on the frontend and backend.
+  - Image Control: No oversized images here! We have custom validators keeping those file sizes in check.
+  - Safe Defaults: Default values and character limits keep things neat and tidy.
+  - Backup and default values
+
+- Ready for Anything
+
+  - Profile Pics: Don’t worry about broken images—default profile pictures have got your back.
+  - Auto Profiles: Every new user gets a profile automatically. No null references on our watch!
+
+- Error pages or as better known Oops! Pages
+
+  - Error Pages: If you wander into the unknown, a “Page Not Found” error will guide you back on track.
+
+- Responsive Design: Looks Great Everywhere: Our site adjusts beautifully across all devices.
+  Complete Control
+
+- CRUD Operations: Create, read, update, and delete your content and profiles with ease.
+
+-User Interaction - Get Involved: Like, comment, follow—get the full experience based on your authorization status.
+
+**SignIn/SignUp Page**
+![X]()
+
+Join the Fun: Creating an account is easy-peasy. After signing up, you’ll be whisked to the sign-in page. Already signed in? You’ll head straight to the home page.
+
+**Navigation Bar**
+![x]()
+
+Always There for You: The navigation bar adapts to whether you’re signed in or not, and it looks great on any screen size.
+
+**Profile Page**
+![x]()
+
+Showcase Yourself: See detailed info about users, including posts, followers, and who they follow. If you follow them, it’s highlighted. Add personal touches with a dedicated info section. Follow or hide users unless it’s your own profile. All posts from the profile owner are displayed below.
+
+**Profiles Sidebar**
+![x]()
+
+Popular Profiles: Check out the most followed profiles. Follow or unfollow with a click, and enjoy a sidebar that fits perfectly on any screen.
+
+**Post List**
+![x]()
+
+Endless Inspiration: Browse posts infinitely! Use the search bar to find posts by title or username. See your personalized feed of posts from those you follow and liked posts. Blocked users won’t show up, and friends-only posts are just for friends.
+
+**Post Page**
+![x]()
+
+Dive into Details: See all the nitty-gritty about a post, including comments. Edit or delete your posts easily. Tag posts with one category, and (once the bug’s fixed) multiple hashtags. The multi-hashtag feature is hidden for now due to [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68. Like the category tagging, it offers a predefined list to select/deselect multiple hashtags. However, once a post is saved, you can't change the hashtags during edits. To avoid a bad user experience, we've temporarily hidden this feature in the belly of our scrumptious app.
+
+**Contact Form**
+![x]()
+
+Get in Touch: Use our form to reach out. A friendly modal will thank you for your message, but just a heads up—this is a student project, so we’re not monitoring messages closely. Thanks for testing!
+
+</details>
 
 ### Future Features
 
-The following will be added in future iterations of this project:
+<details>
+<summary>The following will be added in future iterations of this project:</summary>
+<br>
 
-- A
-- B
-- C
+- **Hashtags**: Organize and filter content using hashtags to connect users. This feature is on hold due to [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68). The issue involves an inability to save new hashtags after editing a post, leading to the retention of the previous selection. The multi-select form for hashtags was removed to avoid confusion and disruption until a solution is found.
+- **Admin Page Expansion**: Enhance the admin page to manage various tasks, such as handling messages sent through the contact form. This would allow admins to respond directly to users from a dedicated admin-only page.
+- **Chat/Direct Messaging**: Introduce a chat or direct messaging function to facilitate user communication.
+- **Alert Notifications**: Implement alert notifications for broadcasting messages to all users.
+- **Block Feature Evolution**: Currently, blocking hides users. In the future, it will also prevent the blocked user from interacting with the blocker’s content.
+- **Profile Customization**: Allow users to customize their profiles with themes, backgrounds, and additional information fields.
+- **Content Recommendations**: Implement a recommendation system to suggest posts, users, or hashtags based on user activity and preferences.
+- **Enhanced Search**: Improve search functionality to include advanced filters and sorting options, making it easier for users to find specific content.
+- **Content Moderation Tools**: Provide tools for users to report inappropriate content and for admins to review and manage reports efficiently.
+- **Integration with External Services**: Allow users to link their accounts with external services such as social media platforms for seamless content sharing and authentication.
+</details>
+<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
@@ -601,6 +671,10 @@ Pixavibe features full Create, Read, Update and Delete functionality, via the UI
 
 ### Technologies
 
+<details>
+<summary>List of technologies and Languages used</summary>
+<br>
+
 #### Language
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) is used to structure the content of the application.
@@ -619,12 +693,15 @@ Pixavibe features full Create, Read, Update and Delete functionality, via the UI
 - [React Router 5.3.4](https://github.com/remix-run/react-router) - This fully-featured routing library for React allowed for seamless site navigation, greatly enhancing the user experience.
 - [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - Implemented to enable the loading of additional data sets upon scrolling, especially when data surpasses pagination limits.
 
+</details>
+
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Tools and Services
 
 <details>
 <summary>List of Tools & Services</summary>
+
 <br>
 
 - [Am I Responsive?](http://ami.responsivedesign.is/) is used to show the website image on a range of devices.
@@ -867,8 +944,10 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
 
 - My immediate and extended family, as well as my friends, who support and cheer me on!
 - [Jonathan Zakrisson!](https://github.com/Jonathan97-web/) A very knowledgeable, kind, and helpful man, whose support meant a great deal. Without it, the project would have been in peril of never seeing the light of day!
-- Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow.
+- [Emil Jädersten](https://github.com/EmilionR/), for chairing the Sunday huddle and sharing knowhow, in so many ways.
+- [Jörgen Jonsson](https://github.com/JorgenDIF/JorgenDIF), giving the community his time an energy, and being a cheerful guy in general.
 - To all engaged fellow students at all channels and a special shout out to #community-sweden!
+- Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow.
 - My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
 
 </details>
