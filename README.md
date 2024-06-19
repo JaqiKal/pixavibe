@@ -67,6 +67,10 @@ To create a user-friendly, responsive platform that enables users to share and i
 
 #### Secondary Objectives:
 
+<details>
+<summary>List of secondary objectives</summary>
+<br>
+
 1. **Implement essential social media features such as liking, commenting, and following.**
 
    **User Stories:**
@@ -76,7 +80,8 @@ To create a user-friendly, responsive platform that enables users to share and i
    - **US-27:** View Liked Posts
    - **US-28:** View Followed Users' Posts
    - **US-30:** Add Tags to Posts
-   - **US-47:** Block Users
+   - **US-47:** Block/(hide) Users
+   - **US-70:** Blocked Users Cannot See or Interact with the User's Posts
 
 2. **Ensure smooth and intuitive navigation for users.**
 
@@ -92,8 +97,13 @@ To create a user-friendly, responsive platform that enables users to share and i
    **User Stories:**
 
    - **US-10:** Integrate Front-End and API
+   </details>
 
 #### Developer Goals:
+
+<details>
+<summary>List of developer goals</summary>
+<br>
 
 1. **Build a robust, scalable back-end using Django Rest Framework.**
 
@@ -126,6 +136,7 @@ To create a user-friendly, responsive platform that enables users to share and i
    - **US-18:** Logged In Status Check
    - **US-19:** Maintain Logged-In Status
    - **US-20:** Conditional Sign In/Up Options
+   - **US-70:** Blocked Users Cannot See or Interact with the User's Posts
 
 5. **Document the development process and deployment steps clearly in README files for both front-end and back-end repositories.**
 
@@ -134,8 +145,13 @@ To create a user-friendly, responsive platform that enables users to share and i
    - **US-4:** SP - Configure Dev Environment
    - **US-12:** Write React Component Tests
    - **US-13:** DRF - Write API Endpoint Tests
+   </details>
 
 #### User-Centric Goals:
+
+<details>
+<summary>List of user goals</summary>
+<br>
 
 1. **Provide an intuitive interface for users to easily post, edit, and delete content.**
 
@@ -168,14 +184,21 @@ To create a user-friendly, responsive platform that enables users to share and i
    - **US-43:** View All Posts by Specific User
    - **US-40:** View Most Followed Profiles
    - **US-41:** View User Stats
+   - **US-61:** Add category to posts
+   - **US-67:** Add category filter
 
 4. **Deliver a responsive design for optimal user experience across devices.**
 
    **User Stories:**
 
    - **US-5:** Design Responsive UI
+   </details>
 
 #### Learning Outcomes and Skill Development:
+
+<details>
+<summary>List LO & Skills</summary>
+<br>
 
 1. **To master Full-Stack development by building a comprehensive web application from scratch.**
 
@@ -208,6 +231,9 @@ To create a user-friendly, responsive platform that enables users to share and i
    - **US-3:** SP - Set Up Project Repositories
    - **US-2:** SP - Identify Key Features
 
+</details>
+<br>
+
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Agile Planning and Development
@@ -224,93 +250,100 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Project Tracking (GitHub Projects)
 
-- For details please follow link to: [Github Project board](#)
-
-_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
-
 #### Epics
 
-- _Scope_: This Epic defines the overall scope of the frontend application, detailing the main functionalities, user interface design, and integration with the backend API.
+<details>
+<summary>Epic list</summary>
 
-- _Development_: This epic covers the initial setup of the React application, including the installation of dependencies, configuration of development tools, and setting up the project structure.
+<br>
 
-- _Navigation & Authentication_: This epic covers the implementation of the navigation bar, routing, and authentication mechanisms. It ensures users can navigate through the application and securely log in or register.
+- [EPIC#51: Define Set Up and Project Scope](https://github.com/JaqiKal/pixavibe-frontend/issues/51) This epic defines the project's scope and vision, identify key features, and set up the project repositories and development environment to ensure all stakeholders have a clear understanding of the project's goals and objectives and to manage the codebase efficiently.
+- [EPIC#52: Design and Implement User Interface](https://github.com/JaqiKal/pixavibe-frontend/issues/52) This epic design a responsive and user-friendly interface using React to provide a seamless experience across devices.
+- [EPIC#53: Set Up and Secure Django Rest Framework](https://github.com/JaqiKal/pixavibe-frontend/issues/53) This epic set up the Django Rest Framework and secure user data for building and maintaining the API.
+- [EPIC#54: Integrate Front-End and Back-End](https://github.com/JaqiKal/pixavibe-frontend/issues/54) This epic ensure dynamic data fetching and display by integrating the front-end with the back-end API.
+- [EPIC#55: Testing](https://github.com/JaqiKal/pixavibe-frontend/issues/55) This epic is about writing tests to ensure the functionality and reliability of the application.
+- [EPIC#56: Navigation & Authentication](https://github.com/JaqiKal/pixavibe-frontend/issues/56) This epic implement navigation and authentication features to enhance user experience and security.
+- [EPIC#57: Adding & Liking Posts](https://github.com/JaqiKal/pixavibe-frontend/issues/57) This epic enable users to create, view, and like posts to engage with the content.
+- [EPIC#58: The Posts Page](https://github.com/JaqiKal/pixavibe-frontend/issues/58) This epic provide features to view and interact with posts, including searching and infinite scroll.
+- [EPIC#59: The Post Page](https://github.com/JaqiKal/pixavibe-frontend/issues/59) This epic
+- [EPIC#60: The Profile Page](https://github.com/JaqiKal/pixavibe-frontend/issues/60) This epic enable users to manage their profiles and interact with other user profiles.
+- [EPIC#62: A blocking functionality so that users can manage their privacy](https://github.com/JaqiKal/pixavibe-frontend/issues/62) This epic strengthen user privacy by implementing effective blocking capabilities
+- [EPIC#63: Streamlining User Engagement and Feedback Processes](https://github.com/JaqiKal/pixavibe-frontend/issues/63) This epic facilitate Efficient User Communication and Feedback Management.
+- [EPIC#64: Enhance content organization through hashtags](https://github.com/JaqiKal/pixavibe-frontend/issues/64) This epic improve Content Accessibility and Organization via Advanced Tagging.
 
-- _Adding & Liking Posts_: This epic covers the frontend functionality for creating new posts and liking existing posts. It enables users to interact with the backend API to perform these actions through the user interface.
+</details>
 
-- _Posts Page_: This epic covers the creation of the posts page where all posts are displayed. It includes fetching posts from the backend, displaying them in a user-friendly manner, and enabling interactions like liking and commenting.
-
-- _Profile Page_: This epic covers the frontend creation of user profile pages. It allows users to view and edit their profiles, including personal information and their own posts.
-
-- _Block_: T
-
-- _Contact_:
-
-- _Hashtag_:
-  <br>
+<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### User Stories
 
 <details>
-<summary>User Story Table</summary>
-SP =  Set up phase, aka inception /sprint zero, foundational tasks necessary before main development begins.
-DRF = developing functionalities that are typically part of the Django REST Framework (DRF) phase
-The unmarked are part of the development during Frontend phase. These are pivotal during the main development cycles and often follow the setup done in the IN phase.
+<summary>User Story list</summary>
 
-| US-ID | Area                        | User story Title                       | Statement                                                                                                                                                               |
-| ----- | --------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1     | Scope                       | SP - Define Project Scope              | As a product owner, I want to define the project scope and vision so that all stakeholders have a clear understanding of the project's goals and objectives             |
-| 2     | Scope                       | SP - Identify Key Features             | As a product owner, I want to identify key features and functionalities required for the application so that it meets user needs effectively                            |
-| 3     | Development                 | SP - Set Up Project Repositories       | As a developer, I want to set up a project repository for the front-end and back-end so that I can manage the codebase efficiently                                      |
-| 4     | Development                 | SP - Configure Dev Environment         | As a developer, I want to configure the development environment so that I can ensure consistent setup across different machines                                         |
-| 5     | Development                 | Design Responsive UI                   | As a developer, I want to design a responsive user interface using React so that users have a seamless experience across devices                                        |
-| 6     | Development                 | Create Reusable Components             | As a developer, I want to create reusable components in React so that the codebase is maintainable and scalable                                                         |
-| 7     | Development                 | DRF - Set Up Django Project            | As a developer, I want to create a Django project and set up the Django Rest Framework so that I can build the API                                                      |
-| 8     | Development                 | DRF - Design Database Models           | As a developer, I want to design database models so that the data is structured logically                                                                               |
-| 9     | Development                 | DRF - Implement API CRUD Operations    | As a developer, I want to implement CRUD operations in the API so that users can manage their content                                                                   |
-| 10    | Development                 | Integrate Front-End and API            | As a developer, I want to integrate the front-end with the back-end API so that data can be fetched and displayed dynamically                                           |
-| 11    | Development                 | DRF - Secure User Data                 | As a developer, I want to secure user data by storing passwords hashed and ensuring sensitive information is protected                                                  |
-| 12    | Development                 | Write React Component Tests            | As a developer, I want to write tests so that I can ensure the functionality of my React components                                                                     |
-| 13    | Development                 | DRF - Write API Endpoint Tests         | As a developer, I want to write tests so that I can verify the correctness of the API endpoints                                                                         |
-| 14    | Navigation & Authentication | Navbar View on Every Page              | As a user I can view a navbar from every page so that I can navigate easily between pages                                                                               |
-| 15    | Navigation & Authentication | Seamless Page Navigation               | As a user I can navigate through pages quickly so that I can view content seamlessly without page refresh                                                               |
-| 16    | Navigation & Authentication | Sign Up for New Account                | As a user I can create a new account so that I can access all the features for signed up users                                                                          |
-| 17    | Navigation & Authentication | Sign In to Access Features             | As a user I can sign in to the app so that I can access functionality for logged in users                                                                               |
-| 18    | Navigation & Authentication | Logged In Status Check                 | As a user I can tell if I am logged in or not so that I can log in if I need to                                                                                         |
-| 19    | Navigation & Authentication | Maintain Logged-In Status              | As a user I can maintain my logged-in status until I choose to log out so that my user experience is not compromised                                                    |
-| 20    | Navigation & Authentication | Conditional Sign In/Up Options         | Conditional rendering - As a logged out user I can see sign in and sign up options so that I can sign in/sign up                                                        |
-| 21    | Navigation & Authentication | View User Avatars                      | As a user I can view user's avatars so that I can easily identify users of the application                                                                              |
-| 22    | Adding & Liking Posts       | Create New Posts                       | As a logged in user I can create posts so that I can share my images with the world!                                                                                    |
-| 23    | Adding & Liking Posts       | View Post Details                      | As a user I can view the details of a single post so that I can learn more about it                                                                                     |
-| 24    | Adding & Liking Posts       | Like Posts                             | As a logged in user I can like a post so that I can show my support for the posts that interest me                                                                      |
-| 25    | The Posts Page              | View Most Recent Posts                 | As a user I can view all the most recent posts, ordered by most recently created first so that I am up to date with the newest content                                  |
-| 26    | The Posts Page              | Search Posts by Keywords               | As a user, I can search for posts with keywords, so that I can find the posts and user profiles I am most interested in                                                 |
-| 27    | The Posts Page              | View Liked Posts                       | As a logged in user I can view the posts I liked so that I can find the posts I enjoy the most                                                                          |
-| 28    | The Posts Page              | View Followed Users' Posts             | As a logged in user I can view content filtered by users I follow so that I can keep up to date with what they are posting about                                        |
-| 29    | The Posts Page              | Infinite scroll                        | As a user I can keep scrolling through the images on the site, that are loaded for me automatically so that I don't have to click on "next page" etc                    |
-| 30\*  | The Posts Page              | Add Tags to Posts                      | As a user, I want to add tags to my posts so that they are easier to find                                                                                               |
-| 31\*  | The Posts Page              | Search Posts by Tags                   | As a user, I want to search for posts by tags so that I can find related content                                                                                        |
-| 32    | The Post Page               | View Post Page                         | As a user I can view the posts page so that I can read the comments about the post                                                                                      |
-| 33    | The Post Page               | Edit My Post Details                   | As a post owner I can edit my post title and description so that I can make corrections or update my post after it was created                                          |
-| 34    | The Post Page               | Add Comments to Posts                  | As a logged in user I can add comments to a post so that I can share my thoughts about the post                                                                         |
-| 35    | The Post Page               | View Comment Dates                     | As a user I can see how long ago a comment was made so that I know how old a comment is                                                                                 |
-| 36    | The Post Page               | Read Comments on Posts                 | As a user I can read comments on posts so that I can read what other users think about the posts                                                                        |
-| 37    | The Post Page               | Delete My Comments                     | As an owner of a comment I can delete my comment so that I can control removal of my comment from the application                                                       |
-| 38    | The Post Page               | Edit My comment                        | As an owner of a comment I can edit my comment so that I can fix or update my existing comment                                                                          |
-| 39    | The Profile Page            | View User Profiles                     | As a user I can view other users profiles so that I can see their posts and learn more about them                                                                       |
-| 40    | The Profile Page            | View Most Followed Profiles            | As a user I can see a list of the most followed profiles so that I can see which profiles are popular                                                                   |
-| 41    | The Profile Page            | View User Stats                        | As a user I can view statistics about a specific user: bio, number of posts, follows and users followed so that I can learn more about them                             |
-| 42    | The Profile Page            | Follow/Unfollow Users                  | Follow/Unfollow a user: As a logged in user I can follow and unfollow other users so that I can see and remove posts by specific users in my posts feed                 |
-| 43    | The Profile Page            | View All Posts by specific User        | As a user I can view all the posts by a specific user so that I can catch up on their latest posts, or decide I want to follow them                                     |
-| 44    | The Profile Page            | Edit My Profile                        | As a logged in user I can edit my profile so that I can change my profile picture and bio                                                                               |
-| 45    | The Profile Page            | Update username and password           | As a logged in user I can update my username and password so that I can change my display name and keep my profile secure                                               |
-| 46    | The Profile Page            | DRF - Implement Blocking Functionality | As a developer, I want to implement a blocking functionality so that users can manage their privacy effectively                                                         |
-| 47    | The Profile Page            | Block Users                            | As a user, I want to be able to block other users so that they cannot interact with my content                                                                          |
-| 48    | The Profile Page            | DRF - Create Contact Form              | As a developer, I want to create a contact form that stores user queries, complaints, or suggestions in the Contact model so that the platform can handle user feedback |
-| 49    | The Profile Page            | Send Feedback to Admins                | As a user, I want to send feedback or queries to the platform administrators so that I can report issues or suggest improvements                                        |
-| 50    | The Profile Page            | DRF - Implement Post Tagging           | As a developer, I want to implement tagging functionality for posts so that users can categorize their content                                                          |
+<br>
+
+SP = Set up phase, aka inception /sprint zero, foundational tasks necessary before main development begins.<br>
+DRF = developing functionalities that are typically part of the Django REST Framework (DRF) phase.<br>
+
+The unmarked are part of the development during Frontend phase.<br>
+
+| US-ID                                                        | Area                        | User story Title                                           | Statement                                                                                                                                                               |
+| ------------------------------------------------------------ | --------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1](https://github.com/JaqiKal/pixavibe-frontend/issues/1)   | Scope                       | SP - Define Project Scope                                  | As a product owner, I want to define the project scope and vision so that all stakeholders have a clear understanding of the project's goals and objectives             |
+| [2](https://github.com/JaqiKal/pixavibe-frontend/issues/2)   | Scope                       | SP - Identify Key Features                                 | As a product owner, I want to identify key features and functionalities required for the application so that it meets user needs effectively                            |
+| [3](https://github.com/JaqiKal/pixavibe-frontend/issues/3)   | Development                 | SP - Set Up Project Repositories                           | As a developer, I want to set up a project repository for the front-end and back-end so that I can manage the codebase efficiently                                      |
+| [4](https://github.com/JaqiKal/pixavibe-frontend/issues/4)   | Development                 | SP - Configure Dev Environment                             | As a developer, I want to configure the development environment so that I can ensure consistent setup across different machines                                         |
+| [5](https://github.com/JaqiKal/pixavibe-frontend/issues/5)   | Development                 | Design Responsive UI                                       | As a developer, I want to design a responsive user interface using React so that users have a seamless experience across devices                                        |
+| [6](https://github.com/JaqiKal/pixavibe-frontend/issues/6)   | Development                 | Create Reusable Components                                 | As a developer, I want to create reusable components in React so that the codebase is maintainable and scalable                                                         |
+| [7](https://github.com/JaqiKal/pixavibe-frontend/issues/7)   | Development                 | DRF - Set Up Django Project                                | As a developer, I want to create a Django project and set up the Django Rest Framework so that I can build the API                                                      |
+| [8](https://github.com/JaqiKal/pixavibe-frontend/issues/5)   | Development                 | DRF - Design Database Models                               | As a developer, I want to design database models so that the data is structured logically                                                                               |
+| [9](https://github.com/JaqiKal/pixavibe-frontend/issues/9)   | Development                 | DRF - Implement API CRUD Operations                        | As a developer, I want to implement CRUD operations in the API so that users can manage their content                                                                   |
+| [10](https://github.com/JaqiKal/pixavibe-frontend/issues/10) | Development                 | Integrate Front-End and API                                | As a developer, I want to integrate the front-end with the back-end API so that data can be fetched and displayed dynamically                                           |
+| [11](https://github.com/JaqiKal/pixavibe-frontend/issues/11) | Development                 | DRF - Secure User Data                                     | As a developer, I want to secure user data by storing passwords hashed and ensuring sensitive information is protected                                                  |
+| [12](https://github.com/JaqiKal/pixavibe-frontend/issues/12) | Development                 | Write React Component Tests                                | As a developer, I want to write tests so that I can ensure the functionality of my React components                                                                     |
+| [13](https://github.com/JaqiKal/pixavibe-frontend/issues/13) | Development                 | DRF - Write API Endpoint Tests                             | As a developer, I want to write tests so that I can verify the correctness of the API endpoints                                                                         |
+| [14](https://github.com/JaqiKal/pixavibe-frontend/issues/14) | Navigation & Authentication | Navbar View on Every Page                                  | As a user I can view a navbar from every page so that I can navigate easily between pages                                                                               |
+| [15](https://github.com/JaqiKal/pixavibe-frontend/issues/15) | Navigation & Authentication | Seamless Page Navigation                                   | As a user I can navigate through pages quickly so that I can view content seamlessly without page refresh                                                               |
+| [16](https://github.com/JaqiKal/pixavibe-frontend/issues/16) | Navigation & Authentication | Sign Up for New Account                                    | As a user I can create a new account so that I can access all the features for signed up users                                                                          |
+| [17](https://github.com/JaqiKal/pixavibe-frontend/issues/17) | Navigation & Authentication | Sign In to Access Features                                 | As a user I can sign in to the app so that I can access functionality for logged in users                                                                               |
+| [18](https://github.com/JaqiKal/pixavibe-frontend/issues/18) | Navigation & Authentication | Logged In Status Check                                     | As a user I can tell if I am logged in or not so that I can log in if I need to                                                                                         |
+| [19](https://github.com/JaqiKal/pixavibe-frontend/issues/19) | Navigation & Authentication | Maintain Logged-In Status                                  | As a user I can maintain my logged-in status until I choose to log out so that my user experience is not compromised                                                    |
+| [20](https://github.com/JaqiKal/pixavibe-frontend/issues/20) | Navigation & Authentication | Conditional Sign In/Up Options                             | Conditional rendering - As a logged out user I can see sign in and sign up options so that I can sign in/sign up                                                        |
+| [21](https://github.com/JaqiKal/pixavibe-frontend/issues/21) | Navigation & Authentication | View User Avatars                                          | As a user I can view user's avatars so that I can easily identify users of the application                                                                              |
+| [22](https://github.com/JaqiKal/pixavibe-frontend/issues/22) | Adding & Liking Posts       | Create New Posts                                           | As a logged in user I can create posts so that I can share my images with the world!                                                                                    |
+| [23](https://github.com/JaqiKal/pixavibe-frontend/issues/23) | Adding & Liking Posts       | View Post Details                                          | As a user I can view the details of a single post so that I can learn more about it                                                                                     |
+| [24](https://github.com/JaqiKal/pixavibe-frontend/issues/24) | Adding & Liking Posts       | Like Posts                                                 | As a logged in user I can like a post so that I can show my support for the posts that interest me                                                                      |
+| [25](https://github.com/JaqiKal/pixavibe-frontend/issues/25) | The Posts Page              | View Most Recent Posts                                     | As a user I can view all the most recent posts, ordered by most recently created first so that I am up to date with the newest content                                  |
+| [26](https://github.com/JaqiKal/pixavibe-frontend/issues/26) | The Posts Page              | Search Posts by Keywords                                   | As a user, I can search for posts with keywords, so that I can find the posts and user profiles I am most interested in                                                 |
+| [27](https://github.com/JaqiKal/pixavibe-frontend/issues/27) | The Posts Page              | View Liked Posts                                           | As a logged in user I can view the posts I liked so that I can find the posts I enjoy the most                                                                          |
+| [28](https://github.com/JaqiKal/pixavibe-frontend/issues/28) | The Posts Page              | View Followed Users' Posts                                 | As a logged in user I can view content filtered by users I follow so that I can keep up to date with what they are posting about                                        |
+| [29](https://github.com/JaqiKal/pixavibe-frontend/issues/29) | The Posts Page              | Infinite scroll                                            | As a user I can keep scrolling through the images on the site, that are loaded for me automatically so that I don't have to click on "next page" etc                    |
+| [30](https://github.com/JaqiKal/pixavibe-frontend/issues/30) | The Posts Page              | Add hashtags to Posts                                      | As a user, I want to add hashtags to my posts so that they are easier to find                                                                                           |
+| [31](https://github.com/JaqiKal/pixavibe-frontend/issues/31) | The Posts Page              | Search Posts by hashtag                                    | As a user, I want to search for posts by hashtags so that I can find related content                                                                                    |
+| [67](https://github.com/JaqiKal/pixavibe-frontend/issues/67) | The Posts Page              | Add category to posts                                      | As a user, I want to add category to my posts so that they are easier to find                                                                                           |
+| [71](https://github.com/JaqiKal/pixavibe-frontend/issues/71) | The Posts Page              | Add category filter                                        | As a user, I want to be able to filter category so that posts are easier to find                                                                                        |
+| [32](https://github.com/JaqiKal/pixavibe-frontend/issues/32) | The Post Page               | View Post Page                                             | As a user I can view the posts page so that I can read the comments about the post                                                                                      |
+| [33](https://github.com/JaqiKal/pixavibe-frontend/issues/33) | The Post Page               | Edit My Post Details                                       | As a post owner I can edit my post title and description so that I can make corrections or update my post after it was created                                          |
+| [34](https://github.com/JaqiKal/pixavibe-frontend/issues/34) | The Post Page               | Add Comments to Posts                                      | As a logged in user I can add comments to a post so that I can share my thoughts about the post                                                                         |
+| [35](https://github.com/JaqiKal/pixavibe-frontend/issues/35) | The Post Page               | View Comment Dates                                         | As a user I can see how long ago a comment was made so that I know how old a comment is                                                                                 |
+| [36](https://github.com/JaqiKal/pixavibe-frontend/issues/36) | The Post Page               | Read Comments on Posts                                     | As a user I can read comments on posts so that I can read what other users think about the posts                                                                        |
+| [37](https://github.com/JaqiKal/pixavibe-frontend/issues/37) | The Post Page               | Delete My Comments                                         | As an owner of a comment I can delete my comment so that I can control removal of my comment from the application                                                       |
+| [38](https://github.com/JaqiKal/pixavibe-frontend/issues/38) | The Post Page               | Edit My comment                                            | As an owner of a comment I can edit my comment so that I can fix or update my existing comment                                                                          |
+| [39](https://github.com/JaqiKal/pixavibe-frontend/issues/39) | The Profile Page            | View User Profiles                                         | As a user I can view other users profiles so that I can see their posts and learn more about them                                                                       |
+| [40](https://github.com/JaqiKal/pixavibe-frontend/issues/40) | The Profile Page            | View Most Followed Profiles                                | As a user I can see a list of the most followed profiles so that I can see which profiles are popular                                                                   |
+| [41](https://github.com/JaqiKal/pixavibe-frontend/issues/41) | The Profile Page            | View User Stats                                            | As a user I can view statistics about a specific user: bio, number of posts, follows and users followed so that I can learn more about them                             |
+| [42](https://github.com/JaqiKal/pixavibe-frontend/issues/42) | The Profile Page            | Follow/Unfollow Users                                      | Follow/Unfollow a user: As a logged in user I can follow and unfollow other users so that I can see and remove posts by specific users in my posts feed                 |
+| [43](https://github.com/JaqiKal/pixavibe-frontend/issues/43) | The Profile Page            | View All Posts by specific User                            | As a user I can view all the posts by a specific user so that I can catch up on their latest posts, or decide I want to follow them                                     |
+| [44](https://github.com/JaqiKal/pixavibe-frontend/issues/44) | The Profile Page            | Edit My Profile                                            | As a logged in user I can edit my profile so that I can change my profile picture and bio                                                                               |
+| [45](https://github.com/JaqiKal/pixavibe-frontend/issues/45) | The Profile Page            | Update username and password                               | As a logged in user I can update my username and password so that I can change my display name and keep my profile secure                                               |
+| [46](https://github.com/JaqiKal/pixavibe-frontend/issues/46) | The Profile Page            | DRF - Implement Blocking Functionality                     | As a developer, I want to implement a blocking functionality so that users can manage their privacy effectively                                                         |
+| [47](https://github.com/JaqiKal/pixavibe-frontend/issues/47) | The Profile Page            | Block/(Hide) Users                                         | As a user, I want to be able to block other users so that they cannot interact with my content                                                                          |
+| [48](https://github.com/JaqiKal/pixavibe-frontend/issues/48) | The Profile Page            | DRF - Create Contact Form                                  | As a developer, I want to create a contact form that stores user queries, complaints, or suggestions in the Contact model so that the platform can handle user feedback |
+| [49](https://github.com/JaqiKal/pixavibe-frontend/issues/49) | The Profile Page            | Send Feedback to Admins                                    | As a user, I want to send feedback or queries to the platform administrators so that I can report issues or suggest improvements                                        |
+| [50](https://github.com/JaqiKal/pixavibe-frontend/issues/50) | The Profile Page            | DRF - Implement Post Tagging                               | As a developer, I want to implement tagging functionality for posts so that users can categorize their content                                                          |
+| [70](https://github.com/JaqiKal/pixavibe-frontend/issues/70) | The Profile Page            | Blocked users cannot see or interact with the user's posts | As a user, I want to block other users so that they cannot see or interact with my posts                                                                                |
 
 </details> <br>
 
@@ -332,9 +365,11 @@ By focusing on the Must Have features, the project ensures the highest priority 
 - Won't Have: <br>
   Deferred features that are not essential for the initial launch but could be considered for future phases (infinite scroll).
   <br>
+  <br>
 
 <details>
 <summary>Prioritized User stories </summary>
+<br>
 
 | Phase    | US-ID | Must Have                     | Should Have                     | Could Have                       |
 | -------- | ----- | ----------------------------- | ------------------------------- | -------------------------------- |
@@ -356,6 +391,8 @@ By focusing on the Must Have features, the project ensures the highest priority 
 | Frontend | 39    | View User Profiles            |                                 |                                  |
 | Frontend | 42    | Follow/Unfollow Users         |                                 |                                  |
 | Frontend | 44    | Edit My Profile               |                                 |                                  |
+| Frontend | 67    | Add category to posts         |                                 |                                  |
+| Frontend | 71    | Add category filter           |                                 |                                  |
 | Frontend | 5     |                               | Design Responsive UI            |                                  |
 | Frontend | 6     |                               | Create Reusable Components      |                                  |
 | Frontend | 12    |                               | Write React Component Tests     |                                  |
@@ -445,21 +482,22 @@ Icon, headings and border colours are gold (#cca53c).
 
 Main text is white (#ffffff).
 
-The main page background colour is an off shade of white (#f8f8f8).
+The main page background colour is a light shade of lilac (#e7d5e6;).
+
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Typography
 
-The main font used on the website is "DM Sans".
+The main font used on the website is "DM Sans". 
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Imagery
 
-The images on this website are §§§§§§§§§§§§§§§§
+The images on this website are made by DALL-E or if in post feed, private origin.
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_

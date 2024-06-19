@@ -18,6 +18,7 @@
     border-radius: 20px;
     border: 1px solid #f0d2ee;
     box-shadow: 3px 3px 5px #bc9bbb;
+    color: #6d398a;
 }
 
 /* Ensures image fills the container without distortion */
@@ -41,7 +42,7 @@
 
 /* Default link styling */
 a {
-    color: #555555;
+    color: #6d398a;
     transition: color ease-in-out 0.3s;
 }
 
@@ -59,7 +60,7 @@ a:hover i {
 
 /* Base styling for icons within links */
 i {
-    color: #555555;
+    color: #6d398a;
     font-size: 1.0rem;
     padding: 7px;
     vertical-align: middle;

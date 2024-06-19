@@ -1,10 +1,11 @@
 .ContactForm {
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 85px;
     padding: 20px;
-    background-color: #f7f7f7;
+    background-color: #e8f7e5;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(109, 57, 138, 0.8);
 }
 
 .ContactForm h1 {
@@ -14,7 +15,7 @@
 
 /* Style for the input field */
 .inputField {
-    border: 2px solid #ced4da;
+    border: 2px solid #bc9bbb;
     border-radius: 4px;
     padding: 10px;
     font-size: 16px;
