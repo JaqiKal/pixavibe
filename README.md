@@ -1,10 +1,11 @@
 # Pixavibe
 
-![Mockup](amiresponsive) §§§§§§§§§§§§§§§§§§§§§§§§§§
+![x](/documentation/readme-image/amiresponsive-oval.webp)
 
-Pixavibe is a Full-Stack web application designed to facilitate content sharing among users, akin to a simplified version of Instagram. Utilizing and Django Rest Framework for the back-end and React for the front-end, the application provides a seamless user experience for browsing, posting, and interacting with content.
+Pixavibe is a Full-Stack web application designed to facilitate content sharing among users, akin to a simplified version of Instagram. Utilizing Django Rest Framework for the back-end and React for the front-end, the application provides a seamless user experience for browsing, posting, and interacting with content.
 <br>
-The live link can be found here: [Pixavibe](#) §§§§§§§§§§§§§§§§§§§§§§§§
+<br>
+The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
 <br>
 
 <hr>
@@ -43,11 +44,11 @@ The live link can be found here: [Pixavibe](#) §§§§§§§§§§§§§§§§�
 
 ## Live Site
 
-[Pixavibe site]()
+[Pixavibe site](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
 
 ## API Backend
 
-[Pixavibe API](https://github.com/JaqiKal/pixavibe-api)
+[Pixavibe API README](https://github.com/JaqiKal/pixavibe-api/blob/main/README.mdi)
 
 ## The Strategy Plane
 
@@ -211,13 +212,13 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Agile Planning and Development
 
-Agile methodologies and principles guide the planning and creation of Pixavibe. While not adhering strictly to traditional Agile methodologies, such as scheduled sprints or scrums. The development process is inspired by Agile principles, focusing on flexibility, continuous improvement, and rapid adaptation to change. Sprints is not used as the project benefits more from focusing directly on developing an epic corresponding to an app in the backend and following th priority level on the User Stories. High level approach is to divide the project into phases: plan, development (as test driven as possible and continuous deploy) and finalize documentation. The approach is straightforward, development of features in a logical sequence, addressing core functionalities first before expanding to more complex features.
+Agile methodologies and principles guide the planning and creation of Pixavibe. While not adhering strictly to traditional Agile methodologies, such as scheduled sprints or scrums. The development process is inspired by Agile principles, focusing on flexibility, continuous improvement, and rapid adaptation to change. Sprints are not used as the project benefits more from focusing directly on developing an epic corresponding to an app in the backend and following the priority level on the User Stories within the Epic. High level approach is to divide the project into phases: plan, development incl unit test, function test, continuous deployment. The documentation is created, continuously reviewed and updated along the way. The approach is straightforward, development of features in a logical sequence, addressing core functionalities first before expanding to more complex features.
 
 When encountering bugs or issues, rather than halting development, these are recorded as bug issues and added to the backlog. This allows to continue progressing in other areas while periodically revisiting and prioritizing the backlog based on severity and impact. This method ensures that development momentum is maintained while systematically addressing and resolving issues.
 
 Feedback from users are actively sought and analyzed to identify areas for improvement, ensuring that the product continuously evolves to meet the needs and expectations of its users effectively
 
-A project kanban board was used to track progress, with user stories moved between 'Todo', 'In Progress' and 'Done' columns as appropriate.
+A project kanban board was used to track progress, with user stories moved between 'Todo', 'In Progress', 'Bug', and 'Done' columns as appropriate.
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
@@ -624,7 +625,6 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
   - [serie of videos - Django Testing Tutorial - What Is Testing?](https://youtu.be/qwypH3YvMKc?si=1OptYFWRajgREWh_)
   - [Unit Tests in Python || Python Tutorial || Learn Python Programming](https://youtu.be/1Lfv5tUGsn8?si=ZgIDWVjSQqTIUYYK)
   - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) are used in test cases to validate that the application is behaving as expected under various conditions.
-
 
 #### Acknowledgements
 
