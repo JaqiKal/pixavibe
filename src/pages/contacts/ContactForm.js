@@ -9,6 +9,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Button, Alert, Container } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/ContactForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import CharacterCounter from "../../components/CharacterCounter";
@@ -122,8 +123,11 @@ function ContactForm() {
               </Alert>
             ))}
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button
+              className={`${btnStyles.Button} ${btnStyles.Green}`}
+          type="Submit"
+        >
+          Send
         </Button>
       </Form>
 
