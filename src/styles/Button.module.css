@@ -60,7 +60,7 @@
     /* background-color: #242a3d;
   color: white; */
     background-color: #242a3d;
-    color: aliceblue;
+    color: #f0f8ff;
 }
 
 /* Black button hover and outline state */
@@ -91,7 +91,7 @@
 /* Greige outline button and hover state */
 .GreigeOutline,
 .Greige:hover {
-    background-color: #ffffff;
+    background-color: #e7d5e6;
     color: #7d726c;
 }
 

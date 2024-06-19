@@ -1,6 +1,6 @@
 # Pixavibe
 
-![x](/documentation/readme-image/amiresponsive-oval.webp)
+![x](/documentation/readme-image/amiresponsive.webp)
 
 Pixavibe is a Full-Stack web application designed to facilitate content sharing among users, akin to a simplified version of Instagram. Utilizing Django Rest Framework for the back-end and React for the front-end, the application provides a seamless user experience for browsing, posting, and interacting with content.
 <br>
@@ -32,6 +32,9 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
     - [Design](#design)
       - [Colour-Scheme](#colour-scheme)
       - [Typography](#typography)
+      - [Imagery](#imagery)
+      - [Reusable Component Design](#reusable-component-design)
+
     - [Technologies](#technologies)
     - [Testing](#testing)
     - [Deployment](#deployment)
@@ -476,21 +479,32 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Colour-Scheme
 
-The background colour for individual components is black (#000000).
+We were reminiscing about our childhood and the simple joys that filled those days. One such joy was an enterprise that delivered ice cream directly from the factory to our doorstep. Even now, it brings a smile to our faces. The colors in our palette are inspired by our favorite ice cream flavors from those cherished memories. A joyous recollection forms the foundation of our color scheme.
 
-Icon, headings and border colours are gold (#cca53c).
+- Page background colour is a light shade of lilac (#e7d5e6;).
+- Navbar are light green (#e8f7ef)
+- Main text is Lilac (#6d398a)
+- Links and Icons are lilac (#6d398a)
+- Container text is lilac (#6d398a)
+- Icon and Link hover is green (#0ctb04)
+- Border line and shadow is light lilac (#f0d2ee)
+- Follow/unfollow button shift between (#2142b2/#f0f8ff)
+- Block/unblock button shift between (#7d726c/#e7d5e6)
+- SignIn button shift between (#bc9bbb/#6d398a)
+- SignUp button shift between (#6d398a/#bc9bbb)
+- Contact form button shift between (#0c7b04/#bc9bbb)
 
-Main text is white (#ffffff).
-
-The main page background colour is a light shade of lilac (#e7d5e6;).
-
+![palette](/documentation/readme-image/pixawibe_palette.webp)
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Typography
 
-The main font used on the website is "DM Sans". 
+The main font used on the website is "DM Sans".
+
+![font](/documentation/readme-image/font_dm-sans.webp)
+
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
@@ -501,6 +515,10 @@ The images on this website are made by DALL-E or if in post feed, private origin
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+
+#### Reusable Component Design
+
+
 
 ### Technologies
 
@@ -513,12 +531,14 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Frameworks, libraries and dependencies
 
-- [React 17.0.2](https://legacy.reactjs.org/docs/getting-started.html) - A JavaScript library for building user interfaces. An older version was chosen to stay inline with all other dependencies used as part of the Moments walkthrough which provided a base that this project was then modelled on. Using the react framework really elevated this project, allowing pages such as focus to contain full crude functionality for 2 models as well as RUD for a third all within one view. Providing the user with a way to see and connect all their data together.
-- [React bootstrap 1.6.6](https://react-bootstrap.github.io/) - A frontend framework built for react that provides common components. React bootstrap was chosen to help speed up the development of this project and allow time to focused elsewhere. In particular, the accordion component has been essential in providing mobile users with an uncluttered view while allowing quick and easy movement through different areas of their data.
-- [React Router 5.3.4](https://github.com/remix-run/react-router) - A lightweight, fully-featured routing library for React. This library has allowed seamless navigation around the site to be provided for users.
-- [Axios](https://axios-http.com/) - A simple promise based HTTP client for the browser and node.js. An essential component of this project providing connection between the frontend and backend.
-- [jwt-decode 3.1.2](https://www.npmjs.com/package/jwt-decode) - Used to decode the JSON web tokens. Another essential component of this project in providing a secure passageway between the frontend and backend for users.
-- [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - Used to provide loading of next set of data on page scrolling where the data exceeds pagination limit. This has not been utilised, see [bug #7](#bugs-and-fixes).
+- [Axios](https://axios-http.com/) - A promise-based HTTP client for both the browser and Node.js, Axios has been crucial for ensuring smooth communication between the frontend and backend.
+- [CSS Validator 0.11.0]() - A tool used to validate CSS code. It ensures that all CSS written for the project adheres to standard syntax rules and best practices. Using this validator helps in maintaining clean and error-free stylesheets, which is essential for consistent and predictable rendering across different browsers.
+- [jwt-decode 3.1.2](https://www.npmjs.com/package/jwt-decode) - Used for decoding JSON web tokens, this tool has been essential for maintaining secure user authentication between the frontend and backend.
+- [Multiselect React Dropdown 2.0.25]() - This component is used to provide a multi-select dropdown functionality in React applications. It allows users to select multiple options from a dropdown menu, enhancing the user interface by making it more interactive and user-friendly. This component is particularly useful for forms and filtering data where multiple selections are needed. It was chosen mostly because it is fun to try out. The functionality was proven, and very handy but unfortunately a bug in our code base is stopping us from showcasing it to users. It is going to be used for the Hashtag feature.
+- [React 17.0.2](https://legacy.reactjs.org/docs/getting-started.html) - A JavaScript library for building user interfaces. An older version was chosen to stay inline with all other dependencies used as part of the Moments walkthrough which provided a base that this project was then modelled on.
+- [React bootstrap 1.6.6](https://react-bootstrap.github.io/) - A frontend framework built for react that provides common components. React bootstrap was chosen to help speed up the development of this project and allow time to focused elsewhere.
+- [React Router 5.3.4](https://github.com/remix-run/react-router) - This fully-featured routing library for React allowed for seamless site navigation, greatly enhancing the user experience.
+- [react-infinite-scroll-component](https://www.npmjs.com/package/react-infinite-scroll-component) - Implemented to enable the loading of additional data sets upon scrolling, especially when data surpasses pagination limits.
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
@@ -551,8 +571,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Testing
 
-Testing can be found in the [TESTING.md file](#) §§§§§§§§§§§§§§
-<br>
+For thest results we refer to the [TESTING.md file](https://github.com/JaqiKal/pixavibe-frontend/blob/main/TESTING.md).
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
