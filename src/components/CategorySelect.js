@@ -6,6 +6,7 @@ import appStyles from "../App.module.css";
 import Form from "react-bootstrap/Form";
 import styles from "../App.module.css";
 import PropTypes from "prop-types";
+import { axiosReq } from "../api/axiosDefaults";
 
 /**
  * The component fetches categories from the API and provides a dropdown
@@ -23,10 +24,7 @@ const CategorySelect = ({ setFilter, mobile }) => {
     //Fetches categories from the API and updates the state.
     const fetchCategories = async () => {
       try {
-        const response = await fetch(
-          "https://pixavibe-api-1b79caa01d4f.herokuapp.com/category/"
-        );
-        const data = await response.json();
+        const { data } = await axiosReq.get("category/");
         setCategories(data.results);
       } catch (err) {
         console.error("Error fetching categories:", err); // Log error if fetching fails
