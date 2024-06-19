@@ -14,7 +14,8 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-//import MultiSelect from "../../components/MultiSelect";  Make dropdown invisible for user, reason in TESTING.md
+//import MultiSelect from "../../components/MultiSelect";  Make dropdown invisible for user, reason in TESTING.md, BUG#68
+import formStyles from "../../styles/FormStyles.module.css";
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
@@ -121,12 +122,13 @@ function PostEditForm() {
   const textFields = (
     <div className="text-center">
       <Form.Group>
-        <Form.Label>Title</Form.Label>
+        <Form.Label className={formStyles.FormLabel}>Title</Form.Label>
         <Form.Control
           type="text"
           name="title"
           value={title}
           onChange={handleChange}
+          className={formStyles.TextArea}
         />
       </Form.Group>
       {errors?.title?.map((message, idx) => (
@@ -135,13 +137,14 @@ function PostEditForm() {
         </Alert>
       ))}
       <Form.Group>
-        <Form.Label>Content</Form.Label>
+        <Form.Label className={formStyles.FormLabel}>Content</Form.Label>
         <Form.Control
           as="textarea"
           rows={6}
           name="content"
           value={content}
           onChange={handleChange}
+          className={formStyles.TextArea}
         />
       </Form.Group>
       {errors?.content?.map((message, idx) => (
@@ -152,6 +155,7 @@ function PostEditForm() {
       <Form.Group>
         <Form.Label>Category</Form.Label>
         <Form.Control
+          className={formStyles.Dropdown}
           as="select"
           name="category"
           value={category}
@@ -171,7 +175,7 @@ function PostEditForm() {
         </Alert>
       ))}
 
-      {/* Make dropdown invisible for user, reason in TESTING.md
+      {/* Make dropdown invisible for user, reason in TESTING.md, BUG#68
        <Form.Group>
         <Form.Label>Hashtags</Form.Label>
         <MultiSelect

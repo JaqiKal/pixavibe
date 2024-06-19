@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import appStyles from "../App.module.css";
 import Form from "react-bootstrap/Form";
-import styles from "../App.module.css";
+//import styles from "../App.module.css";
 import PropTypes from "prop-types";
 import { axiosReq } from "../api/axiosDefaults";
+import formStyles from "../styles/FormStyles.module.css";
 
 /**
  * The component fetches categories from the API and provides a dropdown
@@ -47,9 +48,11 @@ const CategorySelect = ({ setFilter, mobile }) => {
     >
       <Row className="row d-flex justify-content-center">
         <Form.Group controlId="categorySelect">
-          <Form.Label>Filter on Category</Form.Label>
+          <Form.Label className={formStyles.FormLabel}>
+            Filter on Category
+          </Form.Label>
           <Form.Control
-            className={styles.Dropdown}
+            className={formStyles.Dropdown}
             as="select"
             onChange={(e) => setFilter(e.target.value)}
             defaultValue=""
