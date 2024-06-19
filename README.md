@@ -35,6 +35,7 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
       - [Typography](#typography)
       - [Imagery](#imagery)
       - [Reusable Component Design](#reusable-component-design)
+      - [CRUD](#crud)
     - [Technologies](#technologies)
     - [Testing](#testing)
     - [Deployment](#deployment)
@@ -520,89 +521,76 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 This application emphasizes modularity and reusability. Each component is designed to function independently and can be easily repurposed in different contexts. Some components have multiple uses across the app and offer potential for further applications.
 
-##### Asset component\*\*
+<details>
+
+<summary>A selection of reusable components</summary>
+
+<br>
+
+**Asset component**
 
 - Purpose: Display a media asset, such as images, spinner animations, and messages.
+- Props: src, message, spinner
+- Usage: `const Asset` is considered a reusable component and has been reused in: NotFound.js, PostCreateForm.js, PostPage.js, PostsPage.js, PopularProfiles.js, ProfilePage.js to display a spinner whenever content is loading.
 
-- Props:
-
-  - spinner: Boolean to display a loading spinner.
-  - src: URL of the image to be displayed.
-  - message: Text message to accompany the asset.
-
-- Used in: Post feed, Post detail page, Profile page, NavBar.
-
-- Potential uses: Displaying static images, loading animations, error messages.
-
-##### Avatar component
+**Avatar component**
 
 - Purpose: Display user profile images.
+- Props: profile, owner, image
+  Usage: `const Avatar` is considered a reusable component and has been reused in: NavBar.js, Comment.js, CommentCreateForm.js, Post.js and Profile.js to handle and import the avatar for the user
 
-- Props:
+**CategorySelect Component**
 
-  - src: URL of the profile image.
-  - height: Height of the avatar image.
-  - text: Optional text to display alongside the avatar.
-
-- Used in: Post feed, Post detail page, Profile page, NavBar.
-
-- Potential uses: Displaying user avatars in various sections of the application.
-
-##### MoreDropdown Component\*\*
-
-- Purpose: Provide a dropdown menu for actions like editing and deleting items.
-
-- Props:
-
-  - handleEdit: Function to handle the edit action.
-  - handleDelete: Function to handle the delete action.
-
-- Used in: Post component, ProfilePage.
-
-- Potential uses: Context menus for various content types that support edit and delete actions.
-
-##### MultiSelect Component\*\*
-
-Note: The component is out of sight due to [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68).
-
-- Purpose: Select multiple hashtags.
-
-- Props:
-
-  - selectedHashtags: Array of selected hashtags.
-  - setSelectedHashtags: Function to update the selected hashtags state.
-
-- Used in: PostCreateForm, PostEditForm.
-
-- Potential uses: Any form or interface requiring multi-select functionality.
-
-##### CategorySelect Component\*\*
-
-- Purpose: Fetch and display categories for filtering content.
-
-- Props:
-
-  - setFilter: Function to update the selected category filter.
-  - mobile: Boolean to indicate if the component is in mobile view.
-
-- Used in: PostsPage.
-
+- Purpose: This component encompasses functionality that fetches categories from an API and displays them in a dropdown menu, allowing users to filter items based on the selected category. It can be reused in different situations where a dropdown list with filtering for categories is needed.
+- Props: setFilter: Function to update the selected category filter, mobile: Boolean to indicate if the component is in mobile view.
+- Usage: `const CategoryFilter` is considered a reusable component and has been reused in: PostsPage.js to render the Category filtering of posts.
 - Potential uses: Filtering options in other lists or content sections.
 
-##### ProfileDataContext and CurrentUserContext\*\*
+**Comment**
+
+- Purpose: This component is designed to display a comment with options to edit or delete it if the current user is the owner. This component can be reused in different contexts where similar functionality is needed such as blog post comments, forum threads or product reviews.
+- Props: id, content, owner and more...
+- Usage:`const Comment`is considered a reusable component and has been reused in: PostPage.js to fetch comments related to the specific post.
+  Potential uses: The comment component could be easily reused on profile pages to display all comments made by a specific user.
+
+**MoreDropdown Component**
+
+- Purpose: Provide a dropdown menu for actions like editing and deleting items. Can be reused as a simple dropdown menu in different scenarios for when users need to edit a comment, post, photos etc.
+- Props: handleEdit: Function to handle the edit action, handleDelete:
+- Usage: `const MoreDropdown` is considered a reusable component and has been reused in Comment.js, Post.js and ProfilePage.js to render the dropdown menu the enable the user to edit their data.
+- Potential uses: Context menus for various content types that support edit and delete actions.
+
+**Navbar**
+
+- Purpose: This component presents a form for users to update their passwords. It can be reused across different parts of the application where password updating functionality is needed.
+  -Usage: `const NavBar` is considered a reusable component and has been reused in: App.js to render the navbar on the entire website no matter what url path the user is currently located at.
+  Potential uses: Could be fitted onto a completely different app with small routing adjustments.
+
+**Post**
+Purpose: Display a specific post.
+Props: id, title, content, owner and more.
+Used in: `const Post` is considered a reusable component and has been reused in: PostPage.js and PostsPage.js to import all the data related to the specific post.Post feed, Post detail page, Profile page.
+Potential uses: Could be used for a "featured post" component or a list of the most popular posts of all time. Forum threads or Portfolio showcases.
+
+**ProfileDataContext and CurrentUserContext**
 
 - Purpose: Manage user and profile data across the application.
-
 - Usage:
-
   - CurrentUserContext: Provides current user data.
   - ProfileDataContext: Provides profile data, such as popular profiles.
-
 - Used in: Various components requiring user or profile data.
-
 - Potential uses: Any component that needs to access or manipulate user-related state efficiently.
 
-##### CRUD functionality\*\*
+**Profile**
+Purpose: This component is designed to render a user profile with options for following/unfollowing and block/unblock based on the current user's interaction status with the profile.
+Props: profile, owner, image
+Usage: Can be used as a Community memeber widget, Author card in blog posts, Participant list in events pages.
+From this component const Profile is considered a reusable component and has been reused in: PopularProfiles.js tho render the profiles in the popular profiles field.
+Potential uses: Highly reusable, convenient to use anywhere where you need to show the profile/user associated with a piece of content.
+
+</details>
+
+### CRUD
 
 Pixavibe features full Create, Read, Update and Delete functionality, via the UI implemented in React and the Django Rest Framework API. Pixavibe administrator have superuser authority and manages full CRUD.
 
@@ -635,6 +623,10 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Tools and Services
 
+<details>
+<summary>List of Tools & Services</summary>
+<br>
+
 - [Am I Responsive?](http://ami.responsivedesign.is/) is used to show the website image on a range of devices.
 - [ASPOSE](https://products.aspose.app/pdf/sv/conversion/jpg-to-webp#) is used to convert image to WEBP.
 - [Balsamiq](https://balsamiq.com/) is used to create wireframes.
@@ -658,11 +650,60 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 - [Wave](https://wave.webaim.org) is a suite of evaluation tools that helps authors make their web content more accessible to individuals with disabilities.
 - [Web Disability Sim](https://chromewebstore.google.com/detail/web-disability-simulator/olioanlbgbpmdlgjnnampnnlohigkjla) is a google chrome extension that allows you to view your site as people with accessibility needs would see it.
 
+</details>
+
+<br>
+
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Testing
 
-For thest results we refer to the [TESTING.md file](https://github.com/JaqiKal/pixavibe-frontend/blob/main/TESTING.md).
+For the test results we refer to the [TESTING.md file](https://github.com/JaqiKal/pixavibe-frontend/blob/main/TESTING.md).
+
+<details>
+<summary>Known and unsolved issues</summary>
+<br>
+
+- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
+- When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
+
+  - Mounting when not logged in
+  - Redirecting a logged-in user away from the sign-up/sign-in page
+  - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
+
+    ![x](/documentation/testing_image/401-error.png)
+
+- Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
+- (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
+
+  ![x](/documentation/testing_image/field-filters-label-invalid-name.png)
+
+- **Disclaimer on npm Audit Issues**: </br>
+  As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
+
+  - **ansi-html** (<0.0.8): High severity - Uncontrolled Resource Consumption.
+  - **axios** (0.8.1 - 0.27.2): Moderate severity - Cross-Site Request Forgery Vulnerability.
+  - **braces** (<3.0.3): High severity - Uncontrolled Resource Consumption.
+  - **browserslist** (4.0.0 - 4.16.4): Moderate severity - Regular Expression Denial of Service.
+  - **ejs** (<=3.1.9): Critical severity - Template injection vulnerability.
+  - **glob-parent** (<5.1.2): High severity - Regular Expression Denial of Service.
+  - **immer** (7.0.0 - 9.0.5): Critical severity - Prototype Pollution.
+  - **ip**: High severity - Server-Side Request Forgery.
+  - **loader-utils** (2.0.0 - 2.0.3): Critical severity - Prototype Pollution.
+  - **lodash.template**: High severity - Command Injection.
+  - **minimatch** (<3.0.5): High severity - Regular Expression Denial of Service.
+  - **node-forge** (<=1.2.1): High severity - Prototype Pollution.
+  - **nth-check** (<2.0.1): High severity - Inefficient Regular Expression Complexity.
+  - **postcss** (<8.4.31): Moderate severity - Line return parsing error.
+  - **semver** (7.0.0 - 7.5.1): Moderate severity - Regular Expression Denial of Service.
+  - **shell-quote** (<=1.7.2): Critical severity - Improper Neutralization of Special Elements.
+  - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
+
+There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
+
+</details>
+
+<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
@@ -670,7 +711,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Version Control
 
-The site was created using the Gitpod editor and pushed to github to the remote repository ‘pixavibe’.
+The site was created using the Gitpod editor and pushed to github to the remote repository ‘pixavibe-frontend’.
 
 The following git commands were used throughout development to push code to the remote repo:
 
@@ -685,29 +726,71 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### Heroku Deployment
 
-The site was deployed to Heroku. The steps to deploy are as follows:
+ <details>
+ <summary>To deploy the project to Heroku, I took the following steps</summary>
+ 
+ <br>
 
-1 - While in Heroku, navigate to dashboard and then click on the new button in the top right corner choosing: create new app.
+**Initial set-up**
 
-2 - Input a name for your app (this name will need to be unique) and choose the correct region for where you are located. Click create app.
+- Sign up for a [Heroku](https://heroku.com/) account at Heroku's website.
+- Download and install the Heroku Command Line Interface (CLI) to interact with Heroku from your local machine.
+- Or use Heroku Web interface.
 
-3 - Click on deploy tab. Select deploy method, in this case Git Hub. Confirm connection to git hub by searching for the correct repository and then connecting to it.
+**Preparing the Application**
 
-4 - To manually deploy project click 'Deploy Branch'. Once built a message will appear saying: Your app was successfully deployed. Click the view button to view the deployed page making a note of it's url
+- Create and add the 'Procfile' to your application's root directory `echo web: node index.js > Procfile`. Heroku relies on this file to determine how to run your application, ensuring the correct setup of your web server. Use commands like web: `gunicorn PROJ_NAME.wsgi` in the 'Procfile' to instruct Heroku on starting your web server with Gunicorn
+- Ensure you have a requirements.txt file listing all project dependencies.
+- Set up necessary configuration variables in Heroku setting tab > Config Vars (eg. SECRET_KEY, DATABASE_URL, etc.).
+- In your app's 'settings.py' add Heroku to ALLOWED_HOSTS
 
-_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+**Create Heroku App**
+
+- Sign in or sign up to [Heroku](https://heroku.com/).
+- Click the button that says "Create new app."
+- Enter a unique app name.
+- Choose your region from the dropdown menu.
+- Click the "Create app" button.
+- Scroll further down on the page, select Add Buildpack. The buildpacks will install further dependencies that are not included in the 'requirements.txt'. <br>
+  It's crucial to arrange the build packs correctly! First, choose Python and then Node.js. If they're not in this sequence, you can reorder them by dragging.
+
+**Deployment**
+
+- Deploy by either push your code to Heroku or by connecting your GitHub repository to Heroku or using the Heroku CLI to deploy your application.
+- (if applicable) Run database migrations using the Heroku CLI.
+- For deploying this project, we're using GitHub as our method. After choosing GitHub, make sure to confirm the connection. Then, search for your repository name and once Heroku finds your repository - click "connect"
+- Scroll down to the section "Automatic Deploys".
+- Click "Enable automatic deploys" or choose "Deploy branch" and manually deploy.
+- Click "Deploy branch" wait for the app to be built. Once this is done, a message should appear letting us know that the app was successfully deployed.
+- Click the button "View" to see the app.
+
+**Final Steps**
+
+- Enable the Web Dyno, make sure the web dyno is up and running after deployment.
+- Open your application from the Heroku dashboard or using the CLI command heroku open.
+
+For more detailed instructions and troubleshooting, visit the [official Heroku Dev Center](https://devcenter.heroku.com/).
+
+</details>
 
 #### Local Deployment
 
-Navigate to the GitHub Repository you want to clone to use locally:
+<details>
+<summary>How to clone:</summary>
+<br>
 
+Cloning a GitHub repository creates a local copy on your machine, allowing you to sync between the two locations. Here are the steps:
+
+- Navigate to the GitHub Repository you want to clone to use locally:
 - Click on the code drop down button
 - Click on HTTPS
 - Copy the repository link to the clipboard
 - Open your IDE of choice (git must be installed for the next steps)
-- Type git clone copied-git-url into the IDE terminal
-
-The project will now have been cloned on your local machine for use.
+- In your IDE or local coding environment use the link to open the repository.
+  - For example: in VScode: <br>
+    clicking on 'Clone Git Repository...' will bring up a box in which to paste the link. once vscode has the link, you will then be asked where you would like the repo saving. You should now be set up ready to work on the repository.
+  - For example: in Gitpod <br>
+    Click on the green Open button (next to 'Code'). Gitpod opens and start preparing the workspace.
 
 Install Dependencies:
 
@@ -716,54 +799,55 @@ Install Dependencies:
 Run Application:
 
 `npm start`
+
 <br>
+</details>
+ 
+ <br>
 
-#### How to Fork
+<details>
+<summary>How to Fork</summary>
 
-Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea. In order to protect the main branch while you work on something new, essential when working as part of a team or when you want to experiment with a new feature, you will need to fork a branch.
 
-1. Log in (or sign up) to Github.
-2. Go to the selected repository.
-3. Click the Fork button in the top right corner and select create a fork.
-4. One can change the name of the fork and add description
-5. Choose to copy only the main branch or all branches to the new fork.
-6. Click Create a Fork. A repository should appear in your GitHub
-   <br>
+- Log in (or sign up) to Github.
+- Go to the selected repository.
+- Click the Fork button in the top right corner and select create a fork.
+- One can change the name of the fork and add description
+- Choose to copy only the main branch or all branches to the new fork.
+- Click Create a Fork. A repository should appear in your GitHub
 
-_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+Instructions to fork directly from an issue:
 
-#### How to Clone
+- Click to view an issue, either from the issues list or from the project board. From the project board you will need to click once to bring up the issue and then again on the title to go into it fully.
+- Partway down the right hand side (on desktop) you should see the heading 'Development' and under this a link to 'create a branch for this issue or link a pull request'.
+- Click on the link to create a forked branch that is tied to the issue.
 
-1. Log in (or sign up) to GitHub.
-2. Go to the selected repository.
-3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
-4. Open the terminal in your code editor or open command-line interface on your computer and change the current working directory to the location you want to use for the cloned directory.
-5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
-   - `$ git clone <your link>`
-6. Press Enter. Your local clone will be created.
+</details>
+
+<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Credits
 
-This article was used to implement the simple star rating component:
-
-- [awran5/react-simple-star-rating](https://github.com/awran5/react-simple-star-rating)
-
 #### Content
 
-Throughout the development of Pixavibe, a variety of resources have been utilized to ensure the platform is robust, user-friendly, and engaging. Below is a list of key documentation, blogs, tutorials, and guides that have been instrumental in crafting the features and functionality of Pixavibe:
+<details>
+<summary>List of content</summary> 
+<br>
+Throughout the development of Pixavibe, a variety of resources have been utilized to ensure the platform is robust, user-friendly, and engaging. Below is a list of documentation, blogs, tutorials, and guides that have been instrumental in crafting the features and functionality of Pixavibe:
 
-- Logo used was created at
+- Logo used was created at [Looka](https://looka.com/dashboard)
 - [React Multiselect dropdown](https://www.npmjs.com/package/multiselect-react-dropdown), this library is used for handling hashtags. It helps keep the codebase cleaner and more maintainable.
 - [css-validator](https://www.npmjs.com/package/css-validator) together with GPT was used to create `validate-css.js`. It was used to validate CSS.
 - **Bootstrap**: Used for styling and responsive design, making the site accessible on a variety of devices - [Bootstrap documentation](https://getbootstrap.com/).
 - **Sources of inspiration and guidance in general**:
-  - X
-  - Y
-  - Z
   - This resources is only available to enrolled students at The Code Institute:
     - The Code Institute Diploma in Full Stack Software Development (Advanced Front-End) Walk-through project Moments (frontend)
+  - [React](https://react.dev/learn) A goto place to learn.
+  - [Django Rest framework](https://www.django-rest-framework.org/) A got place to learn
+  - [Django & React Tutorial](https://youtu.be/JD-age0BPVo?si=vLYojx9J_rD8ZKyU), Tech with Tim, also a goto net source for inspo.
 - **Testing**: Used to learn how to create test cases
   - [How to write test cases for Django Rest Framework Applications](https://rajansahu713.medium.com/mastering-the-art-of-django-test-cases-fa7b0322c9fb)
   - [Django REST framwork, Testing](https://www.django-rest-framework.org/api-guide/testing/#testingDjango)
@@ -773,15 +857,22 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
   - [serie of videos - Django Testing Tutorial - What Is Testing?](https://youtu.be/qwypH3YvMKc?si=1OptYFWRajgREWh_)
   - [Unit Tests in Python || Python Tutorial || Learn Python Programming](https://youtu.be/1Lfv5tUGsn8?si=ZgIDWVjSQqTIUYYK)
   - [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) are used in test cases to validate that the application is behaving as expected under various conditions.
+  </details>
 
 #### Acknowledgements
 
-I would like to thank!
+<details>
+<summaryI would like to thank!</summary>
+<br>
 
 - My immediate and extended family, as well as my friends, who support and cheer me on!
-- [Jonathan!](https://github.com/Jonathan97-web/) A very knowledgeable, kind, and helpful man, whose support meant a great deal. Without it, the project would have been in peril of never seeing the light of day!
+- [Jonathan Zakrisson!](https://github.com/Jonathan97-web/) A very knowledgeable, kind, and helpful man, whose support meant a great deal. Without it, the project would have been in peril of never seeing the light of day!
 - Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow.
-- To all engaged fellow students at all channels and a special shout out to CI slack channel #community-sweden!
+- To all engaged fellow students at all channels and a special shout out to #community-sweden!
 - My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
+
+</details>
+
+<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
