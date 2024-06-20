@@ -35,7 +35,6 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
       - [Typography](#typography)
       - [Imagery](#imagery)
       - [Reusable Component Design](#reusable-component-design)
-      - [CRUD](#crud)
     - [Technologies](#technologies)
     - [Testing](#testing)
     - [Deployment](#deployment)
@@ -355,6 +354,9 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 #### MoSCoW Prioritization
 
+<details>
+<summary>MoSCow </summaryW
+<br>
 By focusing on the Must Have features, the project ensures the highest priority tasks are completed first, delivering a functional and valuable product to users. The Should Have and Could Have features provide room for enhancements and future iterations, aligning with both the MoSCoW method and the Pareto principle for effective project management.
 
 - Must Have: <br>
@@ -367,9 +369,9 @@ By focusing on the Must Have features, the project ensures the highest priority 
   Adds value but can be deferred without impacting the core functionality (tagging, advanced user interactions, and feedback mechanisms).
 
 - Won't Have: <br>
-  Deferred features that are not essential for the initial launch but could be considered for future phases (infinite scroll).
-  <br>
-  <br>
+Deferred features that are not essential for the initial launch but could be considered for future phases (infinite scroll).
+<br>
+</details> <br>
 
 <details>
 <summary>Prioritized User stories </summary>
@@ -484,42 +486,105 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 - CRUD Operations: Create, read, update, and delete your content and profiles with ease.
 
--User Interaction - Get Involved: Like, comment, follow—get the full experience based on your authorization status.
+-User Interaction - Get Involved: Like, comment, follow—get the full experience based on your authorization status. Pixavibe administrator have superuser authority and manages full CRUD.
 
-**SignIn/SignUp Page**
-![X]()
+- Create - users can register a new user account, authenticated users can create post(s) and create a comment(s)
+- Read - authenticated users can view their posts, comments, and their profile image.
+- Update - authenticated users can update their profile image, username and password, and edit and save comments, its title, and select/deselect category and save it.
+- Delete - authenticated users can delete their own comments and posts.
 
+**SignIn/SignUp Page** <br>
 Join the Fun: Creating an account is easy-peasy. After signing up, you’ll be whisked to the sign-in page. Already signed in? You’ll head straight to the home page.
 
-**Navigation Bar**
-![x]()
+![X](/documentation/readme-image/existing_feat/signin.webp)
 
+![X](/documentation/readme-image/existing_feat/signup.webp)
+
+**Navigation Bar** <br>
 Always There for You: The navigation bar adapts to whether you’re signed in or not, and it looks great on any screen size.
 
-**Profile Page**
-![x]()
+![x](/documentation/readme-image/existing_feat/iph-nav.webp)
 
-Showcase Yourself: See detailed info about users, including posts, followers, and who they follow. If you follow them, it’s highlighted. Add personal touches with a dedicated info section. Follow or hide users unless it’s your own profile. All posts from the profile owner are displayed below.
+![x](/documentation/readme-image/existing_feat/air-nav.webp)
+
+**Profile Page**
+<br>
+Showcase Yourself: See detailed info about users, including posts, followers, and who they follow. If you follow them, it’s highlighted. Add personal touches with a dedicated info section. Follow or hide users unless it’s your own profile. All posts from the profile owner are displayed below. Click on the three dots and edit your profile, change username, change password
+
+![x](/documentation/readme-image/existing_feat/profile_edit_dropdown.webp)
+
+![x](/documentation/readme-image/existing_feat/full_profile_own.webp)
+
+![x](/documentation/readme-image/existing_feat/edit_profile_bio.webp)
+
+![x](/documentation/readme-image/existing_feat/edit_profile_name.webp)
+
+![x](/documentation/readme-image/existing_feat/edit_profile_pw.webp)
+
+Hide with Block button, hidden profile is not seen in feeds, and will not appear when searched on.
+Sometimes one simply is in need of some mild curating. Hidden user is still able to see and interact with the blocker. In coming development iterations this feature will evolve to become a true block, where no interaction will be permitted from the blocked user.
+
+![x](/documentation/readme-image/existing_feat/hide.webp)
 
 **Profiles Sidebar**
-![x]()
-
+<br>
 Popular Profiles: Check out the most followed profiles. Follow or unfollow with a click, and enjoy a sidebar that fits perfectly on any screen.
 
-**Post List**
-![x]()
+![x](/documentation/readme-image/existing_feat/popular_profile.webp)
 
-Endless Inspiration: Browse posts infinitely! Use the search bar to find posts by title or username. See your personalized feed of posts from those you follow and liked posts. Blocked users won’t show up, and friends-only posts are just for friends.
+**Post List**
+<br>
+Endless Inspiration: Browse posts infinitely! Use the search bar to find posts by title or username. Use category to filter. See your personalized feed of posts from those you follow and liked posts. Blocked users won’t show up.
+
+![x](/documentation/readme-image/existing_feat/postlist.webp)
+
+Category filter
+
+![x](/documentation/readme-image/existing_feat/category_before_after.webp)
+
+Follow/unfollow
+
+![x](/documentation/readme-image/existing_feat/follow_unfollow.webp)
+
+Like/unlike
+
+![x](/documentation/readme-image/existing_feat/like_nolike.webp)
+
+Block/ unblock
+
+!![x](/documentation/readme-image/existing_feat/hide.webp)
 
 **Post Page**
-![x]()
-
+<br>
 Dive into Details: See all the nitty-gritty about a post, including comments. Edit or delete your posts easily. Tag posts with one category, and (once the bug’s fixed) multiple hashtags. The multi-hashtag feature is hidden for now due to [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68. Like the category tagging, it offers a predefined list to select/deselect multiple hashtags. However, once a post is saved, you can't change the hashtags during edits. To avoid a bad user experience, we've temporarily hidden this feature in the belly of our scrumptious app.
 
-**Contact Form**
-![x]()
+Just own poste(s), me, myself and I!
 
+![x](/documentation/readme-image/existing_feat/postdetail.webp)
+
+Edit Image, Title, Content, Category
+
+![x](/documentation/readme-image/existing_feat/edit_postdetail.webp)
+
+Select a category tag and add to post
+
+![x](/documentation/readme-image/existing_feat/add_post_category_dropdown.webp)
+
+Dropdown menu for edit and delete
+
+![x](/documentation/readme-image/existing_feat/edit_delete.webp)
+
+Edit Comments
+
+![x](/documentation/readme-image/existing_feat/comment_suite.webp)
+
+**Contact Form**
+<br>
 Get in Touch: Use our form to reach out. A friendly modal will thank you for your message, but just a heads up—this is a student project, so we’re not monitoring messages closely. Thanks for testing!
+
+![x](/documentation/readme-image/existing_feat/contact.webp)
+
+![x](/documentation/readme-image/existing_feat/contact_modal.webp)
 
 </details>
 
@@ -659,15 +724,6 @@ From this component const Profile is considered a reusable component and has bee
 Potential uses: Highly reusable, convenient to use anywhere where you need to show the profile/user associated with a piece of content.
 
 </details>
-
-### CRUD
-
-Pixavibe features full Create, Read, Update and Delete functionality, via the UI implemented in React and the Django Rest Framework API. Pixavibe administrator have superuser authority and manages full CRUD.
-
-- Create - users can register a new user account, authenticated users can create post(s) and create a comment(s)
-- Read - authenticated users can view their posts, comments, and their profile image.
-- Update - authenticated users can update their profile image, username and password, and edit and save comments, its title, and select/deselect category and save it.
-- Delete - authenticated users can delete their own comments and posts.
 
 ### Technologies
 
