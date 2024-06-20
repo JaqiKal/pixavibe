@@ -31,19 +31,14 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
     - [Future Features](#future-features)
   - [The Surface Plane](#the-surface-plane)
     - [Design](#design)
-      - [Colour-Scheme](#colour-scheme)
-      - [Typography](#typography)
-      - [Imagery](#imagery)
-      - [Reusable Component Design](#reusable-component-design)
     - [Technologies](#technologies)
-    - [Testing](#testing)
-    - [Deployment](#deployment)
-    - [Version Control](#version-control)
-      - [Heroku](#heroku-deployment)
-      - [Local Deployment](#local-deployment) -[How to Fork](#how-to-fork) -[How to Clone](#how-to-clone)
-    - [Credits](#credits)
-      - [Content](#content)
-      - [Acknowledgements](#acknowledgements)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+    - [Heroku](#heroku-deployment)
+    - [Local Deployment](#local-deployment) -[How to Fork](#how-to-fork) -[How to Clone](#how-to-clone)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Acknowledgements](#acknowledgements)
 
 ## Live Site
 
@@ -51,7 +46,7 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
 
 ## API Backend
 
-[Pixavibe API README](https://github.com/JaqiKal/pixavibe-api/blob/main/README.mdi)
+[Pixavibe API README](https://github.com/JaqiKal/pixavibe-api/blob/main/README.md)
 
 ## The Strategy Plane
 
@@ -241,15 +236,18 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Agile Planning and Development
 
+<details>
+<summary>Is Pixavibe agile?</summary>
+<br>
+
 Agile methodologies and principles guide the planning and creation of Pixavibe. While not adhering strictly to traditional Agile methodologies, such as scheduled sprints or scrums. The development process is inspired by Agile principles, focusing on flexibility, continuous improvement, and rapid adaptation to change. Sprints are not used as the project benefits more from focusing directly on developing an epic corresponding to an app in the backend and following the priority level on the User Stories within the Epic. High level approach is to divide the project into phases: plan, development incl unit test, function test, continuous deployment. The documentation is created, continuously reviewed and updated along the way. The approach is straightforward, development of features in a logical sequence, addressing core functionalities first before expanding to more complex features.
 
 When encountering bugs or issues, rather than halting development, these are recorded as bug issues and added to the backlog. This allows to continue progressing in other areas while periodically revisiting and prioritizing the backlog based on severity and impact. This method ensures that development momentum is maintained while systematically addressing and resolving issues.
 
 Feedback from users are actively sought and analyzed to identify areas for improvement, ensuring that the product continuously evolves to meet the needs and expectations of its users effectively
 
-A project kanban board was used to track progress, with user stories moved between 'Todo', 'In Progress', 'Bug', and 'Done' columns as appropriate.
-
-_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+A project [kanban board](https://github.com/users/JaqiKal/projects/14) was used to track progress, with user stories moved between 'Todo', 'In Progress', 'Bug', and 'Done' columns as appropriate.
+</details>
 
 #### Project Tracking (GitHub Projects)
 
@@ -347,7 +345,6 @@ The unmarked are part of the development during Frontend phase.<br>
 | [49](https://github.com/JaqiKal/pixavibe-frontend/issues/49) | The Profile Page            | Send Feedback to Admins                                    | As a user, I want to send feedback or queries to the platform administrators so that I can report issues or suggest improvements                                        |
 | [50](https://github.com/JaqiKal/pixavibe-frontend/issues/50) | The Profile Page            | DRF - Implement Post Tagging                               | As a developer, I want to implement tagging functionality for posts so that users can categorize their content                                                          |
 | [70](https://github.com/JaqiKal/pixavibe-frontend/issues/70) | The Profile Page            | Blocked users cannot see or interact with the user's posts | As a user, I want to block other users so that they cannot see or interact with my posts                                                                                |
-
 </details> <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
@@ -355,7 +352,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 #### MoSCoW Prioritization
 
 <details>
-<summary>MoSCow </summaryW
+<summary>MoSCow </summary>
 <br>
 By focusing on the Must Have features, the project ensures the highest priority tasks are completed first, delivering a functional and valuable product to users. The Should Have and Could Have features provide room for enhancements and future iterations, aligning with both the MoSCoW method and the Pareto principle for effective project management.
 
@@ -442,8 +439,31 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 <details>
 <summary>All Wireframe Images</summary>
+<br>
 
-![X](#) §§§§§§§§§
+Login/Signup
+
+![X](/documentation/readme-image/wireframes/wireframe_login_register.webp)
+
+Posts Page
+
+![X](/documentation/readme-image/wireframes/wireframe_auth_home.webp)
+
+Post Page
+
+![X](/documentation/readme-image/wireframes/wireframe_postdetail.webp)
+
+Profile
+
+![X](/documentation/readme-image/wireframes/wireframe_profile.webp)
+
+Contact
+
+![X](/documentation/readme-image/wireframes/wireframe_contact.webp)
+
+Log out
+
+![X](/documentation/readme-image/wireframes/wireframe_nonauth.png)
 
 </details>
 <br>
@@ -532,7 +552,7 @@ Popular Profiles: Check out the most followed profiles. Follow or unfollow with 
 
 ![x](/documentation/readme-image/existing_feat/popular_profile.webp)
 
-**Post List**
+**Posts page**
 <br>
 Endless Inspiration: Browse posts infinitely! Use the search bar to find posts by title or username. Use category to filter. See your personalized feed of posts from those you follow and liked posts. Blocked users won’t show up.
 
@@ -552,13 +572,13 @@ Like/unlike
 
 Block/ unblock
 
-!![x](/documentation/readme-image/existing_feat/hide.webp)
+![x](/documentation/readme-image/existing_feat/hide.webp)
 
 **Post Page**
 <br>
 Dive into Details: See all the nitty-gritty about a post, including comments. Edit or delete your posts easily. Tag posts with one category, and (once the bug’s fixed) multiple hashtags. The multi-hashtag feature is hidden for now due to [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68. Like the category tagging, it offers a predefined list to select/deselect multiple hashtags. However, once a post is saved, you can't change the hashtags during edits. To avoid a bad user experience, we've temporarily hidden this feature in the belly of our scrumptious app.
 
-Just own poste(s), me, myself and I!
+Owner´s post(s), me, myself and I!
 
 ![x](/documentation/readme-image/existing_feat/postdetail.webp)
 
@@ -566,11 +586,11 @@ Edit Image, Title, Content, Category
 
 ![x](/documentation/readme-image/existing_feat/edit_postdetail.webp)
 
-Select a category tag and add to post
+Select a category tag and add to post. Makes life easier when one can filter on category.
 
 ![x](/documentation/readme-image/existing_feat/add_post_category_dropdown.webp)
 
-Dropdown menu for edit and delete
+Dropdown menu for edit and delete of individual post.
 
 ![x](/documentation/readme-image/existing_feat/edit_delete.webp)
 
@@ -613,8 +633,9 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Design
 
-#### Colour-Scheme
-
+<details>
+<summary>Colour-Scheme, Typography and Imagery</summary>
+<br>
 We were reminiscing about our childhood and the simple joys that filled those days. One such joy was an enterprise that delivered ice cream directly from the factory to our doorstep. Even now, it brings a smile to our faces. The colors in our palette are inspired by our favorite ice cream flavors from those cherished memories. A joyous recollection forms the foundation of our color scheme.
 
 - Page background colour is a light shade of lilac (#e7d5e6;).
@@ -633,8 +654,6 @@ We were reminiscing about our childhood and the simple joys that filled those da
 ![palette](/documentation/readme-image/pixawibe_palette.webp)
 <br>
 
-_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
-
 #### Typography
 
 The main font used on the website is "DM Sans".
@@ -648,7 +667,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 #### Imagery
 
 The images on this website are made by DALL-E or if in post feed, private origin.
-<br>
+</details><br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
@@ -702,10 +721,10 @@ This application emphasizes modularity and reusability. Each component is design
   Potential uses: Could be fitted onto a completely different app with small routing adjustments.
 
 **Post**
-Purpose: Display a specific post.
-Props: id, title, content, owner and more.
-Used in: `const Post` is considered a reusable component and has been reused in: PostPage.js and PostsPage.js to import all the data related to the specific post.Post feed, Post detail page, Profile page.
-Potential uses: Could be used for a "featured post" component or a list of the most popular posts of all time. Forum threads or Portfolio showcases.
+- Purpose: Display a specific post.
+- Props: id, title, content, owner and more.
+- Usage: `const Post` is considered a reusable component and has been reused in: PostPage.js and PostsPage.js to import all the data related to the specific post.Post feed, Post detail page, Profile page.
+- Potential uses: Could be used for a "featured post" component or a list of the most popular posts of all time. Forum threads or Portfolio showcases.
 
 **ProfileDataContext and CurrentUserContext**
 
@@ -717,11 +736,11 @@ Potential uses: Could be used for a "featured post" component or a list of the m
 - Potential uses: Any component that needs to access or manipulate user-related state efficiently.
 
 **Profile**
-Purpose: This component is designed to render a user profile with options for following/unfollowing and block/unblock based on the current user's interaction status with the profile.
-Props: profile, owner, image
-Usage: Can be used as a Community memeber widget, Author card in blog posts, Participant list in events pages.
+- Purpose: This component is designed to render a user profile with options for following/unfollowing and block/unblock based on the current user's interaction status with the profile.
+- Props: profile, owner, image
+- Usage: Can be used as a Community memeber widget, Author card in blog posts, Participant list in events pages.
 From this component const Profile is considered a reusable component and has been reused in: PopularProfiles.js tho render the profiles in the popular profiles field.
-Potential uses: Highly reusable, convenient to use anywhere where you need to show the profile/user associated with a piece of content.
+- Potential uses: Highly reusable, convenient to use anywhere where you need to show the profile/user associated with a piece of content.
 
 </details>
 
@@ -797,9 +816,8 @@ For the test results we refer to the [TESTING.md file](https://github.com/JaqiKa
 <summary>Known and unsolved issues</summary>
 <br>
 
-- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
+- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has a bug registerd (in Kanban board) and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
 - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
-
   - Mounting when not logged in
   - Redirecting a logged-in user away from the sign-up/sign-in page
   - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
@@ -842,20 +860,17 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Deployment
 
-#### Version Control
 
+<details>
+<summary>Version Control</summary>
+<br>
 The site was created using the Gitpod editor and pushed to github to the remote repository ‘pixavibe-frontend’.
-
 The following git commands were used throughout development to push code to the remote repo:
 
-`git add <file>` - This command was used to add the file(s) to the staging area before they are committed.
-
-`git commit -m “commit message”` - This command was used to commit changes to the local repository queue ready for the final step.
-
-`git push` - This command was used to push all committed code to the remote repository on github.
-<br>
-
-_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
+- `git add <file>` - This command was used to add the file(s) to the staging area before they are committed.
+- `git commit -m “commit message”` - This command was used to commit changes to the local repository queue ready for the final step.
+- `git push` - This command was used to push all committed code to the remote repository on github.
+</details>
 
 #### Heroku Deployment
 
@@ -1000,7 +1015,7 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
 
 - My immediate and extended family, as well as my friends, who support and cheer me on!
 - [Jonathan Zakrisson!](https://github.com/Jonathan97-web/) A very knowledgeable, kind, and helpful man, whose support meant a great deal. Without it, the project would have been in peril of never seeing the light of day!
-- [Emil Jädersten](https://github.com/EmilionR/), for chairing the Sunday huddle and sharing knowhow, in so many ways.
+- [Emil Jädersten](https://github.com/EmilionR/), for chairing the Sunday huddle and sharing knowhow, in many ways.
 - [Jörgen Jonsson](https://github.com/JorgenDIF/JorgenDIF), giving the community his time an energy, and being a cheerful guy in general.
 - To all engaged fellow students at all channels and a special shout out to #community-sweden!
 - Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow.
