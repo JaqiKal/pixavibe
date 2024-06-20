@@ -17,7 +17,7 @@ The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
   - [Live Site](#live-site)
   - [API Backend](#api-backend)
   - [The Strategy Plane](#the-strategy-plane)
-    - [Development Goals mapped with User Stories](#development-goals-mapped-with-user-stories)
+    - [Development Goals and Corresponding User Stories](#development-goals-and-corresponding-user-stories)
     - [Learning Outcomes and Skill Development](#learning-outcomes-and-skill-development)
     - [Agile Planning and Development](#agile-planning-and-development)
       - [Project Tracking (GitHub Projects)](#project-tracking-github-projects)
@@ -368,7 +368,7 @@ By focusing on the Must Have features, the project ensures the highest priority 
 - Won't Have: <br>
 Deferred features that are not essential for the initial launch but could be considered for future phases (infinite scroll).
 <br>
-</details> <br>
+</details>
 
 <details>
 <summary>Prioritized User stories </summary>
@@ -433,7 +433,7 @@ Deferred features that are not essential for the initial launch but could be con
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
-## The Structured Plane
+## The Structure Plane
 
 ### Wireframes
 
@@ -1016,13 +1016,10 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
 - My immediate and extended family, as well as my friends, who support and cheer me on!
 - [Jonathan Zakrisson!](https://github.com/Jonathan97-web/) A very knowledgeable, kind, and helpful man, whose support meant a great deal. Without it, the project would have been in peril of never seeing the light of day!
 - [Emil Jädersten](https://github.com/EmilionR/), for chairing the Sunday huddle and sharing knowhow, in many ways.
-- [Jörgen Jonsson](https://github.com/JorgenDIF/JorgenDIF), giving the community his time an energy, and being a cheerful guy in general.
+- [Jörgen Jonsson](https://github.com/JorgenDIF/JorgenDIF), giving the community his time an energy, and being a cheerful channel-lead in general.
 - To all engaged fellow students at all channels and a special shout out to #community-sweden!
 - Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow.
 - My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
-
 </details>
-
-<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
