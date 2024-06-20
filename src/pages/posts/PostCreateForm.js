@@ -32,7 +32,7 @@ function PostCreateForm() {
   useRedirect("loggedOut");
   const [errors, setErrors] = useState({});
   const [selectedHashtags, setSelectedHashtags] = useState([]);
-  const [showHashtagDropdown] = useState(false);  // Make dropdown invisible for user, reason in TESTING.md
+  const [showHashtagDropdown] = useState(false); // Make dropdown invisible for user, reason in TESTING.md
 
   const [postData, setPostData] = useState({
     title: "",
@@ -226,12 +226,15 @@ function PostCreateForm() {
       )}
 
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Black}`}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        type="submit"
+      >
         create
       </Button>
     </div>

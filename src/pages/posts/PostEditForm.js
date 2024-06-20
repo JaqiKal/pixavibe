@@ -14,7 +14,7 @@ import btnStyles from "../../styles/Button.module.css";
 
 import { useHistory, useParams } from "react-router";
 import { axiosReq } from "../../api/axiosDefaults";
-//import MultiSelect from "../../components/MultiSelect";  Make dropdown invisible for user, reason in TESTING.md, BUG#68
+
 import formStyles from "../../styles/FormStyles.module.css";
 
 function PostEditForm() {
@@ -175,27 +175,16 @@ function PostEditForm() {
         </Alert>
       ))}
 
-      {/* Make dropdown invisible for user, reason in TESTING.md, BUG#68
-       <Form.Group>
-        <Form.Label>Hashtags</Form.Label>
-        <MultiSelect
-          selectedHashtags={selectedHashtags}
-          setSelectedHashtags={setSelectedHashtags}
-        />
-      </Form.Group>
-      {errors?.hashtags?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))} */}
-
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Black}`}
         onClick={() => history.goBack()}
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button
+        className={`${btnStyles.Button} ${btnStyles.Green}`}
+        type="submit"
+      >
         save
       </Button>
     </div>
