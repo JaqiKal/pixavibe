@@ -970,10 +970,7 @@ Instructions to fork directly from an issue:
 - Click to view an issue, either from the issues list or from the project board. From the project board you will need to click once to bring up the issue and then again on the title to go into it fully.
 - Partway down the right hand side (on desktop) you should see the heading 'Development' and under this a link to 'create a branch for this issue or link a pull request'.
 - Click on the link to create a forked branch that is tied to the issue.
-
 </details>
-
-<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
