@@ -198,12 +198,12 @@ I used Lighthouse to test all pages. Performance results were quite low, but thi
 
 | Page         | Performance | Accessibility | Best Practices | SEO |
 | ------------ | ----------- | ------------- | -------------- | --- |
-| Home         | 64          | 95            | 78             | 100 |
-| Post Detail  | 59          | 91            | 78             | 100 |
-| Post Form    | 99          | 87            | 78             | 100 |
-| Profile page | 84          | 91            | 96             | 91  |
-| Login        | 97          | 86            | 96             | 91  |
-| Register     | 97          | 86            | 96             | 91  |
+| Home         | 64          | 100           | 78             | 100 |
+| Post Detail  | 59          | 100           | 78             | 100 |
+| Post Form    | 99          | 100           | 78             | 100 |
+| Profile page | 84          | 100           | 96             | 100 |
+| Login        | 98          | 90            | 96             | 92  |
+| Register     | 98          | 95            | 96             | 100 |
 
 </details>
 <br>
