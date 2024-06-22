@@ -1,5 +1,8 @@
+
+
 # Table of Contents
 
+- [Introduction](#introduction)
 - [User Story Testing](#user-story-testing)
 - [Validator Testing](#validator-testing)
   - [JSX](#jsx)
@@ -14,6 +17,10 @@
     - [Executed manual test cases and results](#executed-manual-test-cases-and-results)
   - [DRF-API Test Cases Representation](#drf-api-test-cases-representation)
 - [Issues](#issues)
+
+## Introduction
+
+This document encompasses the verification of the DRF-API backend and the React frontend.
 
 ## User Story Testing
 
