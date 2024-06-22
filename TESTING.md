@@ -214,11 +214,11 @@ I used Lighthouse to test all pages. Performance results were quite low, but thi
 
 | Page         | Performance | Accessibility | Best Practices | SEO |
 | ------------ | ----------- | ------------- | -------------- | --- |
-| Home         | 63          | 96            | 78             | 100 |
-| Post Detail  | 50          | 88            | 78             | 100 |
-| Post Form    | 55          | 81            | 78             | 92  |
-| Profile page | 75          | 89            | 78             | 92  |
-| Login        | 85          | 95            | 74             | 100 |
+| Home         | 63          | 100           | 78             | 100 |
+| Post Detail  | 50          | 100           | 78             | 100 |
+| Post Form    | 83          | 92            | 78             | 92  |
+| Profile page | 75          | 100           | 79             | 92  |
+| Login        | 85          | 95            | 96             | 100 |
 | Register     | 88          | 95            | 74             | 100 |
 
 </details>
