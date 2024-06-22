@@ -2,17 +2,17 @@
 
 ![x](/documentation/readme-image/amiresponsive.webp)
 
-Pixavibe is a Full-Stack web application designed to facilitate content sharing among users, akin to a simplified version of Instagram. Utilizing Django Rest Framework for the back-end and React for the front-end, the application provides a seamless user experience for browsing, posting, and interacting with content.
+Pixavibe is a Full-Stack web application designed to facilitate content sharing among users, similar to Instagram. Utilizing Django Rest Framework for the back-end and React for the front-end, the application provides a seamless user experience for browsing, posting, and interacting with content.
 <br>
 <br>
-The website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
+Visit the website: [Pixavibe](https://pixavibe-frontend-e53fa907f215.herokuapp.com/)
 <br>
 
 <hr>
 
 ## Table of Contents
 
-- [Pixavibe](#Pixavibe)
+- [Pixavibe](#pixavibe)
 
   - [Live Site](#live-site)
   - [API Backend](#api-backend)
@@ -129,7 +129,7 @@ To create a user-friendly, responsive platform that enables users to share and i
    **User Stories:**
 
    - **US-11:** DRF - Secure User Data
-   - **US-16:** Sign Up for New Account
+   - **US-16:** Sign Up For New Account
    - **US-17:** Sign In to Access Features
    - **US-18:** Logged In Status Check
    - **US-19:** Maintain Logged-In Status
@@ -240,13 +240,15 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 <summary>Is Pixavibe agile?</summary>
 <br>
 
-Agile methodologies and principles guide the planning and creation of Pixavibe. While not adhering strictly to traditional Agile methodologies, such as scheduled sprints or scrums. The development process is inspired by Agile principles, focusing on flexibility, continuous improvement, and rapid adaptation to change. Sprints are not used as the project benefits more from focusing directly on developing an epic corresponding to an app in the backend and following the priority level on the User Stories within the Epic. High level approach is to divide the project into phases: plan, development incl unit test, function test, continuous deployment. The documentation is created, continuously reviewed and updated along the way. The approach is straightforward, development of features in a logical sequence, addressing core functionalities first before expanding to more complex features.
+Agile methodologies and principles guide the planning and creation of Pixavibe. While not adhering strictly to traditional Agile methodologies, such as scheduled sprints or scrums. We base the development process on Agile principles, focusing on flexibility, continuous improvement, and rapid adaptation to change. Instead of using sprints, we focus directly on developing epics corresponding to backend apps and following the priority level on the User Stories within each epic. 
 
-When encountering bugs or issues, rather than halting development, these are recorded as bug issues and added to the backlog. This allows to continue progressing in other areas while periodically revisiting and prioritizing the backlog based on severity and impact. This method ensures that development momentum is maintained while systematically addressing and resolving issues.
+Our high level approach is to divide the project into phases: plan, development (incl unit testing & function testing) and continuous deployment. Documentation is created, continuously reviewed and updated along the way. Our approach is straightforward: develop features in a logical sequence, addressing core functionalities first before expanding to more complex features.
 
-Feedback from users are actively sought and analyzed to identify areas for improvement, ensuring that the product continuously evolves to meet the needs and expectations of its users effectively
+When we encounter bugs or issues, we record them as bug issues and add them to the backlog, rather than halting development. This allows us to continue progressing in other areas while periodically revisiting and prioritizing the backlog based on severity and impact. This method ensures that we maintain development momentum while systematically addressing and resolving issues.
 
-A project [kanban board](https://github.com/users/JaqiKal/projects/14) was used to track progress, with user stories moved between 'Todo', 'In Progress', 'Bug', and 'Done' columns as appropriate.
+We actively seek and analyze user feedback to identify areas for improvement, ensuring the product continuously evolves to meet user needs and expectations effectively.
+
+We used a project [kanban board](https://github.com/users/JaqiKal/projects/14) to track progress, moving user stories between 'Todo', 'In Progress', 'Bug', and 'Done' columns as appropriate.
 </details>
 
 #### Project Tracking (GitHub Projects)
@@ -542,7 +544,7 @@ Showcase Yourself: See detailed info about users, including posts, followers, an
 ![x](/documentation/readme-image/existing_feat/edit_profile_pw.webp)
 
 Hide with Block button, hidden profile is not seen in feeds, and will not appear when searched on.
-Sometimes one simply is in need of some mild curating. Hidden user is still able to see and interact with the blocker. In coming development iterations this feature will evolve to become a true block, where no interaction will be permitted from the blocked user.
+Sometimes one may need some mild curating... Hidden user is still able to see and interact with the blocker. In coming development iterations this feature will evolve to become a true block, where no interaction will be permitted from the blocked user.
 
 ![x](/documentation/readme-image/existing_feat/hide.webp)
 
@@ -785,7 +787,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 - [Coolors](https://coolors.co/) is used to create the colour scheme palette.
 - [CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input) is used to check code ensuring that my CSS is error-free and adheres to the latest web standards.
 - [DevTools](https://developer.chrome.com/docs/devtools) to help in edit pages on-the-fly and diagnose problems quickly.
-- [Diffchecker - text](https://www.diffchecker.com/text-compare/) is used to check code snippets
+- [Diffchecker - text](https://www.diffchecker.com/text-compare/) is used to check code snippets.
 - [Favicon.io](https://favicon.io/) is used to create favicon.
 - [Font Awesome](https://fontawesome.com/) is used for the iconography on the website.
 - [Git](https://git-scm.com/) is used for version control.
@@ -794,7 +796,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 - [Google Dev Tools](https://developers.google.com/web/tools) is used during testing, debugging and styling.
 - [Google Fonts](https://fonts.google.com/) is a catalog of free, open-source fonts. Used for typography.
 - [Heroku](https://www.heroku.com) ia a platform for deploying and hosting web applications.
-- [Look](https:www.looka.com) ia used for the logo and symbol
+- [Look](https:www.looka.com) ia used for the logo and symbol.
 - [Markup Validation Service](https://validator.w3.org/) is used to check code ensuring that my HTML is error-free and adheres to the latest web standards.
 - [NVDA](https://www.nvaccess.org/download/), NonVisual Desktop Access is a free and open-source, portable screen reader for Microsoft Windows.
 - [Tiny PNG](https://tinypng.com/) is used to compress images.
@@ -816,7 +818,7 @@ For the test results we refer to the [TESTING.md file](https://github.com/JaqiKa
 <summary>Known and unsolved issues</summary>
 <br>
 
-- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has a bug registerd (in Kanban board) and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
+- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Troubleshooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has a bug registered (in Kanban board) and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
 - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
   - Mounting when not logged in
   - Redirecting a logged-in user away from the sign-up/sign-in page
@@ -981,7 +983,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 <details>
 <summary>List of content</summary> 
 <br>
-Throughout the development of Pixavibe, a variety of resources have been utilized to ensure the platform is robust, user-friendly, and engaging. Below is a list of documentation, blogs, tutorials, and guides that have been instrumental in crafting the features and functionality of Pixavibe:
+Throughout the development of Pixavibe, we utilized a variety of resources to ensure the platform is robust, user-friendly, and engaging. Below is a list of documentation, blogs, tutorials, and guides that have been instrumental in crafting the features and functionality of Pixavibe:
 
 - Logo used was created at [Looka](https://looka.com/dashboard)
 - [React Multiselect dropdown](https://www.npmjs.com/package/multiselect-react-dropdown), this library is used for handling hashtags. It helps keep the codebase cleaner and more maintainable.
@@ -1007,7 +1009,7 @@ Throughout the development of Pixavibe, a variety of resources have been utilize
 #### Acknowledgements
 
 <details>
-<summaryI would like to thank!</summary>
+<summary>I would like to thank!</summary>
 <br>
 
 - My immediate and extended family, as well as my friends, who support and cheer me on!
