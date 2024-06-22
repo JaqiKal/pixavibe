@@ -116,7 +116,7 @@ I have used jsx-Prettier and ESLint throughout the development to check that my 
 
 ### HTML
 
-I validated my HTML pages using the W3 Nu HTML Checker. They came back with no errors, only pointers about redundant trailing slashes left by React. You can check the results for each page below.
+I validated my HTML pages using the W3 Nu HTML Checker. They came back with no errors, only pointers about redundant trailing slashes left by React. Please check the results for each page below.
 
 <details>
 <summary>HTML validation results</summary>
@@ -147,9 +147,9 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### CSS
 
-Validation process was automated by using the css-validator npm package. All pages come back clean without any errors. </br>
+Validation process was automated by using the 'CSS-validator npm package'. All pages come back clean without any errors. </br>
 
-Vendor extensions are CSS properties or pseudo-elements specific to particular browser engines, prefixed with -webkit-, -moz-, etc. Pseudo-elements allow styling of parts of an element, such as scrollbars. In index.css, vendor extensions include -apple-system, -webkit-font-smoothing, and -moz-osx-font-smoothing. In App.module.css, vendor extended pseudo-elements include ::-webkit-scrollbar, ::-webkit-scrollbar-track, and ::-webkit-scrollbar-thumb.
+Vendor extensions are CSS properties or pseudo-elements specific to particular browser engines, prefixed with -webkit-, -moz-, etc. Pseudo-elements allow styling of parts of an element, such as scrollbars. In index.css, vendor extensions include -apple-system, -webkit-font-smoothing, and -moz-osx-font-smoothing. In App.module.css, vendor-specific pseudo-elements include ::-webkit-scrollbar, ::-webkit-scrollbar-track, and ::-webkit-scrollbar-thumb.
 
 Our project includes a CSS validation script `validate-css.js` that ensures all stylesheets adhere to web standards. This script uses the [W3C CSS Validator](http://jigsaw.w3.org/css-validator/validator) to check for errors and warnings in our CSS files. Vendor-specific properties and pseudo-elements are flagged as warnings, which are expected. The validation process helps maintain clean, error-free CSS, enhancing cross-browser compatibility and overall code quality. To run the validation, use the command npm run validate:css.
 
@@ -228,14 +228,14 @@ By solving these issues, Wave reports no Error and no Contrast Errors.
 
 ![Wave](/documentation/testing_image/validate_wave.png)
 
-- Contrast issue in comments for the timestamp: I changed the color from #BC9BBB to a slightly darker hue, #966496.
-- Error Missing form label. A form control does not have a corresponding label: <br>
+- Contrast issue in 'comments' for the timestamp: I changed the color from #BC9BBB to a slightly darker hue, #966496.
+- Error'''''''''''. Missing form label. A form control does not have a corresponding label: <br>
   This was solved by adding a form label for <Form.Control> in both CommentCreateForm.ja and CommentEditForm.js. <br>
   ` <Form.Label htmlFor="commentContent" className="sr-only">` <br>
   and <br>
   `<Form.Label htmlFor="editCommentContent" className="sr-only">`
 
-- Error. Empty Link. A link contains no text: <br>
+- Error: Empty Link. A link contains no text: <br>
   Added 'aria-label' to links in Post.js
 
 ```
@@ -245,7 +245,7 @@ By solving these issues, Wave reports no Error and no Contrast Errors.
 </Link>
 ```
 
-- Error. Missing alternative text for the avatar image: <br>
+- Error: Missing alternative text for the avatar image: <br>
   Added the alt attribute to the <img> tag in ProfilePage.js. The alt attribute provides alternative text for screen readers, making the image accessible. <br>
 
 ```
@@ -259,7 +259,7 @@ By solving these issues, Wave reports no Error and no Contrast Errors.
 </Col>
 ```
 
-- Error Missing form label in PostsPAge.js. A form control does not have a corresponding label: <br>
+- Error: Missing form label in PostsPage.js. A form control does not have a corresponding label: <br>
   This was solved by adding a form label for search input.
 
 ```
@@ -885,7 +885,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 **Known and unsolved issues**
 
-  - Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
+  - Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Troubleshooting activities have been undertaken, also by senior developers (tutor support) but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multi-select form has been removed from the PostCreateForm and PostEditForm
   - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
 
     - Mounting when not logged in
