@@ -1,10 +1,10 @@
 // Customized to cater for category filtering functionality in the application.
 
 import React, { useState, useEffect } from "react";
-import { Container, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 import appStyles from "../App.module.css";
 import Form from "react-bootstrap/Form";
-//import styles from "../App.module.css";
 import PropTypes from "prop-types";
 import { axiosReq } from "../api/axiosDefaults";
 import formStyles from "../styles/FormStyles.module.css";
