@@ -14,8 +14,6 @@
     - [Executed manual test cases and results](#executed-manual-test-cases-and-results)
   - [DRF-API Test Cases Representation](#drf-api-test-cases-representation)
 - [Issues](#issues)
-  - [Known and unsolved issues](#known-and-unsolved-issues)
-    - [Solved issues](#solved-issues)
 
 ## User Story Testing
 
@@ -179,6 +177,9 @@ All Python files were run validated with pep8 and cleaned until no errors were f
 ![pep8](/documentation/testing_image/validate_python.png)
 
 </details>
+<br>
+
+_<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Lighthouse
 
