@@ -34,7 +34,7 @@ function PostsPage({ message, isFollowingFeed, isLikedFeed }) {
         const { data: blocksData } = await axiosReq.get("/blocks/");
         setBlocks(blocksData.results);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 
@@ -55,7 +55,7 @@ function PostsPage({ message, isFollowingFeed, isLikedFeed }) {
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 

@@ -37,25 +37,25 @@ cssFiles.forEach((file) => {
     // Validate CSS
     validator({ text: css }, (error, data) => {
       if (error) {
-        console.error(`Validation error in ${file}:`, error);
+        // console.error(`Validation error in ${file}:`, error);
       } else {
         // If no validation error, check for specific CSS errors and warnings.
         if (data.errors.length === 0) {
-          console.log(`No errors found in ${file}.`);
+         // console.log(`No errors found in ${file}.`);
         } else {
-          console.log(`Errors in ${file}:`);
+        // console.log(`Errors in ${file}:`);
           data.errors.forEach((err) => console.log(err.message)); // Iterate over each error and log the error message.
         }
 
         if (data.warnings.length === 0) {
-          console.log(`No warnings found in ${file}.`);
+        // console.log(`No warnings found in ${file}.`);
         } else {
-          console.log(`Warnings in ${file}:`);
+         // console.log(`Warnings in ${file}:`);
           data.warnings.forEach((warn) => console.log(warn.message)); // Iterate over each warning and log the warning message.
         }
       }
     });
   } catch (err) {
-    console.error(`Error reading file ${file}:`, err); // Catch any errors that occur while reading the file and log them.
+    // console.error(`Error reading file ${file}:`, err); // Catch any errors that occur while reading the file and log them.
   }
 });

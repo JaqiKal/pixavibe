@@ -59,10 +59,10 @@ function PostCreateForm() {
         if (Array.isArray(data.results)) {
           setCategories(data.results);
         } else {
-          console.error("Fetched data.results is not an array:", data.results);
+         // console.error("Fetched data.results is not an array:", data.results);
         }
       } catch (error) {
-        console.error("Error fetching categories:", error);
+       // console.error("Error fetching categories:", error);
       }
     };
 
@@ -83,7 +83,7 @@ function PostCreateForm() {
         }));
         console.log("Fetched Hashtags:", data.results); // Log fetched hashtags
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     }
 
@@ -117,8 +117,6 @@ function PostCreateForm() {
     event.preventDefault();
     const formData = new FormData();
 
-    console.log(selectedHashtags.map((item) => item.name).join(","));
-
     // Convert array to comma-separated string
 
     formData.append("title", title);
@@ -132,15 +130,11 @@ function PostCreateForm() {
       JSON.stringify(selectedHashtags.map((tag) => tag.id))
     ); // Append hashtags as JSON string
 
-    console.log("Post Data to be submitted:", postData); // Log the data being sent
-    console.log("FormData to be submitted:", formData.get("hashtags")); // Log the formData content
-    console.log("Selected Hashtags at submit:", selectedHashtags); // Log selected hashtags
-
     try {
       const { data } = await axiosReq.post("/posts/", formData);
       history.push(`/posts/${data.id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

@@ -37,7 +37,6 @@ const Post = (props) => {
     hashtags,
   } = props;
 
-  console.log("Hashtags:", hashtags); // Ensure hashtags are passed correctly
 
   const currentUser = useCurrentUser(); // Getting the current user from the context
   const is_owner = currentUser?.username === owner; // Checking if the current user is the owner of the post
@@ -54,7 +53,7 @@ const Post = (props) => {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -75,7 +74,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
@@ -96,7 +95,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

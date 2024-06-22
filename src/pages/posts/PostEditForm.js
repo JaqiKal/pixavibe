@@ -48,7 +48,7 @@ function PostEditForm() {
           history.push("/");
         }
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
 
@@ -65,10 +65,10 @@ function PostEditForm() {
         if (Array.isArray(data.results)) {
           setCategories(data.results);
         } else {
-          console.error("Fetched data.results is not an array:", data.results);
+          // console.error("Fetched data.results is not an array:", data.results);
         }
       } catch (error) {
-        console.error("Error fetching categories:", error);
+        // console.error("Error fetching categories:", error);
       }
     };
 
@@ -112,7 +112,7 @@ function PostEditForm() {
       await axiosReq.put(`/posts/${id}/`, formData);
       history.push(`/posts/${id}`);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
       if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }

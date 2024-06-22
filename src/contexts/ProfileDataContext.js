@@ -68,7 +68,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -89,7 +89,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.error(err.response ? err.response.data : err);
+      // console.error(err.response ? err.response.data : err);
     }
   };
 
@@ -98,7 +98,7 @@ export const ProfileDataProvider = ({ children }) => {
       const { data } = await axiosRes.delete(
         `/blocks/${clickedProfile.blocking_id}/`
       );
-      console.log(data);
+      // console.log(data);
 
       setProfileData((prevState) => ({
         ...prevState,
@@ -109,8 +109,8 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
-      console.log(clickedProfile);
+     // console.log(err);
+     // console.log(clickedProfile);
     }
   };
 
@@ -126,7 +126,7 @@ export const ProfileDataProvider = ({ children }) => {
           popularProfiles: data,
         }));
       } catch (err) {
-        console.log(err);
+      //  console.log(err);
       }
     };
 
