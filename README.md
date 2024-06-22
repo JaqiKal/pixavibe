@@ -985,6 +985,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 <br>
 Throughout the development of Pixavibe, we utilized a variety of resources to ensure the platform is robust, user-friendly, and engaging. Below is a list of documentation, blogs, tutorials, and guides that have been instrumental in crafting the features and functionality of Pixavibe:
 
+- [Favicon, credited to](https://www.flaticon.com/free-icons/photography") Photography icons created by Vactor area- Flaticon
 - Logo used was created at [Looka](https://looka.com/dashboard)
 - [React Multiselect dropdown](https://www.npmjs.com/package/multiselect-react-dropdown), this library is used for handling hashtags. It helps keep the codebase cleaner and more maintainable.
 - [css-validator](https://www.npmjs.com/package/css-validator) together with GPT was used to create `validate-css.js`. It was used to validate CSS.
