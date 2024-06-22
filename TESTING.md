@@ -626,9 +626,6 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 | HME-M-16 | Post feed         | Display | Posts by blocked users are not displayed                         | Pass   |         |
 | HME-M-17 | Post feed         | Display | "Following" feed only displays posts by followed users           | Pass   |         |
 | HME-M-18 | Post feed         | Display | "Liked" feed only displays posts the current user has liked      | Pass   |         |
-| HME-M-19 | Report button     | Display | Only displays on other users' posts                              | Pass   |         |
-| HME-M-20 | Report button     | Click   | Open the report form                                             | Pass   |         |
-| HME-M-21 | Report form       | Submit  | Sends a report to the admin page                                 | Pass   |         |
 
 </details>
 
@@ -654,9 +651,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 | PST-M-10 | Like Counter    | Display | Display the correct number of likes received by the post         | Pass   |         |
 | PST-M-11 | Comment Icon    | Click   | Open the post's comment section                                  | Pass   |         |
 | PST-M-12 | Comment Counter | Display | Display the correct number of comments on the post               | Pass   |         |
-| PST-M-13 | Report button   | Display | Only displays on other users' posts                              | Pass   |         |
-| PST-M-14 | Report button   | Click   | Open the report form                                             | Pass   |         |
-| PST-M-15 | Report form     | Submit  | Sends a report to the admin page                                 | Pass   |         |
+
 
 </details>
 
@@ -674,7 +669,6 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 | CMT-M-02 | Comment Form  | Submit  | Submit the form and add the comment to the post                  | Pass   |         |
 | CMT-M-03 | Comments      | Display | Comments appear in descending order in an infinite scroll format | Pass   |         |
 | CMT-M-04 | Comments      | Display | Comments display the owner's username and avatar                 | Pass   |         |
-| CMT-M-05 | Comments      | Display | Comments by blocked users are blocked                            | Pass   |         |
 | CMT-M-06 | Comments      | Click   | Clicking the avatar opens the associated profile                 | Pass   |         |
 | CMT-M-07 | Edit Button   | Display | Display if logged in as the author of the post                   | Pass   |         |
 | CMT-M-08 | Edit Button   | Click   | Open the comment form                                            | Pass   |         |
