@@ -38,7 +38,6 @@ function PostPage() {
           axiosReq.get(`/posts/${id}`),
           axiosReq.get(`/comments/?post=${id}`),
         ]);
-        console.log("Post data:", post); // Check if hashtags are included
         setPost({ results: [post] });
         setComments(comments);
       } catch (err) {

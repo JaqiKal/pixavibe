@@ -34,9 +34,7 @@ h5 {
 .Hashtag {
     display: inline-block;
     margin-right: 5px;
-    /* Add some space between hashtags */
     padding: 5px;
-    /* Add some padding */
     background-color: white;
     border-radius: 3px;
 
