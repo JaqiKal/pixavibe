@@ -12,6 +12,7 @@
     - [Executed automatic test cases and results](#executed-automatic-test-cases-and-results)
   - [Custom Manual Testing](#custom-manual-testing)
     - [Executed manual test cases and results](#executed-manual-test-cases-and-results)
+  - [DRF-API Test Cases Representation](#drf-api-test-cases-representation)
 - [Issues](#issues)
   - [Known and unsolved issues](#known-and-unsolved-issues)
     - [Solved issues](#solved-issues)
@@ -332,7 +333,7 @@ In addition to the various validators and automated tests above, I created some 
 
 'xxx-m/a-nn'
 
-- xxx = Abbreviation for app
+- xxx = Area of test
 - m/a = manual or automatic script
 - nn = test case IS no.
 
@@ -343,9 +344,16 @@ In addition to the various validators and automated tests above, I created some 
 - CMT = comments
 - CON = contacts
 - FOL = followers
+- HME = Home
 - LKE = likes
+- NAV = Navigation
+- POP = Popular profile
+- PPM = PostCreate & PostEditForm
 - PST = posts
 - PRF = profiles
+- SIU = SignIn&SignUP
+
+
 
 #### Preparation and setup
 
@@ -470,6 +478,9 @@ No automatic test executed, only manual.
 
 <summary>hashtags</summary>
 <br>
+
+#### Note: The following automated tests for hashtags are based on the functionalities provided by the DRF API. Issues related to updating, deleting, and searching by hashtags are documented in [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68).
+
 
 | ID       | Description                                                                                                                                                       | Expected Outcome                                                                                                                                                            | Result | Comment                                                                                                                 |
 | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------- |
@@ -686,6 +697,18 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 | PFM-M-09 | Submit Button  | Click   | Submit the form and create/update the post              | Pass   |         |
 | PFM-M-10 | Submit Button  | Click   | Close the form and redirect the user to the post feed   | Pass   |         |
 
+
+#### Note: The following manual tests for hashtags are based on the functionalities provided by the DRF API. Issues related to updating, deleting, and searching by hashtags are documented in [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68).
+
+| Feature           | Action  | Expected Outcome                                          | Pass/Fail | Comment                                                          |
+| ----------------- | ------- | --------------------------------------------------------- | --------- | ---------------------------------------------------------------- |
+| PFM-M-11          | GET     | Show a list of all hashtags as JSON objects               | Pass      | JSON objects for hashtags are displayed as expected.             |
+| PFM-M-12          | POST    | Create a new hashtag if valid                             | Pass      | New hashtags can be created successfully.                        |
+| PFM-M-13          | GET     | Return a specific hashtag if given a valid id             | Not Tested |                                                                 |
+| PFM-M-14          | PUT     | Update the hashtag if valid                               | Fail      | Updating hashtags does not work as expected, see [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68) |
+| PFM-M-15          | DELETE  | Destroy the hashtag if valid                              | Fail      | Deleting hashtags does not work as expected, see [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68) |
+| PFM-M-16          | GET     | Retrieve posts associated with a hashtag                  | Fail      | Posts associated with hashtags are not retrieved correctly, see [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68) |       
+
 </details>
 
 <br>
@@ -698,17 +721,21 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 | ID       | Feature                  | Action  | Expected Outcome                                                 | Result | Comment |
 | -------- | ------------------------ | ------- | ---------------------------------------------------------------- | ------ | ------- |
-| PFR-M-01 | Avatar                   | Display | The user's avatar appears on the top of the page                 | Pass   |         |
-| PFR-M-02 | Username                 | Display | The user's username appears on the top of the page               | Pass   |         |
-| PFR-M-03 | User Stats               | Display | The number of posts, followers, and followed users are displayed | Pass   |         |
-| PFR-M-04 | Options Button           | Display | The option button appears if signed-in as the profile owner      | Pass   |         |
-| PFR-M-05 | Options Button           | Click   | Clicking opens the profile options menu                          | Pass   |         |
-| PFR-M-06 | Options Menu             | Display | Display options for editing the profile, username and password   | Pass   |         |
-| PFR-M-07 | "Edit profile" Button    | Click   | Open the profile editing form                                    | Pass   |         |
-| PFR-M-08 | "Change username" Button | Click   | Open the username editing form                                   | Pass   |         |
-| PFR-M-09 | "Change password" Button | Click   | Open the password editing form                                   | Pass   |         |
-| PFR-M-10 | User Posts               | Display | The profile owner's posts are displayed under the profile        | Pass   |         |
-| PFR-M-11 | User Posts               | Display | The profile post feed has an infinite scroll layout              | Pass   |         |
+| PRF-M-01 | Avatar                   | Display | The user's avatar appears on the top of the page                 | Pass   |         |
+| PRF-M-02 | Username                 | Display | The user's username appears on the top of the page               | Pass   |         |
+| PRF-M-03 | User Stats               | Display | The number of posts, followers, and followed users are displayed | Pass   |         |
+| PRF-M-04 | Options Button           | Display | The option button appears if signed-in as the profile owner      | Pass   |         |
+| PRF-M-05 | Options Button           | Click   | Clicking opens the profile options menu                          | Pass   |         |
+| PRF-M-06 | Options Menu             | Display | Display options for editing the profile, username and password   | Pass   |         |
+| PRF-M-07 | "Edit profile" Button    | Click   | Open the profile editing form                                    | Pass   |         |
+| PRF-M-08 | "Change username" Button | Click   | Open the username editing form                                   | Pass   |         |
+| PRF-M-09 | "Change password" Button | Click   | Open the password editing form                                   | Pass   |         |
+| PRF-M-10 | User Posts               | Display | The profile owner's posts are displayed under the profile        | Pass   |         |
+| PRF-M-11 | User Posts               | Display | The profile post feed has an infinite scroll layout              | Pass   |         |
+| PRF-M-12 | Hide/(block) User	      | Create	| User1 can hide User2 successfully                                | Pass   |         |       
+| PRF-M-13 | Hide/(block) User	      | Update	| User1 can update the hide on User2 successfully                  | Pass   |         |
+| PRF-M-14 | Hide/(block) User	      | Delete  |	User1 can unhide User2 successfully                              | Pass   |         |
+| PRF-M-15 | Hide/(block) User	      |	View	  | User1 can see the list of users they have hidden                 | Pass	  | This is validated by the presence of 'blocking_id' or 'blocking_target' fields in the JSON response, which indicates whether a user has been blocked by User1. The list effectively provides the information about blocked users. |
 
 </details>
 
@@ -758,73 +785,162 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 | SIU-M-10 | Sign In Button         | Click   | Validate the form before submission                 | Pass   |         |
 | SIU-M-11 | Sign In Button         | Click   | Notify the user about any invalid data              | Pass   |         |
 | SIU-M-12 | Sign In Button         | Click   | Submit the form and create the new user and profile | Pass   |         |
-
 </details>
 
+### DRF-API Test Cases Representation
+
+<details>
+<summary>The manual and automatic test cases are represented in a different view, more API-centric. Below is the detailed breakdown:</summary>
+<br>
+
+### DRF API
+| Feature | Action | Expected Outcome | Pass/Fail |
+| --- | --- | --- | --- |
+| Refresh token | POST | Refreshes the auth token to keep the user signed in | Pass |
+| Sign-out view | POST | Destroys the token and signs the user out | Pass |
+
+### Profiles
+| Feature | Action | Expected Outcome | Pass/Fail |
+| --- | --- | --- | --- |
+| Profile List | GET | Show a list of all profiles as JSON objects | Pass |
+| Profile List | POST | Create a new profile if valid | Pass |
+| Profile List | POST | Automatically make a profile when creating a user | Pass |
+| Profile Detail | GET | Return a specific profile if given a valid id | Pass |
+| Profile Detail | POST | Create a new profile if valid | Pass |
+| Profile Detail | PUT | Update the profile if valid | Pass |
+| Profile Detail | DELETE | Destroy the profile and its owner instance if valid | Pass |
+| Related instances | DELETE | Destroying a profile destroys all content related to its owner | Pass |
+| Serializer | Annotation | Annotate the number of posts, followers, and followed users of a profile | Pass |
+
+### Posts
+| Feature | Action | Expected Outcome | Pass/Fail |
+| --- | --- | --- | --- |
+| Post List | GET | Show a list of all posts as JSON objects | Pass |
+| Post List | POST | Create a new post if valid | Pass |
+| Post Detail | GET | Return a specific post if given a valid id | Pass |
+| Post Detail | PUT | Update the post if valid | Pass |
+| Post Detail | DELETE | Destroy the post instance if valid | Pass |
+
+### Comments
+| Feature | Action | Expected Outcome | Pass/Fail |
+| --- | --- | --- | --- |
+| Comment List | GET | Show a list of all comments as JSON objects | Pass |
+| Comment List | POST | Create a new comment if valid | Pass |
+| Comment Detail | GET | Return a specific comment if given a valid id | Pass |
+| Comment Detail | PUT | Update the comment if valid | Pass |
+| Comment Detail | DELETE | Destroy the comment if valid | Pass |
+
+### Followers
+| Feature | Action | Expected Outcome | Pass/Fail |
+| --- | --- | --- | --- |
+| Follower List | GET | Show a list of all followers as JSON objects | Pass |
+| Follower List | POST | Create a new follower if valid | Pass |
+| Follower Detail | GET | Return a specific follower if given a valid id | Pass |
+| Follower Detail | PUT | Update the follower if valid | Pass |
+| Follower Detail | DELETE | Destroy the follower if valid | Pass |
+| Unique Together | No duplicates | The model prevents creating duplicate follow instances with the same owner and target user |Pass |
+
+### Hashtags
+| Feature           | Action  | Expected Outcome                                          | Pass/Fail | Comment                                                          |
+| ----------------- | ------- | --------------------------------------------------------- | --------- | ---------------------------------------------------------------- |
+| Hashtag List      | GET     | Show a list of all hashtags as JSON objects               | Pass      | JSON objects for hashtags are displayed as expected.             |
+| Hashtag List      | POST    | Create a new hashtag if valid                             | Pass      | New hashtags can be created successfully.                        |
+| Hashtag Detail    | GET     | Return a specific hashtag if given a valid id             | Not Tested |                                                                 |
+| Hashtag Detail    | PUT     | Update the hashtag if valid                               | Fail      | Updating hashtags does not work as expected, see [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68) |
+| Hashtag Detail    | DELETE  | Destroy the hashtag if valid                              | Fail      | Deleting hashtags does not work as expected, see [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68) |
+| Search by Hashtag | GET     | Retrieve posts associated with a hashtag                  | Fail      | Posts associated with hashtags are not retrieved correctly, see [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68) |
+
+
+### Likes
+| Feature | Action | Expected Outcome | Pass/Fail |
+| --- | --- | --- | --- |
+| Like List | GET | Show a list of all likes as JSON objects | Pass |
+| Like List | POST | Create a new like if valid | Pass |
+| Like Detail | GET | Return a specific like if given a valid id | Pass |
+| Like Detail | PUT | Update the like if valid | Pass |
+| Like Detail | DELETE | Destroy the like if valid | Pass |
+| Unique Together | No duplicates | The model prevents creating duplicate like instances with the same owner and target post | Pass |
+| Like List | View | User1 can see the list of users they have Liked/unliked | Pass
+
+### Hide/(Blocks)
+| Feature | Action | Expected Outcome | Pass/Fail |
+| --- | --- | --- | --- |
+| Block List | GET | Show a list of all hides/(blocks)as JSON objects | Pass |
+| Block List | POST | Create a new hide/(block) if valid | Pass |
+| Block Detail | GET | Return a specific hide/(block) if given a valid id | Pass |
+| Block Detail | PUT | Update the hide/(block) if valid | Pass |
+| Block Detail | DELETE | Destroy the hide/(block) if valid | Pass |
+| Unique Together | No duplicates | The model prevents creating duplicate hide/(block) instances with the same owner and target user | Pass |
+| Block List | View | User1 can see the list of users they have hidden/(blocked) | Pass
+</details>
 <br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ## Issues
 
-### Known and unsolved issues
+<details>
+<summary>List of open and closed issues</summary>
+<br>
 
-- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
-- When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
+**Known and unsolved issues**
 
-  - Mounting when not logged in
-  - Redirecting a logged-in user away from the sign-up/sign-in page
-  - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
+  - Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Trouble shooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
+  - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
 
-    ![x](/documentation/testing_image/401-error.png)
+    - Mounting when not logged in
+    - Redirecting a logged-in user away from the sign-up/sign-in page
+    - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
 
-- Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
-- (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
+      ![x](/documentation/testing_image/401-error.png)
 
-  ![x](/documentation/testing_image/field-filters-label-invalid-name.png)
+  - Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
+  - (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
 
-- **Disclaimer on npm Audit Issues**: </br>
-  As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
+    ![x](/documentation/testing_image/field-filters-label-invalid-name.png)
 
-  - **ansi-html** (<0.0.8): High severity - Uncontrolled Resource Consumption.
-  - **axios** (0.8.1 - 0.27.2): Moderate severity - Cross-Site Request Forgery Vulnerability.
-  - **braces** (<3.0.3): High severity - Uncontrolled Resource Consumption.
-  - **browserslist** (4.0.0 - 4.16.4): Moderate severity - Regular Expression Denial of Service.
-  - **ejs** (<=3.1.9): Critical severity - Template injection vulnerability.
-  - **glob-parent** (<5.1.2): High severity - Regular Expression Denial of Service.
-  - **immer** (7.0.0 - 9.0.5): Critical severity - Prototype Pollution.
-  - **ip**: High severity - Server-Side Request Forgery.
-  - **loader-utils** (2.0.0 - 2.0.3): Critical severity - Prototype Pollution.
-  - **lodash.template**: High severity - Command Injection.
-  - **minimatch** (<3.0.5): High severity - Regular Expression Denial of Service.
-  - **node-forge** (<=1.2.1): High severity - Prototype Pollution.
-  - **nth-check** (<2.0.1): High severity - Inefficient Regular Expression Complexity.
-  - **postcss** (<8.4.31): Moderate severity - Line return parsing error.
-  - **semver** (7.0.0 - 7.5.1): Moderate severity - Regular Expression Denial of Service.
-  - **shell-quote** (<=1.7.2): Critical severity - Improper Neutralization of Special Elements.
-  - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
+  - **Disclaimer on npm Audit Issues**: </br>
+    As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
 
-There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
+    - **ansi-html** (<0.0.8): High severity - Uncontrolled Resource Consumption.
+    - **axios** (0.8.1 - 0.27.2): Moderate severity - Cross-Site Request Forgery Vulnerability.
+    - **braces** (<3.0.3): High severity - Uncontrolled Resource Consumption.
+    - **browserslist** (4.0.0 - 4.16.4): Moderate severity - Regular Expression Denial of Service.
+    - **ejs** (<=3.1.9): Critical severity - Template injection vulnerability.
+    - **glob-parent** (<5.1.2): High severity - Regular Expression Denial of Service.
+    - **immer** (7.0.0 - 9.0.5): Critical severity - Prototype Pollution.
+    - **ip**: High severity - Server-Side Request Forgery.
+    - **loader-utils** (2.0.0 - 2.0.3): Critical severity - Prototype Pollution.
+    - **lodash.template**: High severity - Command Injection.
+    - **minimatch** (<3.0.5): High severity - Regular Expression Denial of Service.
+    - **node-forge** (<=1.2.1): High severity - Prototype Pollution.
+    - **nth-check** (<2.0.1): High severity - Inefficient Regular Expression Complexity.
+    - **postcss** (<8.4.31): Moderate severity - Line return parsing error.
+    - **semver** (7.0.0 - 7.5.1): Moderate severity - Regular Expression Denial of Service.
+    - **shell-quote** (<=1.7.2): Critical severity - Improper Neutralization of Special Elements.
+    - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
 
-### Solved Issues
+  There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
 
-- Social Authentication Installation Error:
+- **Solved Issues**
 
-  - During the process of setting up our Django application in the pixavibe-api environment, we encountered a specific error related to package dependencies when attempting to install `dj-rest-auth[with_social]`. This issue was triggered by an incompatibility between the django-allauth package and the version of Python we were using (Python 3.12.2).
-    - Downgraded to Python 3.11.9 to resolve this.
-    - Added runtime.txt with python-3.9.11 to ensure consistent Python version across environments and prevent future issues.
-      To execute the final migration required for enabling JSON Web Token authentication.
-    - pip install django-allauth==0.54.0
-    - In settings.py MIDDLEWARE remove 'allauth.account.middleware.AccountMiddleware' this is only required since django-allauth==0.56.0
+  - Social Authentication Installation Error:
 
-  **Error message**:
+    - During the process of setting up our Django application in the pixavibe-api environment, we encountered a specific error related to package dependencies when attempting to install `dj-rest-auth[with_social]`. This issue was triggered by an incompatibility between the django-allauth package and the version of Python we were using (Python 3.12.2).
+      - Downgraded to Python 3.11.9 to resolve this.
+      - Added runtime.txt with python-3.9.11 to ensure consistent Python version across environments and prevent future issues.
+        To execute the final migration required for enabling JSON Web Token authentication.
+      - pip install django-allauth==0.54.0
+      - In settings.py MIDDLEWARE remove 'allauth.account.middleware.AccountMiddleware' this is only required since django-allauth==0.56.0
 
-  - ![x](/documentation/testing_image/error-all-auth-incomptible-python-3-12-2.webp)
+    **Error message**:
 
-- [BUG#61: Comment edit save fails to display updated content](https://github.com/JaqiKal/pixavibe-frontend/issues/61)
-- [BUG#65: Avatar broken in posts card](https://github.com/JaqiKal/pixavibe-frontend/issues/65)
-- [BUG#66: Post detail CRUD lost](https://github.com/JaqiKal/pixavibe-frontend/issues/66)
-- [BUG#69: ot possible to edit Category when editing post](https://github.com/JaqiKal/pixavibe-frontend/issues/69)
+    - ![x](/documentation/testing_image/error-all-auth-incomptible-python-3-12-2.webp)
+
+  - [BUG#61: Comment edit save fails to display updated content](https://github.com/JaqiKal/pixavibe-frontend/issues/61)
+  - [BUG#65: Avatar broken in posts card](https://github.com/JaqiKal/pixavibe-frontend/issues/65)
+  - [BUG#66: Post detail CRUD lost](https://github.com/JaqiKal/pixavibe-frontend/issues/66)
+  - [BUG#69: ot possible to edit Category when editing post](https://github.com/JaqiKal/pixavibe-frontend/issues/69)
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
