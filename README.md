@@ -688,45 +688,47 @@ This application emphasizes modularity and reusability. Each component is design
 - Purpose: Display a media asset, such as images, spinner animations, and messages.
 - Props: src, message, spinner
 - Usage: `const Asset` is considered a reusable component and has been reused in: NotFound.js, PostCreateForm.js, PostPage.js, PostsPage.js, PopularProfiles.js, ProfilePage.js to display a spinner whenever content is loading.
+- Potential uses: Loading spinners or media placeholders in any section of the application.
 
 **Avatar component**
 
 - Purpose: Display user profile images.
 - Props: profile, owner, image
   Usage: `const Avatar` is considered a reusable component and has been reused in: NavBar.js, Comment.js, CommentCreateForm.js, Post.js and Profile.js to handle and import the avatar for the user
+- Potential uses: User profile displays, comment sections, and anywhere a user image is required.
 
 **CategorySelect Component**
 
 - Purpose: This component encompasses functionality that fetches categories from an API and displays them in a dropdown menu, allowing users to filter items based on the selected category. It can be reused in different situations where a dropdown list with filtering for categories is needed.
 - Props: setFilter: Function to update the selected category filter, mobile: Boolean to indicate if the component is in mobile view.
 - Usage: `const CategoryFilter` is considered a reusable component and has been reused in: PostsPage.js to render the Category filtering of posts.
-- Potential uses: Filtering options in other lists or content sections.
+- Potential uses: Filtering options in other lists or content sections, such as product categories or blog tags.
 
 **Comment**
 
-- Purpose: This component is designed to display a comment with options to edit or delete it if the current user is the owner. This component can be reused in different contexts where similar functionality is needed such as blog post comments, forum threads or product reviews.
-- Props: id, content, owner and more...
+- Purpose: Display a comment with options to edit or delete it if the current user is the owner.
+- Props: id, content, owner and more.
 - Usage:`const Comment`is considered a reusable component and has been reused in: PostPage.js to fetch comments related to the specific post.
-  Potential uses: The comment component could be easily reused on profile pages to display all comments made by a specific user.
+- Potential uses: Blog post comments, forum threads, product reviews, and profile pages to display user comments.
 
 **MoreDropdown Component**
 
-- Purpose: Provide a dropdown menu for actions like editing and deleting items. Can be reused as a simple dropdown menu in different scenarios for when users need to edit a comment, post, photos etc.
-- Props: handleEdit: Function to handle the edit action, handleDelete:
-- Usage: `const MoreDropdown` is considered a reusable component and has been reused in Comment.js, Post.js and ProfilePage.js to render the dropdown menu the enable the user to edit their data.
+- Purpose: Provide a dropdown menu for actions like editing and deleting items. 
+- Props: handleEdit (function to handle the edit action), handleDelete (function to handle the delete action).
+- Usage: `const MoreDropdown` has been reused in Comment.js, Post.js and ProfilePage.js to render the dropdown menu the enable the user to edit their data.
 - Potential uses: Context menus for various content types that support edit and delete actions.
 
 **Navbar**
 
-- Purpose: This component presents a form for users to update their passwords. It can be reused across different parts of the application where password updating functionality is needed.
-  -Usage: `const NavBar` is considered a reusable component and has been reused in: App.js to render the navbar on the entire website no matter what url path the user is currently located at.
-  Potential uses: Could be fitted onto a completely different app with small routing adjustments.
+- Purpose: Present a navigation bar for the application, including links and user authentication options. 
+- Usage: const Navbar is a reusable component and has been reused in App.js to render the navbar on the entire website, regardless of the URL path.
+- Potential uses: Could be adapted for use in different applications with minimal adjustments to routing and links.
 
 **Post**
 - Purpose: Display a specific post.
 - Props: id, title, content, owner and more.
-- Usage: `const Post` is considered a reusable component and has been reused in: PostPage.js and PostsPage.js to import all the data related to the specific post.Post feed, Post detail page, Profile page.
-- Potential uses: Could be used for a "featured post" component or a list of the most popular posts of all time. Forum threads or Portfolio showcases.
+- Usage: const Post is a reusable component and has been reused in PostPage.js and PostsPage.js to display post data.
+- Potential uses: Featured post component, list of popular posts, forum threads, or portfolio showcases.
 
 **ProfileDataContext and CurrentUserContext**
 
@@ -740,9 +742,20 @@ This application emphasizes modularity and reusability. Each component is design
 **Profile**
 - Purpose: This component is designed to render a user profile with options for following/unfollowing and block/unblock based on the current user's interaction status with the profile.
 - Props: profile, owner, image
-- Usage: Can be used as a Community memeber widget, Author card in blog posts, Participant list in events pages.
-From this component const Profile is considered a reusable component and has been reused in: PopularProfiles.js tho render the profiles in the popular profiles field.
-- Potential uses: Highly reusable, convenient to use anywhere where you need to show the profile/user associated with a piece of content.
+- Usage: Can be used as a Community memeber widget, Author card in blog posts, Participant list in events pages. `const Profile*  is considered a reusable component and has been reused in: PopularProfiles.js to render the profiles in the popular profiles field.
+- Potential uses: Highly reusable, convenient to use anywhere where you need to show the profile/user associated with a piece of content. Community member widget, author card in blog posts, participant list in events pages.
+
+**Custom Hooks**
+- useClickOutsideToggle
+  - Purpose: Handle click outside events to toggle state.
+  - Usage: Can be reused in any component that needs to handle click outside functionality.
+- useRedirect
+  - Purpose: Redirect users based on their authentication status.
+  - Usage: Can be reused in any component that needs to handle user redirects based on authentication.
+
+**Utility Functions**
+- Utility functions (e.g., date formatting, data validation)
+- Purpose: General-purpose functions that can be used across different parts of the application.
 
 </details>
 
@@ -812,7 +825,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Testing
 
-For the test results we refer to the [TESTING.md file](https://github.com/JaqiKal/pixavibe-frontend/blob/main/TESTING.md).
+For the test results and solved issues, we refer to the [TESTING.md file](https://github.com/JaqiKal/pixavibe-frontend/blob/main/TESTING.md).
 
 <details>
 <summary>Known and unsolved issues</summary>
