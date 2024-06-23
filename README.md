@@ -480,7 +480,7 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 <summary>List of existing features</summary>
 <br>
 
-**General Features**
+**Defensive Features**
 
 - Authorization checks - Keeping It Secure
 
@@ -503,19 +503,22 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
   - Error Pages: If you wander into the unknown, a “Page Not Found” error will guide you back on track.
 
-- Responsive Design: Looks Great Everywhere: Our site adjusts beautifully across all devices.
-  Complete Control
+**General Features**
 
-- CRUD Operations: Create, read, update, and delete your content and profiles with ease.
+  - Responsive Design: Looks Great Everywhere: Our site adjusts beautifully across all devices.
+    Complete Control
 
--User Interaction - Get Involved: Like, comment, follow—get the full experience based on your authorization status. Pixavibe administrator have superuser authority and manages full CRUD.
+  - User Interaction - Get Involved: Like, comment, follow—get the full experience based on your authorization status. Pixavibe administrator have superuser authority and manages full CRUD.
 
-- Create - users can register a new user account, authenticated users can create post(s) and create a comment(s)
-- Read - authenticated users can view their posts, comments, and their profile image.
-- Update - authenticated users can update their profile image, username and password, and edit and save comments, its title, and select/deselect category and save it.
-- Delete - authenticated users can delete their own comments and posts.
+  - CRUD Operations: 
+    - Create - users can register a new user account, authenticated users can create post(s) and create a comment(s)
+    - Read - authenticated users can view their posts, comments, and their profile image.
+    - Update - authenticated users can update their profile image, username and password, and edit and save comments, its title, and select/deselect category and save it.
+    - Delete - authenticated users can delete their own comments and posts.
+
 
 **SignIn/SignUp Page** <br>
+
 Join the Fun: Creating an account is easy-peasy. After signing up, you’ll be whisked to the sign-in page. Already signed in? You’ll head straight to the home page.
 
 ![X](/documentation/readme-image/existing_feat/signin.webp)
@@ -550,7 +553,7 @@ Sometimes one may need some mild curating... Hidden user is still able to see an
 
 **Profiles Sidebar**
 <br>
-Popular Profiles: Check out the most followed profiles. Follow or unfollow with a click, and enjoy a sidebar that fits perfectly on any screen.
+Popular Profiles: Check out the most followed profiles. Follow or unfollow with a click, and enjoy a sidebar that fits perfectly on any screen. The profile sidebar is always present on screens that are large enough. On smaller screens, it appears in a smaller section above the main content, and on certain pages it is removed.
 
 ![x](/documentation/readme-image/existing_feat/popular_profile.webp)
 
@@ -626,6 +629,7 @@ Get in Touch: Use our form to reach out. A friendly modal will thank you for you
 - **Enhanced Search**: Improve search functionality to include advanced filters and sorting options, making it easier for users to find specific content.
 - **Content Moderation Tools**: Provide tools for users to report inappropriate content and for admins to review and manage reports efficiently.
 - **Integration with External Services**: Allow users to link their accounts with external services such as social media platforms for seamless content sharing and authentication.
+- **Contact form**: Add email service and functionality to allow users to send messages to the site administrators. The contact form will collect the user's email, subject, and message, and send an email notification to the admin upon submission. This feature will enhance user support and feedback management.
 </details>
 <br>
 
@@ -888,7 +892,6 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 ### Deployment
 
-
 <details>
 <summary>Version Control</summary>
 <br>
@@ -903,15 +906,9 @@ The following git commands were used throughout development to push code to the 
 #### Heroku Deployment
 
  <details>
- <summary>To deploy the project to Heroku, I took the following steps</summary>
+ <summary>To deploy the project to Heroku</summary>
  
  <br>
-
-**Initial set-up**
-
-- Sign up for a [Heroku](https://heroku.com/) account at Heroku's website.
-- Download and install the Heroku Command Line Interface (CLI) to interact with Heroku from your local machine.
-- Or use Heroku Web interface.
 
 **Preparing the Application**
 
@@ -919,6 +916,12 @@ The following git commands were used throughout development to push code to the 
 - Ensure you have a requirements.txt file listing all project dependencies.
 - Set up necessary configuration variables in Heroku setting tab > Config Vars (eg. SECRET_KEY, DATABASE_URL, etc.).
 - In your app's 'settings.py' add Heroku to ALLOWED_HOSTS
+
+**Initial set-up**
+
+- Sign up for a [Heroku](https://heroku.com/) account at Heroku's website.
+- Download and install the Heroku Command Line Interface (CLI) to interact with Heroku from your local machine.
+- Or use Heroku Web interface.
 
 **Create Heroku App**
 
@@ -957,16 +960,13 @@ For more detailed instructions and troubleshooting, visit the [official Heroku D
 
 Cloning a GitHub repository creates a local copy on your machine, allowing you to sync between the two locations. Here are the steps:
 
-- Navigate to the GitHub Repository you want to clone to use locally:
-- Click on the code drop down button
-- Click on HTTPS
-- Copy the repository link to the clipboard
-- Open your IDE of choice (git must be installed for the next steps)
-- In your IDE or local coding environment use the link to open the repository.
-  - For example: in VScode: <br>
-    clicking on 'Clone Git Repository...' will bring up a box in which to paste the link. once vscode has the link, you will then be asked where you would like the repo saving. You should now be set up ready to work on the repository.
-  - For example: in Gitpod <br>
-    Click on the green Open button (next to 'Code'). Gitpod opens and start preparing the workspace.
+- Navigate to the GitHub Repository you want to clone to use locally.
+- Click on the code drop down button.
+- Click on HTTPS.
+- Copy the repository link to the clipboard.
+- Open your IDE of choice (git must be installed for the next steps). 
+- Navigate to the directory where you want the clone to be created.
+- Type `git clone`, and then paste the URL you copied previously. Press Enter to create your local clone.
 
 Install Dependencies:
 
@@ -976,10 +976,8 @@ Run Application:
 
 `npm start`
 
-<br>
 </details>
- 
- <br>
+<br>
 
 <details>
 <summary>How to Fork</summary>
@@ -992,13 +990,8 @@ Most commonly, forks are used to either propose changes to someone else's projec
 - One can change the name of the fork and add description
 - Choose to copy only the main branch or all branches to the new fork.
 - Click Create a Fork. A repository should appear in your GitHub
-
-Instructions to fork directly from an issue:
-
-- Click to view an issue, either from the issues list or from the project board. From the project board you will need to click once to bring up the issue and then again on the title to go into it fully.
-- Partway down the right hand side (on desktop) you should see the heading 'Development' and under this a link to 'create a branch for this issue or link a pull request'.
-- Click on the link to create a forked branch that is tied to the issue.
 </details>
+<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
@@ -1042,10 +1035,11 @@ Throughout the development of Pixavibe, we utilized a variety of resources to en
 - My immediate and extended family, as well as my friends, who support and cheer me on!
 - [Jonathan Zakrisson!](https://github.com/Jonathan97-web/) A very knowledgeable, kind, and helpful man, whose support meant a great deal. Without it, the project would have been in peril of never seeing the light of day!
 - [Emil Jädersten](https://github.com/EmilionR/), for chairing the Sunday huddle and sharing knowhow, in many ways.
-- [Jörgen Jonsson](https://github.com/JorgenDIF/JorgenDIF), giving the community his time an energy, and being a cheerful channel-lead in general.
+- [Jörgen Jonsson](https://github.com/JorgenDIF/JorgenDIF), giving the community his time and energy, and being a cheerful channel-lead & huddle general.
 - To all engaged fellow students at all channels and a special shout out to #community-sweden!
-- Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow.
+- Code Institutes Tutor Support service, their help has been a source of immense relief when in total panic! Also yet another channel to gain more knowhow from.
 - My mentor [Jubril Akolade](https://github.com/jubrillionaire/)
 </details>
+<br>
 
 _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
