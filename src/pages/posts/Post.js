@@ -34,7 +34,8 @@ const Post = (props) => {
     postPage,
     setPosts,
     category_name,
-    hashtags,
+    // eslint-disable-next-line  
+    hashtags,  // This is intentionally unused for now, see BUG#68, TESTING.md
   } = props;
 
 

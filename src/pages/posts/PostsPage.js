@@ -84,7 +84,6 @@ function PostsPage({ message, isFollowingFeed, isLikedFeed }) {
           <Form.Group controlId="searchPosts">
             <Form.Label className="sr-only">Search Posts</Form.Label>
             <Form.Control
-              id="searchPosts"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               type="text"

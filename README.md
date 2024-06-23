@@ -818,21 +818,34 @@ For the test results we refer to the [TESTING.md file](https://github.com/JaqiKa
 <summary>Known and unsolved issues</summary>
 <br>
 
-- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Troubleshooting activities have been undertaken, also by senior developers but solution has not been found yet. The feature has a bug registered (in Kanban board) and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
+- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The error indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Troubleshooting activities have been undertaken, also by senior developers (tutor support) but solution has not been found yet. 
+
+  The feature has a bug registered in the project's Kanban board and will be revisited in future improvements of the Pixavibe app.
+
+  To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
+
+  _**Terminal warning:**_
+
+  In Post.js, line 37: we've disabled the ES linting rule for the unused hashtags variable and added a comment indicating that hashtags is intentionally unused for now, referring to documentation for more information.
+
+  This practice is generally discouraged as it can lead to code that is harder to maintain and understand. In this particular case, the feature is rather isolated and testing indicates nothing else is disrupted in the codebase. We are fully aware that this needs to be resolved before we add more functionality.
+
+  ![compile-warning](/documentation/readme-image/compile_warning_post_h-tag.webp)
+
 - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
   - Mounting when not logged in
   - Redirecting a logged-in user away from the sign-up/sign-in page
   - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
-
+  
     ![x](/documentation/testing_image/401-error.png)
 
 - Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
-- (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
+- (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'. This behavior is consistent with the course material.
 
   ![x](/documentation/testing_image/field-filters-label-invalid-name.png)
 
 - **Disclaimer on npm Audit Issues**: </br>
-  As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
+As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
 
   - **ansi-html** (<0.0.8): High severity - Uncontrolled Resource Consumption.
   - **axios** (0.8.1 - 0.27.2): Moderate severity - Cross-Site Request Forgery Vulnerability.
@@ -852,7 +865,7 @@ For the test results we refer to the [TESTING.md file](https://github.com/JaqiKa
   - **shell-quote** (<=1.7.2): Critical severity - Improper Neutralization of Special Elements.
   - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
 
-There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
+  There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
 
 </details>
 

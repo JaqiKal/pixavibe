@@ -887,42 +887,56 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
 
 **Known and unsolved issues**
 
-  - Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The errors indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Troubleshooting activities have been undertaken, also by senior developers (tutor support) but solution has not been found yet. The feature has been moved to the BUG lane on the Kanban board and will be revisited in future improvements of the Pixavibe app. To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multi-select form has been removed from the PostCreateForm and PostEditForm
-  - When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
+- Hashtag Error [BUG#68](https://github.com/JaqiKal/pixavibe-frontend/issues/68): The error indicate that the response data does not contain the expected 'hashtag_ids' field. Instead, the response contains an empty 'hashtags' array. This suggests that the hashtags are not being properly associated with the post. Troubleshooting activities have been undertaken, also by senior developers (tutor support) but solution has not been found yet. 
 
-    - Mounting when not logged in
-    - Redirecting a logged-in user away from the sign-up/sign-in page
-    - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
+  The feature has a bug registered in the project's Kanban board and will be revisited in future improvements of the Pixavibe app.
 
-      ![x](/documentation/testing_image/401-error.png)
+  To maintain a smooth user experience, the hashtag feature is retained in the codebase, but the multiselect form has been removed from the PostCreateForm and PostEditForm.
 
-  - Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
-  - (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'.
+  _**Terminal warning:**_
 
-    ![x](/documentation/testing_image/field-filters-label-invalid-name.png)
+  In Post.js, line 37: we've disabled the ES linting rule for the unused hashtags variable and added a comment indicating that hashtags is intentionally unused for now, referring to documentation for more information.
 
-  - **Disclaimer on npm Audit Issues**: </br>
-    As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
+  This practice is generally discouraged as it can lead to code that is harder to maintain and understand. In this particular case, the feature is rather isolated and testing indicates nothing else is disrupted in the codebase. We are fully aware that this needs to be resolved before we add more functionality.
 
-    - **ansi-html** (<0.0.8): High severity - Uncontrolled Resource Consumption.
-    - **axios** (0.8.1 - 0.27.2): Moderate severity - Cross-Site Request Forgery Vulnerability.
-    - **braces** (<3.0.3): High severity - Uncontrolled Resource Consumption.
-    - **browserslist** (4.0.0 - 4.16.4): Moderate severity - Regular Expression Denial of Service.
-    - **ejs** (<=3.1.9): Critical severity - Template injection vulnerability.
-    - **glob-parent** (<5.1.2): High severity - Regular Expression Denial of Service.
-    - **immer** (7.0.0 - 9.0.5): Critical severity - Prototype Pollution.
-    - **ip**: High severity - Server-Side Request Forgery.
-    - **loader-utils** (2.0.0 - 2.0.3): Critical severity - Prototype Pollution.
-    - **lodash.template**: High severity - Command Injection.
-    - **minimatch** (<3.0.5): High severity - Regular Expression Denial of Service.
-    - **node-forge** (<=1.2.1): High severity - Prototype Pollution.
-    - **nth-check** (<2.0.1): High severity - Inefficient Regular Expression Complexity.
-    - **postcss** (<8.4.31): Moderate severity - Line return parsing error.
-    - **semver** (7.0.0 - 7.5.1): Moderate severity - Regular Expression Denial of Service.
-    - **shell-quote** (<=1.7.2): Critical severity - Improper Neutralization of Special Elements.
-    - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
+  ![compile-warning](/documentation/readme-image/compile_warning_post_h-tag.webp)
 
-     There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
+- When loading certain pages, 401/400 errors occur due to the absence or expiration of an authorization token, or when invalid form input is provided. These instances include:
+
+  - Mounting when not logged in
+  - Redirecting a logged-in user away from the sign-up/sign-in page
+  - Submitting a sign-in form without entering a username. Expired access token that is refreshed in the background, leading to eventual success
+
+    ![x](/documentation/testing_image/401-error.png)
+
+- Interface elements that depend on the user's authorization state sometimes fail to load without a page refresh. This behavior is consistent with the course material.
+
+- (posts/views.py): django rest framework bug, in the Filter set fields list the Field filters label shows 'Invalid Name'. This behavior is consistent with the course material.
+
+  ![x](/documentation/testing_image/field-filters-label-invalid-name.png)
+
+- **Disclaimer on npm Audit Issues**: </br>
+  As students, we're not expected to fix the following npm audit errors identified in this project. The listed issues may involve breaking changes, which are beyond the scope of our current work. Here are the identified vulnerabilities:
+
+  - **ansi-html** (<0.0.8): High severity - Uncontrolled Resource Consumption.
+  - **axios** (0.8.1 - 0.27.2): Moderate severity - Cross-Site Request Forgery Vulnerability.
+  - **braces** (<3.0.3): High severity - Uncontrolled Resource Consumption.
+  - **browserslist** (4.0.0 - 4.16.4): Moderate severity - Regular Expression Denial of Service.
+  - **ejs** (<=3.1.9): Critical severity - Template injection vulnerability.
+  - **glob-parent** (<5.1.2): High severity - Regular Expression Denial of Service.
+  - **immer** (7.0.0 - 9.0.5): Critical severity - Prototype Pollution.
+  - **ip**: High severity - Server-Side Request Forgery.
+  - **loader-utils** (2.0.0 - 2.0.3): Critical severity - Prototype Pollution.
+  - **lodash.template**: High severity - Command Injection.
+  - **minimatch** (<3.0.5): High severity - Regular Expression Denial of Service.
+  - **node-forge** (<=1.2.1): High severity - Prototype Pollution.
+  - **nth-check** (<2.0.1): High severity - Inefficient Regular Expression Complexity.
+  - **postcss** (<8.4.31): Moderate severity - Line return parsing error.
+  - **semver** (7.0.0 - 7.5.1): Moderate severity - Regular Expression Denial of Service.
+  - **shell-quote** (<=1.7.2): Critical severity - Improper Neutralization of Special Elements.
+  - **webpack-dev-middleware** (<=5.3.3): High severity - Path traversal.
+
+  There are a total of 138 vulnerabilities (1 low, 80 moderate, 49 high, 8 critical).
 </details>
 <br>
 
@@ -949,6 +963,18 @@ _<span style="color: blue;">[Back to Content](#table-of-contents)</span>_
   - [BUG#65: Avatar broken in posts card](https://github.com/JaqiKal/pixavibe-frontend/issues/65)
   - [BUG#66: Post detail CRUD lost](https://github.com/JaqiKal/pixavibe-frontend/issues/66)
   - [BUG#69: ot possible to edit Category when editing post](https://github.com/JaqiKal/pixavibe-frontend/issues/69)
+
+  -  Warning controlId is ignored on <FormControl> component occurs because both controlId and id are specified in the <Form.Control> component within the search bar in PostsPage.js in line 87. To resolve this, the id attribute from the <Form.Control> component was removed, as controlId already assigns an id to it.
+
+      ![controlId warning](/documentation/readme-image/warning_controlId.webp)
+
+- Error: Manifest: Line: 1, column: 1, Syntax error. Steps taken to resolve this:
+  - ensure that there is a file named site.webmanifest in the public folder.
+  - ensure that the path in 'index.html' is correct, the leading slash in hte %PUBLIC_URL% placeholder was removed.
+
+  ![manifest error](/documentation/readme-image/error_manifest.png)
+
+
 </details>
 <br>
 
